@@ -1,0 +1,101 @@
+.card{
+	display: flex;
+	/*height: 200px;*/
+	padding: 15px;
+	margin: 10px 0;
+	background-color: white;
+	box-shadow: 2px 2px 10px 0px grey;
+}
+
+.card .thumbnail {
+	/*flex-grow: 1;*/
+	overflow: hidden;
+	background-color: white;
+	border-radius: 3px;
+	width: 30%;
+	height: 200px;
+}
+.card img.leftImg{
+	height: auto;
+	width: 100%;
+}
+.card .details{
+	/*flex-grow: 5;*/
+	margin-left: 30px;
+	width: 70%;
+}
+.card h1{
+	margin-top: 0;
+	font-size : 1.5rem;
+	color : #4B4B4B;
+}
+.card .author{
+	float: left;
+	background-color : #9ECAFF;
+	height : 30px;
+	padding-right: 8px;
+	/*width : 180px;*/
+	/*border-radius : 20px;*/
+}
+.card .author img{
+	margin-top: 2.5px;
+	margin-left : 8px;
+	margin-right: 1px;
+	float : left;
+	height : 25px;
+	width : 25px;
+	border-radius : 50%;
+}
+.card .author h2{
+	float: left;
+    margin-left: 5px;
+    margin-top: 9px;
+    font-size: 0.8rem;
+    color: white;
+}
+.card .category{
+	float: left;
+	margin-left: 20px;
+	background-color : #FFA060;
+	height : 30px;
+	width : 110px;
+}
+.card .category h2{
+	float: left;
+    margin-left: 25%;
+    margin-top: 7px;
+    font-size: 0.9rem;
+    color: white;
+}
+.card .separator{
+	clear:both;
+	padding-top: 10px;
+	border-bottom: 1px solid #C3C3C3;
+}
+.card p{
+	text-align: justify;
+	font-size : 17px;
+	/*line-height: 150%;*/
+	color : #4B4B4B;
+}
+.card .seemore p{
+	float: right;
+	color: #FFA060;
+	margin-top: 0;
+}
+.card .seemore p:hover, .arrow:hover{
+	border-bottom: 2px solid #FFA060;
+}
+.card .author:hover, .category:hover{
+	box-shadow: 1px 1px 10px 1px gray;
+}
+.card .right {
+	margin-top: 7px;
+	margin-left: 2px;
+	border: solid #FFA060;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+    transform: rotate(-45deg);
+    float: right;
+}

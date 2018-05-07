@@ -1,0 +1,151 @@
+.prod-cont{
+	/*height: 100%;
+	width: 90%;*/
+	margin: auto;
+	background-color : #FFF;
+	box-shadow: 5px 5px 30px 1px #888888;
+	display: flex;
+	padding: 20px;
+}
+.prod-cont .thumbnail {
+	overflow: hidden;
+	box-shadow: 1px 1px 10px 2px black;
+	background-color: white;
+	border-radius: 3px;
+	width: 380px;
+	margin:0 20px;
+}
+.prod-cont img.left-prod{
+	height: auto;	
+	width: 100%;
+}
+
+.prod-cont .info{
+	padding-left: 20px;
+}
+.prod-cont .info .details h2{
+	color: darkgrey;
+}
+.prod-cont .info .author{
+	float: left;
+	background-color : #9ECAFF;
+	height : 30px;
+	padding-right: 8px;
+	margin-left: 2%;
+	/*width : 180px;*/
+	/*border-radius : 20px;*/
+}
+.prod-cont .info .author img{
+	margin-top: 2.5px;
+	margin-left : 8px;
+	margin-right: 1px;
+	float : left;
+	height : 25px;
+	width : 25px;
+	border-radius : 50%;
+}
+.prod-cont .info .author h2{
+	float: left;
+    margin-left: 5px;
+    margin-top: 9px;
+    font-size: 0.8rem;
+    color: white;
+}
+.prod-cont .info .category{
+	float: left;
+	background-color : #FFA060;
+	height : 30px;
+	width : 110px;
+}
+.prod-cont .info .category h2{
+	float: left;
+    margin-left: 25%;
+    margin-top: 7px;
+    font-size: 0.9rem;
+    color: white;
+}
+.prod-cont .info .boton{
+	clear: both;
+}
+.prod-cont .info button{
+	float: right;
+    margin-right: 30px;
+    background-color: #DC7A00FF;
+    padding: 5px 50px;
+    border: 0px solid black;
+    border-radius: 10px;
+    color: white;
+    transition: all .3s;
+    font-size: 40px;
+    transform: rotate(-10deg);
+    margin-bottom: 20px;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px 0px black;
+}
+.prod-cont .info button:hover{
+	/*border:2px solid #7A7A7AFF;*/
+	background-color:#7A7A7AFF;
+	color: white;
+	transform: rotate(350deg);
+}
+.popupPuja, .popupError{
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+}
+.popupPuja > div , .popupError > div{
+    background-color: #fff;
+    box-shadow: 0px 0px 700px 70px black;
+    display: inline-block;
+    height: auto;
+    max-width: 400px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 0px 5% 20px;
+}
+
+.popupPuja .valorPuja{
+	height: 65px;
+	width: 60%;
+	font-size: 60px;
+	padding-bottom:0;
+}
+.popupPuja .opt{
+	margin-bottom: 5px;
+	margin-right: 2px;
+}
+.popupPuja button {
+	height: 65px;
+}
+.popupPuja h1{
+    font-size: 25px;
+    margin-top: 0;
+    padding-bottom: 4px;
+    background-color: #FCF282;
+    border-radius: 0px 0px 25px 25px;
+}
+.val{
+	display: none;
+}
+.popupPuja .valorPuja, .popupPuja button, .popupPuja select{
+	margin-top: 30px
+}
+.popupPujaProd{
+	display: none;
+}
+
+.popupPujaDinProd{
+	display: none;
+}
+.popupPuja select{
+	height: 65px;
+	width: 60%;
+	font-size: 25px;
+	padding-bottom:0;
+}

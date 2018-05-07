@@ -1,0 +1,89 @@
+/* popupLogin box BEGIN */
+.popupLogin, .popupReg{
+    background:rgba(0,0,0,.4);
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+}
+.popupLogin > div, .popupReg > div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px black;
+    display: inline-block;
+    max-width: 400px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 0px 5% 20px;
+}
+.regCont {
+    height: 90%;
+    overflow-y: scroll;
+}
+.regError, .logError{
+    color: red;
+    font-size: 18px;
+    font-weight:bold;
+    text-align: center;
+}
+.exito{
+    color: green;
+    font-size: 18px;
+    font-weight:bold;
+    text-align: center;
+}
+.popupLogin .formulario, .popupReg .formulario{
+    display: flex;
+    flex-direction: column;
+}
+.popupLogin p, .popupReg p{
+    text-align: left;
+}
+.popupLogin .formulario input, .popupReg .formulario input{
+    margin:10px 0;
+}
+.popupReg p{
+    font-size: 20px;
+}
+.popupLogin h1, .popupReg h1{
+    font-size: 25px;
+    margin-top: 0;
+    padding-bottom: 4px;
+    background-color: #FCF282;
+    border-radius: 0px 0px 25px 25px;
+}
+.popupLogin .info, .popupReg .info{
+    text-align: right;
+}
+.info a{
+    text-decoration: underline;
+    color: #DAC905;
+    cursor: pointer;
+}
+.popupCloseButton {
+    background-color: red;
+    display: inline-block;
+    font-weight: bold;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+}
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+
+/* popupLogin box BEGIN */

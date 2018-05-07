@@ -1,0 +1,135 @@
+.perfil-div{
+	display: flex;
+	background-color: white;
+}
+.perfil-div .derecha{
+	flex-grow: 1;
+	padding-left: 15px;
+	border-left: 1px solid gray;
+	font-size: 20px;
+	width: 30%;
+}
+.derecha a{
+	display: block;
+	/*flex-direction: column;*/
+	padding:10px 0;
+}
+.perfil-div .izquierda{
+	flex-grow: 3;
+	padding: 10px 20px;
+	width: 70%;
+}
+.izquierda h2{
+	margin-top: 0;
+	padding-bottom: 5px;
+	border-bottom: 1px solid gray;
+}
+/*
+* Nuevo producto
+*/
+.numis{
+	display: none;
+}
+.newProd{
+	display: flex;
+	
+}
+
+.newProd .imagen {
+	/*position : relative;*/
+	/*margin-left: 15px;
+	margin-top: 0px;*/
+	/*height : 100%;*/
+	/*width : 30%;*/
+	flex-grow: 1;
+	overflow: auto;
+	background-color: white;
+	max-height: 750px;
+	max-width: 450px;
+}
+.newProd .imagen h5{
+	color:blue;
+	font-size: 19px;
+}
+
+.poducto .imagen:hover{
+	background:blue;
+	color: white;
+}
+.newProd img.left{
+	height: auto;
+	width: 100%;
+}
+
+.newProd .info{
+	margin-left: 20px;
+	flex-grow: 1;
+}
+
+.newProd .info h5{
+	color:blue;
+	font-size: 19px;
+}
+.newProd .info input{
+	width: 90%;
+	border: 1px solid white;
+	outline: none;
+    border-bottom: 2px solid blue;
+    font-size: 18px;
+    transition: all .2s;
+}
+.newProd .info input:focus{
+	border-bottom: 3px solid darkblue;
+}
+.newProd .info input:hover{
+	font-size: 19px;
+}
+.newProd .info textarea{
+	width: 90%;
+	height: 200px;
+	outline: none;
+    border: 2px solid blue;
+    font-size: 18px;
+    transition: all .2s;
+}
+.newProd .info textarea:focus{
+	border: 3px solid darkblue;
+}
+.newProd .info textarea:hover{
+	font-size: 19px;
+}
+
+.newProd .info select{
+	width: 50%;
+	outline:none;
+	border: 2px solid blue;
+	font-size: 18px;
+	transition: all .2s;
+}
+.newProd .info select:focus{
+	border: 3px solid darkblue;
+}
+.newProd .info select:hover{
+	font-size: 19px;
+}
+.newProd .info .numis{
+	margin-top:20px;
+}
+.newProd .info .numis input{
+	/*margin-top: 7px;*/
+	width: 100%;
+}
+.newProd button{
+	padding: 8px 12px;
+	border:2px solid blue;
+	color:blue;
+	transition:all .3s;
+	font-size: 20px;
+}
+.newProd button:hover{
+	background:blue;
+	color: white;
+}
+.newProd .crear{
+	margin-top: 10px;
+}

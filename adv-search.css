@@ -1,0 +1,43 @@
+.busc{
+	display: flex;
+	flex-direction: column;
+}
+.adv-search{
+	display: flex;
+	background-color: white;
+	padding: 20px;
+	flex-wrap: wrap;
+	flex-direction: column;
+	box-shadow: 2px 2px 10px 0px grey;
+}
+.adv-search .opciones{
+	display: flex;
+	flex-grow: 1;
+	margin-bottom: 10px;
+}
+.numiBuscar{
+	display: none;
+}
+.adv-search span{
+	display: flex;
+	flex-grow: 1;
+	margin-bottom: 10px;
+}
+.adv-search span p{
+	padding-right:10px;
+}
+.adv-search span select{
+	border:1px solid gray;
+	background:none;
+	margin: 0 10px;
+}
+.adv-search span .ran{
+	width: 100px;
+}
+.adv-search span input{
+	margin-top: 15px;
+	padding-bottom: 1px;
+}
+.productos h2{
+	margin-top: 0;
+}
