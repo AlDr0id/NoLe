@@ -80,7 +80,7 @@ class productoOfreDAO extends DAO{
         //conexión bbdd
       if($ok = parent::conectar()) {
         //consulta del usuario
-        $sql = "SELECT * from producto_ofrecido ORDER BY Fecha DESC LIMIT ".$cantidad;
+        $sql = "SELECT * from producto_ofrecido WHERE EnPuja=1 ORDER BY Fecha DESC LIMIT ".$cantidad;
         $consulta = mysqli_query($this->db, $sql);
         if(mysqli_num_rows($consulta) > 0) {  //devuelve error si no devuelve ninguna fila
           $productos = array();
