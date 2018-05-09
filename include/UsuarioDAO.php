@@ -22,7 +22,8 @@ class UsuarioDAO extends DAO{
           }
         if($info){
           parent::desconectar();
-          return new UsuarioTransfer($info->Nickname,$info->Nombre,$info->Apellido,$info->Pass,$info->Correo,$info->Activo);
+          return new UsuarioTransfer($info->Nickname,$info->Nombre,$info->Apellido,$info->Pass,$info->Correo,
+          $info->Valoracion, $info->Numvaloraciones, $info->Activo);
         }
         else{
             parent::desconectar();
@@ -92,7 +93,7 @@ class UsuarioDAO extends DAO{
         $info= $resultado->fetch_object();
         if(!$info){
 
-         $sql = "INSERT INTO usuario ( Nombre, Apellido,Nickname, Pass, Correo, Activo) VALUES ('$nombre', '$apellido',   '$nickname','$pass', '$correo', '1')";
+         $sql = "INSERT INTO usuario ( Nombre, Apellido,Nickname, Pass, Correo, Valoracion, Numvaloraciones, Activo) VALUES ('$nombre', '$apellido',   '$nickname','$pass', '$correo', 0, 0, '1')";
 
           $consulta = mysqli_query($db, $sql);
           if($consulta){
@@ -133,6 +134,46 @@ class UsuarioDAO extends DAO{
     else
       return false;
     }   
+
+
+    public function valorarUsuario($nickname, $puntuacion) {
+      if(parent::conectar()){
+          $db=$this->db;
+          $sql1 ="SELECT Valoracion, Numvaloraciones FROM usuario WHERE Nickname = '$nickname'";
+          $consulta1 = mysqli_query($db, $sql1);
+          if($consulta1){
+            $fila = mysqli_fetch_assoc($consulta1);
+            $numValoraciones = $fila["Numvaloraciones"];
+            $valoracion = $fila["Valoracion"];
+            //nueva valoracion
+            $valoracion = (($valoracion * $numValoraciones) + $puntuacion )/($numValoraciones + 1);
+            echo $valoracion;
+            $numValoraciones++;
+
+            $sql2 ="UPDATE usuario SET Numvaloraciones = $numValoraciones , valoracion = '$valoracion' WHERE Nickname LIKE '$nickname'";
+            $consulta2 = mysqli_query($db, $sql2);
+            if($consulta2){
+              parent::desconectar();
+              return true;
+            }
+            else{
+              // echo mysqli_error($this->db);
+                parent::desconectar();
+                return false;
+            }
+          
+          }
+          else{
+            // echo mysqli_error($this->db);
+              parent::desconectar();
+              return false;
+          }
+      }
+      else return false;
+    }
+          
+          
+          
 }
 
 ?>
