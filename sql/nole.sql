@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2018 a las 10:02:50
+-- Tiempo de generación: 09-05-2018 a las 10:55:20
 -- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.1
+-- Versión de PHP: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -250,7 +250,7 @@ CREATE TABLE `usuario` (
   `Correo` varchar(50) COLLATE utf8_bin NOT NULL,
   `Activo` tinyint(1) NOT NULL DEFAULT '1',
   `Foto` varchar(100) COLLATE utf8_bin NOT NULL,
-  `Valoracion` decimal(10,0) NOT NULL,
+  `Valoracion` decimal(10,2) NOT NULL,
   `Numvaloraciones` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -259,15 +259,16 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Nombre`, `Apellido`, `Nickname`, `Pass`, `Correo`, `Activo`, `Foto`, `Valoracion`, `Numvaloraciones`) VALUES
-('Jaime', 'Gutierrez', 'JGuti', 'jaimeguti', 'JG@ucm.es', 0, '', '0', 0),
-('Pepe', 'Levis', 'Pepe', 'pepetrousers', 'pepo@hotmail.com', 0, '', '0', 0),
-('aaa', 'aaa', 'aaa', '$2y$10$lDIjVE/GZRsXCN7LAjVqQ.Mg7zU.0s9IVEemBItFYPyeHqF8XDp4O', 'aaa@gmail.com', 1, '', '0', 0),
-('Alex', 'Pascua', 'alexp', 'lol1234', 'alexp@ucm.es', 0, '', '0', 0),
-('Alvaro', 'Ochoa', 'alvo', 'hck3r', 'alvo@mail.com', 0, '', '0', 0),
-('bbb', 'bbb', 'bbb', '$2y$10$AYUBSzm6Q.y653tBqTcrGO.lFFg4HApFSUVevfWEDnEBY5kl2rgZq', 'bbb', 1, '', '0', 0),
-('elPiernas', 'cojo', 'elPiernas69', '$2y$10$FheTevNBlYyvk', 'a@gmail.com', 1, '', '0', 0),
-('manu', 'oreja', 'manu', 'lolo97', 'manu@hotmail.com', 0, '', '0', 0),
-('Rodrigo', 'Barroso', 'rodribarro', 'puma69', 'rodric@gmail.com', 0, '', '0', 0);
+('Jaime', 'Gutierrez', 'JGuti', 'jaimeguti', 'JG@ucm.es', 0, '', '0.00', 0),
+('Pepe', 'Levis', 'Pepe', 'pepetrousers', 'pepo@hotmail.com', 0, '', '0.00', 0),
+('aaa', 'aaa', 'aaa', '$2y$10$lDIjVE/GZRsXCN7LAjVqQ.Mg7zU.0s9IVEemBItFYPyeHqF8XDp4O', 'aaa@gmail.com', 1, '', '0.00', 0),
+('Alex', 'Pascua', 'alexp', 'lol1234', 'alexp@ucm.es', 0, '', '0.00', 0),
+('Alvaro', 'Ochoa', 'alvo', 'hck3r', 'alvo@mail.com', 0, '', '0.00', 0),
+('bbb', 'bbb', 'bbb', '$2y$10$AYUBSzm6Q.y653tBqTcrGO.lFFg4HApFSUVevfWEDnEBY5kl2rgZq', 'bbb', 1, '', '0.00', 0),
+('elPiernas', 'cojo', 'elPiernas69', '$2y$10$FheTevNBlYyvk', 'a@gmail.com', 1, '', '0.00', 0),
+('manu', 'oreja', 'manu', 'lolo97', 'manu@hotmail.com', 0, '', '0.00', 0),
+('raul', 'gomez', 'raul', '$2y$10$eB4GAL9DQHu/MDf6sLxmAOnQWt4tF71ikMbFX1J2I4x00T7IsU.XK', 'raul@m.m', 1, '', '1.79', 15),
+('Rodrigo', 'Barroso', 'rodribarro', 'puma69', 'rodric@gmail.com', 0, '', '0.00', 0);
 
 -- --------------------------------------------------------
 
