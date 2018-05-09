@@ -7,14 +7,20 @@ class usuarioTransfer {
     private $pass;
     private $correo;
     private $activo;
+    private $valoracion;
+    private $numValoraciones;
+
     // constantes
-     public function __construct( $Nickname, $nombre, $apellido, $pass, $correo, $activo) {
-         $this->Nickname = $Nickname;
-         $this->nombre = $nombre;
-         $this->apellido = $apellido;
-         $this->pass = $pass;
-         $this->correo = $correo;
-         $this->activo = $activo;
+     public function __construct( $Nickname, $nombre, $apellido, $pass, $correo, $valoracion, $numValoraciones, $activo) {
+        $this->Nickname = $Nickname;
+        $this->nombre = $nombre;
+        $this->apellido = $apellido;
+        $this->pass = $pass;
+        $this->correo = $correo;
+        $this->activo = $activo;
+        $this->valoracion = $valoracion;
+        $this->numValoraciones = $numValoraciones;
+
     }
     //métodos
     public function getNickname() {
@@ -35,6 +41,14 @@ class usuarioTransfer {
 
     public function getCorreo() {
         return $this->correo;
+    }
+
+    public function getValoracion() {
+        return $this->valoracion;
+    }
+
+    public function getNumValoraciones() {
+        return $this->numValoraciones;
     }
 
     public function getActivo() {
@@ -59,6 +73,14 @@ class usuarioTransfer {
 
     public function setCorreo($correo) {
         $this->correo = $correo;
+    }
+
+    public function setValoracion($valoracion) {
+        $this->valoracion = $valoracion;
+    }
+
+    public function setNumValoraciones($numValoraciones) {
+        $this->numValoraciones = $numValoraciones;
     }
 
      public function setActivo($activo) {

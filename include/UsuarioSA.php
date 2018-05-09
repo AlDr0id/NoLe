@@ -66,5 +66,13 @@ class UsuarioSA {
       return $aux->editUsuario($usuario);
     }
 
+    public function valorarUsuario($nickname, $puntuacion){//nickname del usuario a valorar y su nueva valoracion
+      if(!$this->dao){
+        $this->dao = new UsuarioDAO();
+     }
+     $aux= $this->dao;
+     return $aux->valorarUsuario($nickname, $puntuacion);
+    }
+
 } 
 ?>
