@@ -12,7 +12,7 @@
 	}
 	require_once("include/UsuarioSA.php");
 	$sa = new UsuarioSA();
-  	$user = new usuarioTransfer($_SESSION["nombre"],"","","","","");
+  	$user = new usuarioTransfer($_SESSION["nombre"],"","","","",0,0,"");
 	$us = $sa->mostrarUsuario($user);
 
 	if (! $editarperfil){

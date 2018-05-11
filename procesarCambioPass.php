@@ -15,7 +15,7 @@ $antiguaPass = htmlspecialchars(trim(strip_tags($_POST["ant"])));
 $nuevaPass = htmlspecialchars(trim(strip_tags($_POST["pass"])));
 $nuevaPass2 = htmlspecialchars(trim(strip_tags($_POST["pass2"])));
 $nickname = $_SESSION['nombre'];
-$user = new usuarioTransfer($nickname,"","",$antiguaPass, "","");
+$user = new usuarioTransfer($nickname,"","",$antiguaPass, "",0,0,"");
 
 
 if ($nuevaPass == $nuevaPass2) {

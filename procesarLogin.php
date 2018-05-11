@@ -13,7 +13,7 @@ function loginControlador(usuarioTransfer $user){
 
 $nickname=htmlspecialchars(trim(strip_tags($_POST["user"])));
 $pass=htmlspecialchars(trim(strip_tags($_POST["pass"])));
-$user = new usuarioTransfer($nickname,"","",$pass, "","");
+$user = new usuarioTransfer($nickname,"","",$pass, "",0,0,"");
 $anadido=loginControlador($user);
 
 if($anadido!= NULL){
