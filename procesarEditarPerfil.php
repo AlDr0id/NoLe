@@ -16,7 +16,7 @@ $apellido=htmlspecialchars(trim(strip_tags($_POST["ape"])));
 $email=htmlspecialchars(trim(strip_tags($_POST["mail"])));
 $pass=htmlspecialchars(trim(strip_tags($_POST["pass"])));
 
-$userB = new usuarioTransfer($_SESSION["nombre"],"","",$pass,"","");
+$userB = new usuarioTransfer($_SESSION["nombre"],"","",$pass,"",0,0,"");
 
 $usuarioSA = new usuarioSA();
 $user = $usuarioSA->getUsuario($userB);

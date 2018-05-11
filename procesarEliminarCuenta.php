@@ -13,7 +13,7 @@ function eliminaCuenta(usuarioTransfer $user){
 
 $op = htmlspecialchars(trim(strip_tags($_POST["op"])));
 $nickname = $_SESSION['nombre'];
-$user = new usuarioTransfer($nickname,"","","","","");
+$user = new usuarioTransfer($nickname,"","","","",0,0,"");
 
 if ($op == '1') {
   $anadido = eliminaCuenta($user);

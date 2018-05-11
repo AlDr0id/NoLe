@@ -19,8 +19,9 @@ $apellido=htmlspecialchars(trim(strip_tags($_POST["ape"])));
 $email=htmlspecialchars(trim(strip_tags($_POST["mail"])));
 
 
+
 if($pass == $pass2) {
-  $user = new usuarioTransfer($nickname,$nombre,$apellido,$pass,$email,'1');
+  $user = new usuarioTransfer($nickname,$nombre,$apellido,$pass,$email,0,0,'1');
   $anadido=regUserControlador($user);
   if($anadido) {
     $data['success'] = True;
