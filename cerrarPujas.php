@@ -12,7 +12,7 @@
   		}
   	}
   	else{
-  	$pujas = $pu->getPujaProducto($_GET['id']);
+  	$pujas = $pu->getPujasProductoPendientes($_GET['id']);
 ?>
 <h1>Pujas del producto</h1>
 <div class="pujas">

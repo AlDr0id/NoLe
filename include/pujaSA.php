@@ -21,28 +21,30 @@ class pujaSA {
       return $aux->getPuja($id);
     }
 
-    public function getPujaPostor($idPostor) {
+    public function getPujasPostor($idPostor, $estado) {
       if(!$this->dao){
           $this->dao= new pujaDAO();
         }
       $aux= $this->dao;
-      return $aux->getPujaPostorPendiente($idPostor); // Devuelve un array con las pujas que coincida con idPostor
+      return $aux->getPujasPostor($idPostor, $estado); // Devuelve un array con las pujas que coincida con idPostor
     }
 
-    public function getPujaProducto($idProducto) {
+    
+
+    public function getPujasProductoPendientes($idProducto) {
       if(!$this->dao){
           $this->dao= new pujaDAO();
         }
       $aux= $this->dao;
-      return $aux->getPujaProducto($idProducto); // Devuelve un transfer con la puja que coincida con idProducto
+      return $aux->getPujasProductoPendientes($idProducto); // Devuelve un transfer con la puja que coincida con idProducto
     }
 
-    public function getPujaVendedor($idVendedor) { // Devuelve un array con las pujas que coincida con idVendedor
+    public function getPujasVendedorCerradas($idVendedor) { // Devuelve un array con las pujas que coincida con idVendedor
       if(!$this->dao){
           $this->dao= new pujaDAO();
         }
       $aux= $this->dao;
-      return $aux->getPujaVendedor($idVendedor); // El dao hace un join de producto y puja por id de producto, y filtra para que el id del vendedor (usuario dentro de producto) sea $idVendedor
+      return $aux->getPujasVendedorCerradas($idVendedor); // El dao hace un join de producto y puja por id de producto, y filtra para que el id del vendedor (usuario dentro de producto) sea $idVendedor
     }
 
     public function terminarPuja($idPujaGanadora) {
@@ -61,7 +63,7 @@ class pujaSA {
        $producto =  $productoOfreSA->getProducto($idProducto);
 
        //obtenemos el nick del dueño del producto
-       $owner = $producto->getOwner();
+       $owner = $pujaGanadora->getIdVendedor();
 
        //obtenemos el nick del ganador
        $idPostor = $pujaGanadora->getIdPostor();
@@ -69,18 +71,18 @@ class pujaSA {
       //Ganador cambiar estado puja = ganado
 
        $pujaGanadora->setFecha(date("Y-m-d H:i:s"));
-       $pujaGanadora->setEstado("GANADO");
+       $pujaGanadora->setEstado("GANADA");
        $ok = $aux->editPuja($pujaGanadora);
 
 
       if($ok){//Demas cambiar estado a perdido
          $pujas = array();
-         $pujas = $aux->getPujaProducto($idProducto);
+         $pujas = $aux->getPujasProductoPendientes($idProducto);
          if ($pujas != NULL) {
         
            foreach ($pujas as $puja) {
              if($puja->getId() != $idPujaGanadora){
-                $puja->setEstado("PERDIDO");
+                $puja->setEstado("PERDIDA");
                 $puja->setFecha(date("Y-m-d H:i:s"));
                 $ok = $ok && $aux->editPuja($puja);
              }
@@ -100,7 +102,6 @@ class pujaSA {
 
 
            if($idTrueque != NULL){
-              echo "jsxkasjbc";
               $productoTrueque =$productoOfreSA->getProducto($idTrueque);
               $productoTrueque->setOwner($owner);
               $productoTrueque->setFechaSalida(date("Y-m-d H:i:s"));

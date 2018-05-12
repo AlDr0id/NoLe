@@ -14,7 +14,7 @@ public function getPuja($id) {
         if($consulta){
             $fila = mysqli_fetch_assoc($consulta);
             parent::desconectar();
-            return new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
+            return new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
         }
         else {
           parent::desconectar();
@@ -26,16 +26,17 @@ public function getPuja($id) {
       }
     }
 
-    public function getPujaPostorPendiente($idPostor) {
+    public function getPujasPostor($idPostor, $estado){
       //conexión bbdd
       if($ok = parent::conectar()){
         //consulta del usuario
-        $sql = "SELECT * from puja where IdPostor = '".$idPostor."' AND Estado = 'PENDIENTE'";
+        if($estado != "PENDIENTE" && $estado != "GANADA" && $estado != "PERDIDA") $sql = "SELECT * from puja where IdPostor = '$idPostor' ORDER BY Fecha";
+        else $sql = "SELECT * from puja where IdPostor = '$idPostor' AND Estado = '$estado' ORDER BY Fecha";
         $consulta = mysqli_query($this->db, $sql);
         if(mysqli_num_rows($consulta) > 0){  //devuelve error si no devuelve ninguna fila
           $pujas = array();
           while( $fila = mysqli_fetch_assoc($consulta)){
-            $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
+            $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
             $pujas[] = $puja;
           }
 
@@ -52,43 +53,19 @@ public function getPuja($id) {
       }
     }
 
-    public function getPujaPostorTerminada($idPostor) {
-      //conexión bbdd
-      if($ok = parent::conectar()){
-        //consulta del usuario
-        $sql = "SELECT * from puja where IdPostor = '".$idPostor."' AND Estado != 'PENDIENTE'";
-        $consulta = mysqli_query($this->db, $sql);
-        if(mysqli_num_rows($consulta) > 0){  //devuelve error si no devuelve ninguna fila
-          $pujas = array();
-          while( $fila = mysqli_fetch_assoc($consulta)){
-            $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
-            $pujas[] = $puja;
-          }
-
-            parent::desconectar();
-            return $pujas;
-        }
-        else {
-          parent::desconectar();
-          return NULL;
-        }
-      }
-      else {
-        return NULL;
-      }
-    }
+    
 
 
-  public function getPujaProducto($idProducto) {
+    public function getPujasProductoPendientes($idProducto) {
       //conexión bbdd
       if($ok = parent::conectar()){
       //consulta del usuario
-      $sql = "SELECT * from puja where IdProducto = ".$idProducto." AND Estado = 'PENDIENTE'";
+      $sql = "SELECT * from puja where IdProducto = ".$idProducto." AND Estado = 'PENDIENTE' ORDER BY Fecha";
       $consulta = mysqli_query($this->db, $sql);
       if(mysqli_num_rows($consulta) > 0){  //devuelve error si no devuelve ninguna fila
         $pujas = array();
         while( $fila = mysqli_fetch_assoc($consulta)){
-          $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
+          $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
           $pujas[] = $puja;
         }
 
@@ -105,17 +82,16 @@ public function getPuja($id) {
     }
   }
 
-  public function getPujaVendedor($idVendedor) {
+  public function getPujasVendedorCerradas($idVendedor) {
     //conexión bbdd
     if($ok = parent::conectar()){
       //consulta del usuario
-      $sql = "SELECT * from producto_ofrecido join puja on producto_ofrecido.ID = puja.IdProducto
-       where producto_ofrecido.Usuario = '".$idVendedor." AND puja.Estado = 'PENDIENTE'";
+      $sql = "SELECT * from puja where IdVendedor = '$idVendedor' AND Estado = 'GANADA' ORDER BY Fecha";
       $consulta = mysqli_query($this->db, $sql);
       if(mysqli_num_rows($consulta) > 0){  //devuelve error si no devuelve ninguna fila
         $pujas = array();
         while( $fila = mysqli_fetch_assoc($consulta)){
-          $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
+          $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
           $pujas[] = $puja;
         }
 
@@ -140,6 +116,7 @@ public function getPuja($id) {
         $id = $this->nextIdPuja();
          if($id != -1){
            $idProducto = $puja->getIdProducto();
+           $idVendedor = $puja->getIdVendedor();
            $idPostor = $puja->getIdPostor();
            $precio = $puja->getPrecio();
            $idTrueque = $puja->getIdTrueque();
@@ -147,9 +124,9 @@ public function getPuja($id) {
            $estado = $puja->getEstado();
 
            if($idTrueque == NULL)
-            $sql = "INSERT INTO puja (Id, IdProducto, IdPostor, Precio, IdTrueque, Fecha, Estado) VALUES ('$id', '$idProducto', '$idPostor', '$precio', NULL, '$fecha', '$estado')";
+            $sql = "INSERT INTO puja (Id, IdProducto, idVendedor, IdPostor, Precio, IdTrueque, Fecha, Estado) VALUES ('$id', '$idProducto', '$idVendedor', '$idPostor', '$precio', NULL, '$fecha', '$estado')";
            else
-            $sql = "INSERT INTO puja (Id, IdProducto, IdPostor, Precio, IdTrueque, Fecha, Estado) VALUES ('$id', '$idProducto', '$idPostor', '$precio', '$idTrueque', '$fecha', '$estado')";
+            $sql = "INSERT INTO puja (Id, IdProducto, idVendedor, IdPostor, Precio, IdTrueque, Fecha, Estado) VALUES ('$id', '$idProducto', '$idVendedor', '$idPostor', 0, '$idTrueque', '$fecha', '$estado')";
 
             $consulta = mysqli_query($this->db, $sql);
            if($consulta){
