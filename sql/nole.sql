@@ -1,12 +1,11 @@
-﻿
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2018 a las 10:02:50
+-- Tiempo de generación: 12-05-2018 a las 15:06:58
 -- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.1
+-- Versión de PHP: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -130,7 +129,9 @@ INSERT INTO `numismatica` (`Id`, `Pais`, `Anyo`, `Conservacion`) VALUES
 (5, 'China', 500, 'En cajón'),
 (6, 'Rusia', 2015, 'En caja'),
 (7, 'Alemania', 1992, 'Monedero viejo'),
-(8, 'España', 2018, 'Nueva');
+(8, 'España', 2018, 'Nueva'),
+(9, 'Murcia', 1990, 'Buena'),
+(10, 'Jamaica', 2012, 'buena');
 
 -- --------------------------------------------------------
 
@@ -163,7 +164,9 @@ INSERT INTO `producto_ofrecido` (`ID`, `Nombre`, `Usuario`, `Fecha`, `Disponible
 (5, 'Moneda china antigua', 'alvo', '2015-03-01 04:00:00', 1, 120, 'Creo que es china por las letras. Fecha no asegurada.', 0, 1, ''),
 (6, 'Moneda rusa', 'Pepe', '2015-03-15 09:10:00', 1, 15, 'Moneda rusa de mi viaje.', 0, 0, ''),
 (7, 'Moneda Alemana', 'rodribarro', '2015-03-10 00:00:00', 1, 15, 'Creo que es un marco alemán', 0, 0, ''),
-(8, 'Mnda oro nueva', 'manu', '2018-05-06 00:00:00', 1, 100, 'Oro puro.', 0, 0, '');
+(8, 'Mnda oro nueva', 'manu', '2018-05-06 00:00:00', 1, 100, 'Oro puro.', 0, 0, ''),
+(9, 'Moneda Desierto', 'jose', '2018-05-12 14:58:15', 1, 15, 'a', 0, 0, ''),
+(10, 'moneda jamaica', 'manolo', '2018-05-12 14:59:15', 1, 23, 'a', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -174,6 +177,7 @@ INSERT INTO `producto_ofrecido` (`ID`, `Nombre`, `Usuario`, `Fecha`, `Disponible
 CREATE TABLE `puja` (
   `Id` int(11) NOT NULL,
   `IdProducto` int(11) NOT NULL,
+  `IdVendedor` varchar(50) COLLATE utf8_bin NOT NULL,
   `IdPostor` varchar(20) COLLATE utf8_bin NOT NULL,
   `Precio` float NOT NULL,
   `IdTrueque` int(11) DEFAULT NULL,
@@ -185,13 +189,14 @@ CREATE TABLE `puja` (
 -- Volcado de datos para la tabla `puja`
 --
 
-INSERT INTO `puja` (`Id`, `IdProducto`, `IdPostor`, `Precio`, `IdTrueque`, `Fecha`, `Estado`) VALUES
-(1, 7, 'alexp', 20, NULL, '2018-05-01 05:09:00', 'PENDIENTE'),
-(2, 2, 'alexp', 16, NULL, '2018-05-01 09:04:00', 'PERDIDA'),
-(3, 2, 'JGuti', 50, NULL, '2018-05-03 16:22:00', 'GANADA'),
-(4, 1, 'JGuti', 1005, NULL, '2018-05-04 08:05:00', 'PENDIENTE'),
-(5, 1, 'alexp', 0, 3, '2018-05-04 20:00:00', 'PENDIENTE'),
-(6, 4, 'manu', 21, NULL, '2018-05-05 01:33:23', 'PENDIENTE');
+INSERT INTO `puja` (`Id`, `IdProducto`, `IdVendedor`, `IdPostor`, `Precio`, `IdTrueque`, `Fecha`, `Estado`) VALUES
+(1, 2, 'JGuti', 'manolo', 5.6, NULL, '2018-05-12 01:57:20', 'PENDIENTE'),
+(2, 10, 'manolo', 'jose', 23, NULL, '2018-05-12 01:58:34', 'GANADA'),
+(3, 10, 'manolo', 'marina', 24, NULL, '2018-05-12 01:58:54', 'PERDIDA'),
+(4, 9, 'marina', 'manolo', 15, NULL, '2018-05-12 02:56:15', 'PERDIDA'),
+(5, 10, 'jose', 'manolo', 23, NULL, '2018-05-12 02:56:21', 'GANADA'),
+(6, 10, 'jose', 'marina', 23, NULL, '2018-05-12 02:56:47', 'PERDIDA'),
+(7, 9, 'marina', 'jose', 15, NULL, '2018-05-12 02:57:08', 'GANADA');
 
 -- --------------------------------------------------------
 
@@ -267,7 +272,10 @@ INSERT INTO `usuario` (`Nombre`, `Apellido`, `Nickname`, `Pass`, `Correo`, `Acti
 ('Alvaro', 'Ochoa', 'alvo', 'hck3r', 'alvo@mail.com', 0, '', '0', 0),
 ('bbb', 'bbb', 'bbb', '$2y$10$AYUBSzm6Q.y653tBqTcrGO.lFFg4HApFSUVevfWEDnEBY5kl2rgZq', 'bbb', 1, '', '0', 0),
 ('elPiernas', 'cojo', 'elPiernas69', '$2y$10$FheTevNBlYyvk', 'a@gmail.com', 1, '', '0', 0),
+('jose', 'jose', 'jose', '$2y$10$o3HIcJBQ.kOgtMOfwU4cqeTaiMDfc64tUNmJ2mcTQYUmWdYlipQFu', 'jose', 1, '', '0', 0),
+('manolo', 'manolo', 'manolo', '$2y$10$rp3p8MpdkTSgwh0ORArMwuzJnd567RKz.6r27F8HbRSnMitTmlWfy', 'manolo', 1, '', '0', 0),
 ('manu', 'oreja', 'manu', 'lolo97', 'manu@hotmail.com', 0, '', '0', 0),
+('marina', 'marina', 'marina', '$2y$10$jBIKJl6oK2mmrUcgDmqrz.JzttRX0is1ETgcp9us8653Ak9O4N7PK', 'marina', 1, '', '0', 0),
 ('Rodrigo', 'Barroso', 'rodribarro', 'puma69', 'rodric@gmail.com', 0, '', '0', 0);
 
 -- --------------------------------------------------------
@@ -343,7 +351,8 @@ ALTER TABLE `puja`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `IdProducto` (`IdProducto`),
   ADD KEY `IdPostor` (`IdPostor`),
-  ADD KEY `IdTrueque` (`IdTrueque`);
+  ADD KEY `IdTrueque` (`IdTrueque`),
+  ADD KEY `IdVendedor` (`IdVendedor`);
 
 --
 -- Indices de la tabla `rincon_de_la_abuela`
