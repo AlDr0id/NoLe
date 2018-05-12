@@ -41,7 +41,7 @@
                     require_once('productosUsuario.php');
                  break;
                 case 'verPujas':
-                    require_once('pujasUsuario.php');
+                    require_once('pujasUsuarioPendiente.php');
                  break;
                 case 'verProdPuja':
                     require_once('productosPuja.php');
@@ -61,6 +61,9 @@
                 case 'cerrarPujas':
                       require_once('cerrarPujas.php');
                   break;
+                case 'actividadReciente':
+                      require_once('actividadReciente.php');
+                  break;
                default:
                  # code...
                  break;
@@ -70,7 +73,7 @@
 
         </div>
         <div class="derecha">
-          <a class='activRec'>Ver mi actividad reciente</a>
+          <a href="perfil.php?opt=actividadReciente">Historial</a>
           <a href="perfil.php?opt=verProds">Ver todos mis productos de inventario(No en puja)</a>
           <a href="perfil.php?opt=verPujas">Ver todas mis pujas</a>
           <a href="perfil.php?opt=verProdPuja">Ver todos mis productos en puja</a>

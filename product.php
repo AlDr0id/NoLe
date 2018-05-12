@@ -48,13 +48,13 @@
 		    <span class="helper"></span>
 		    <div>
 		        <div class="popupCloseButton">X</div>
-		        <?php if (isset($_SESSION['login']) and $_SESSION['login'] and $prod->getEnPuja()) { ?>
+		        <?php if (isset($_SESSION['login']) and $_SESSION['login'] and $prod->getEnPuja() and $propietario != $_SESSION['nombre']) { ?>
 		        <h1>Puja</h1>
 		        <form id=opt>
 			        <input class="din" type="radio" name="puja" value="dinero" checked>Pujar con dinero
 					<input class="prod" type="radio" name="puja" value="producto">Pujar con un producto
 				</form>
-		        <form class="formulario" action=<?php echo "'procesarPuja.php?idProd=".$_GET['id']."'"; ?> method="POST">
+		        <form class="formulario" action=<?php echo "'procesarPuja.php?idProd=".$_GET['id']."&idVend=".$propietario."'"; ?> method="POST">
 
 		        	<div class="popupPujaDin">
 				        <input class="valorPuja" type="number" name="valorPuja" value=<?php echo $prod->getPrecio();?> min= <?php echo $prod->getPrecio();?>>
@@ -82,12 +82,15 @@
 		        </form>
 		        <?php }
 			    else{ 
-			    	echo "<h2>No puedes pujar</h2>";
+			    	echo "<h2>No puedes pujar, ";
 			    	if(!$prod->getEnPuja()){
-			    		echo "<h3>Este producto no es pujable<h3>";
-			    	}
+			    		echo "este producto no es pujable.</h2>";
+					}
+					else if($propietario == $_SESSION['nombre']){
+						echo "el propietario no puede pujar por sus productos.</h2>";
+					}
 			    	else{
-			    		echo "Haz login o regístrate para pujar";
+			    		echo "haz login o regístrate para pujar.</h2>";
 			    	}
 			    }?>
 		    </div>
