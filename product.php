@@ -86,7 +86,7 @@
 			    	if(!$prod->getEnPuja()){
 			    		echo "este producto no es pujable.</h2>";
 					}
-					else if($propietario == $_SESSION['nombre']){
+					else if(isset($_SESSION['login']) and $propietario == $_SESSION['nombre']){
 						echo "el propietario no puede pujar por sus productos.</h2>";
 					}
 			    	else{
