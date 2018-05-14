@@ -32,15 +32,18 @@
 .card .author{
 	float: left;
 	background-color : #9ECAFF;
-	height : 30px;
-	padding-right: 8px;
+	/*height : 30px;*/
+	/*padding-right: 8px;*/
 	/*width : 180px;*/
 	/*border-radius : 20px;*/
+	padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 .card .author img{
-	margin-top: 2.5px;
+	/*margin-top: 2.5px;
 	margin-left : 8px;
-	margin-right: 1px;
+	margin-right: 1px;*/
 	float : left;
 	height : 25px;
 	width : 25px;
@@ -48,24 +51,36 @@
 }
 .card .author h2{
 	float: left;
+	margin:0;
     margin-left: 5px;
-    margin-top: 9px;
-    font-size: 0.8rem;
+    /*margin-top: 9px;*/
+    font-size: 15px;
     color: white;
+    
 }
 .card .category{
-	float: left;
-	margin-left: 20px;
-	background-color : #FFA060;
-	height : 30px;
-	width : 110px;
+    float: left;
+    margin-left: 20px;
+    background-color: #FFA060;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
 }
-.card .category h2{
-	float: left;
-    margin-left: 25%;
-    margin-top: 7px;
-    font-size: 0.9rem;
+.card .category a{
+    font-size: 15px;
     color: white;
+    text-decoration: none;
+}
+.card .precio{
+    float: left;
+    margin-left: 20px;
+    padding: 6px 15px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+.card .precio h2{
+    font-size: 15px;
+     margin: 0;
 }
 .card .separator{
 	clear:both;
@@ -80,11 +95,17 @@
 }
 .card .seemore p{
 	float: right;
-	color: #FFA060;
+	color: black;
 	margin-top: 0;
+	border:2px solid black;
+	padding: 5px 30px;
+	border-radius: 4px;
+	font-size: 20px;
+	font-weight: bold;
 }
 .card .seemore p:hover, .arrow:hover{
-	border-bottom: 2px solid #FFA060;
+	background-color: black;
+	color: white;
 }
 .card .author:hover, .category:hover{
 	box-shadow: 1px 1px 10px 1px gray;
