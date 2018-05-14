@@ -13,7 +13,14 @@
 		    <a href="#">Trastero</a>
 			</div>
 	  </span>
-	  <span><a href="#">Comprar un artículo</a></span>
-	  <span><a href="#">Vender un artículo</a></span>
+	  <?php
+		if (isset($_SESSION["login"]) and $_SESSION["login"]) {
+			?>
+			<span><a href="perfil.php?opt=anadProd">Añadir un artículo</a></span>
+		<?php
+		}
+  		?>
+	  
+	  
 	  <span><a href="sobre-nosotros.php">Sobre nosotros</a></span>
 </div>
