@@ -20,6 +20,7 @@
         <div class="popupCloseButton">X</div>
         <h1>Registro</h1>
         <p class="regError"></p>
+        <p id="correoNoValido" hidden> Correo inválido </p>
         <form class="formulario peReg" action="procesarRegistro.php" method="POST">
             <p>Nombre:</p>
             <input type="text" name="nom" placeholder="Introduce nombre" required>
@@ -28,7 +29,7 @@
             <p>Nombre de Usuario:</p>
             <input type="text" name="userReg" placeholder="Introduce nickname" required>
             <p>Correo electrónico:</p>
-            <input type="text" name="mail" placeholder="Introduce email" required>
+            <input type="text" id="mail" name="mail" placeholder="Introduce email" required> 
             <p>Contraseña:</p>
             <input type="password" name="passReg" placeholder="Introduce contraseña" required>
             <p>Repite Contraseña:</p>
