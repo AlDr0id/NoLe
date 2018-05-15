@@ -53,7 +53,7 @@ $pujasVendidas = $sa->getPujasVendedorCerradas($_SESSION["nombre"]);
 				}
 			?>
 			Vendedor: <a href=<?php echo "perfilVisitante.php?nickname=".$p->getOwner();?>></a><?php echo $p->getOwner();?>
-			<a class='valorar' onclick='valorarPuja(<?php echo $pujasGanadas[$i]->getId(); ?>)'>Valorar vendedor</a>
+			<a class='valorar' onclick= <?php echo "valorarPuja(".$pujasGanadas[$i]->getId().",'".$p->getOwner()."')"; ?>>Valorar vendedor</a>
 		</li>
 	<?php
 		}
