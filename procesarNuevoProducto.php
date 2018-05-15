@@ -53,6 +53,6 @@ function newProductControlador(productoOfreTransfer $producto){
 			echo "<script>alert('Fallo al añadir producto');</script>";
 		}
 
- 		//header("Refresh: 0 ;URL= index.php");
+ 		header("Refresh: 0 ;URL= index.php");
 
  ?>
