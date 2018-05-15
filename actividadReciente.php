@@ -107,6 +107,6 @@ $pujasVendidas = $sa->getPujasVendedorCerradas($_SESSION["nombre"]);
 		</li>
 	<?php
 		}
-  } else echo "El usuario ha vendido ningún producto";	
+  } else echo "El usuario no ha vendido ningún producto";	
 	    ?>
 </ul>
