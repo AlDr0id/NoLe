@@ -3,6 +3,7 @@
 <html>
 <head>
   <title>NoLe</title>
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <link rel="stylesheet" type="text/css" href="card.css">
   <link rel="stylesheet" type="text/css" href="menu.css">
@@ -68,7 +69,3 @@
   </div>
 </body>
 </html>
-
-
-
-

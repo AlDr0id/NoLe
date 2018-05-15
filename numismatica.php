@@ -1,4 +1,4 @@
-<?php session_start(); 
+<?php session_start();
 require_once('include/BusquedaSA.php');
 $busq = new BusquedaSA();
 $array = [
@@ -12,6 +12,7 @@ $prod = $busq->getProductoAvan($array);
 <html>
 <head>
   <title>NoLe</title>
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <link rel="stylesheet" type="text/css" href="card.css">
   <link rel="stylesheet" type="text/css" href="menu.css">
@@ -26,7 +27,7 @@ $prod = $busq->getProductoAvan($array);
 </head>
 <body>
 
-  <?php require_once("include/comun/cabecera.php"); 
+  <?php require_once("include/comun/cabecera.php");
 
   require_once("include/comun/menu.php");
 
@@ -53,7 +54,7 @@ $prod = $busq->getProductoAvan($array);
               <h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
           </div>
             <div class="category">
-                <?php 
+                <?php
                   switch ($prod[$i]->getCategoria()) {
                     case '0':
                       echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
@@ -80,7 +81,7 @@ $prod = $busq->getProductoAvan($array);
                       echo "<a>Trastero</a>";
                       break;
                    }?>
-                
+
             </div>
             <div class="precio">
                 <h2><?php echo $prod[$i]->getPrecio() ?>$</h2>
@@ -103,10 +104,3 @@ $prod = $busq->getProductoAvan($array);
   </div>
 </body>
 </html>
-
-
-
-
-
-
-

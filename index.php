@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>NoLe</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<link rel="stylesheet" type="text/css" href="card.css">
 	<link rel="stylesheet" type="text/css" href="menu.css">
@@ -67,7 +68,7 @@
 				    	<h2>'. $ultimosProds[$i]->getOwner() .'</h2></a>' ?>
 				    </div>
 				    <div class="category">
-				      	<?php 
+				      	<?php
 				      		switch ($ultimosProds[$i]->getCategoria()) {
 				      		 	case '0':
 				      		 		echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
@@ -94,7 +95,7 @@
 				      		 		echo "<a>Trastero</a>";
 				      		 		break;
 				      		 }?>
-				      	
+
 				    </div>
 				    <div class="precio">
 				      	<h2><?php echo $ultimosProds[$i]->getPrecio() ?>$</h2>

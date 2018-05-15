@@ -1,9 +1,9 @@
-<?php session_start();
-?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>NoLe</title>
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <link rel="stylesheet" type="text/css" href="card.css">
   <link rel="stylesheet" type="text/css" href="menu.css">
@@ -18,7 +18,7 @@
 </head>
 <body>
 
-  <?php require_once("include/comun/cabecera.php"); 
+  <?php require_once("include/comun/cabecera.php");
   require_once("include/comun/menu.php");
 
   ?>
@@ -32,11 +32,11 @@
         <!-- Aquí tiene que haber dos apartados. A la derecha las opciones, y cuando se seleccione una debe aparecer en la izquierda
               Por defecto debe aparecer la actividad reciente al entrar a perfil.php -->
         <div class="izquierda">
-          <?php 
+          <?php
           if (isset($_GET['opt'])) {
             switch ($_GET['opt']) {
                case 'activRec':
-                    
+
                  break;
                 case 'verProds':
                     require_once('productosUsuario.php');
@@ -50,8 +50,8 @@
                 case 'anadProd':
                     require_once('newProd.php');
                   break;
-                case 'verPerfil':                
-                    require_once('verPerfil.php');                
+                case 'verPerfil':
+                    require_once('verPerfil.php');
                   break;
                 case 'camPass':
                       require_once('cambiaPass.php');
@@ -92,7 +92,7 @@
 </body>
 <script type="text/javascript" src="javascript.js"></script>
 <script type="text/javascript" src="perfil.js"></script>
-<?php 
+<?php
   if (isset($_GET['opt'])) {
     switch ($_GET['opt']) {
         case 'anadProd':
@@ -112,19 +112,3 @@
   }
 ?>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

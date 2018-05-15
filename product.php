@@ -21,6 +21,7 @@
 <html>
 <head>
 	<title>NoLe</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<link rel="stylesheet" type="text/css" href="card.css">
 	<link rel="stylesheet" type="text/css" href="menu.css">
@@ -65,24 +66,24 @@
 		        	<div class="popupPujaProd">
 						<select name="trueque">
 							<option value='-1' selected>-</option>
-							<?php 
+							<?php
 								$productos=$sa->getProductoUsuarioInventario($_SESSION['nombre']);
 								if ($productos != NULL) {
-									for ($i=0; $i < sizeof($productos); $i++) { 
+									for ($i=0; $i < sizeof($productos); $i++) {
 										echo "<option value='".$productos[$i]->getId()."''>".$productos[$i]->getNombre()."</option>";
 									}
 								}
 								else{
 									echo "<option value='-1'>No tienes productos con los que pujar</option>";
 								}
-								
+
 							 ?>
 						</select>
 		            <button type="submit">Añadir puja</button>
 		        	</div>
 		        </form>
 		        <?php }
-			    else{ 
+			    else{
 			    	echo "<h2>No puedes pujar, ";
 			    	if(!$prod->getEnPuja()){
 			    		echo "este producto no es pujable.</h2>";
@@ -105,13 +106,13 @@
 				</div>
 				<div class="info">
 					<div class="boton">
-						<?php 
+						<?php
 							if ($editar){
 								$path = $prod->getId();
 								echo '<a class="more autoriced delete" href="procesarBorrarProducto.php?id='.$path.'">Borrar <i class="fa fa-trash-o" aria-hidden="true"></i></a>';
 								echo '<a class="more autoriced" href="perfil.php?opt=anadProd&id='.$path.'">Editar <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';
 
-									
+
 							}
 							else{
 						?>
@@ -143,7 +144,7 @@
 				    	<h2>'. $prod->getOwner() .'</h2></a>' ?>
 			    	</div>
 					<div class="category">
-				      	<?php 
+				      	<?php
 				      		switch ($prod->getCategoria()) {
 				      		 	case '0':
 				      		 		echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
@@ -170,9 +171,9 @@
 				      		 		echo "<a>Trastero</a>";
 				      		 		break;
 				      		 }?>
-				      	
+
 				    </div>
-					
+
 			    	<!-- Hacer opciones para cada botón. Si es pujar, poner oferta a pagar.
 			    		Si es hacer intercambio, mostrar desplegable con los productos que tiene el usuario -->
 				</div>
@@ -186,11 +187,3 @@
 	<script type="text/javascript" src="javascript.js"></script>
 	<script type="text/javascript" src="puja.js"></script>
 </html>
-
-
-
-
-
-
-
-
