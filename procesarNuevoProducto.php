@@ -29,8 +29,7 @@ function newProductControlador(productoOfreTransfer $producto){
 		 		$consP = htmlspecialchars(trim(strip_tags($_POST['consP'])));
  				$productoNumi = new numismaticaTransfer($id, $paisP, $anioP , $consP);
  				$productoSA = new numismaticaSA();
-        echo $_FILES['fotoProd']['tmp_name'];
-        echo "img/" . $id . ".png";
+
         if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
           $id3 = True;
           $id2 = $productoSA->newProductoNumi($productoNumi);
