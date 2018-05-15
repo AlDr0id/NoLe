@@ -22,6 +22,7 @@
 
 .prod-cont .info{
 	padding-left: 20px;
+	flex-grow: 1;
 }
 .prod-cont .info .details h2{
 	color: darkgrey;
@@ -29,16 +30,11 @@
 .prod-cont .info .author{
 	float: left;
 	background-color : #9ECAFF;
-	height : 30px;
-	padding-right: 8px;
-	margin-left: 2%;
-	/*width : 180px;*/
-	/*border-radius : 20px;*/
+	padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 4px;
 }
 .prod-cont .info .author img{
-	margin-top: 2.5px;
-	margin-left : 8px;
-	margin-right: 1px;
 	float : left;
 	height : 25px;
 	width : 25px;
@@ -46,49 +42,61 @@
 }
 .prod-cont .info .author h2{
 	float: left;
+	margin:0;
     margin-left: 5px;
-    margin-top: 9px;
-    font-size: 0.8rem;
+    font-size: 18px;
     color: white;
+    
 }
 .prod-cont .info .category{
-	float: left;
-	background-color : #FFA060;
-	height : 30px;
-	width : 110px;
+    float: left;
+    margin-left: 20px;
+    background-color: #FFA060;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
 }
-.prod-cont .info .category h2{
-	float: left;
-    margin-left: 25%;
-    margin-top: 7px;
-    font-size: 0.9rem;
+.prod-cont .info .category a{
+    font-size: 18px;
     color: white;
+    text-decoration: none;
 }
 .prod-cont .info .boton{
 	clear: both;
 }
-.prod-cont .info button{
+.prod-cont .info .more{
 	float: right;
     margin-right: 30px;
-    background-color: #DC7A00FF;
+    background-color: white;
     padding: 5px 50px;
-    border: 0px solid black;
-    border-radius: 10px;
-    color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: black;
     transition: all .3s;
-    font-size: 40px;
-    transform: rotate(-10deg);
+    font-size: 30px;
     margin-bottom: 20px;
     font-weight: bold;
-    box-shadow: 0px 0px 10px 0px black;
+    text-decoration: none;
+    cursor: pointer;
 }
-.prod-cont .info button:hover{
-	/*border:2px solid #7A7A7AFF;*/
+.prod-cont .info .autoriced{
+	font-size: 20px;
+    color: #7A7A7AFF;
+    border:none;
+    margin-right:0;
+    padding: 5px 25px;
+}
+.prod-cont .info .delete{
+	color: red;
+}
+.prod-cont .info .more:hover{
+	border-color:#7A7A7AFF;
 	background-color:#7A7A7AFF;
 	color: white;
-	transform: rotate(350deg);
+	/*box-shadow: 0px 1px lightgray;*/
+	transform: translateY(4px);
 }
-.popupPuja, .popupError{
+.popupPuja{
     display:none;
     height:100%;
     position:fixed;
@@ -96,7 +104,7 @@
     top:0;
     width:100%;
 }
-.popupPuja > div , .popupError > div{
+.popupPuja > div{
     background-color: #fff;
     box-shadow: 0px 0px 700px 70px black;
     display: inline-block;
@@ -148,4 +156,7 @@
 	width: 60%;
 	font-size: 25px;
 	padding-bottom:0;
+}
+.fa{
+	border:0;
 }
