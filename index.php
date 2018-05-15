@@ -60,48 +60,18 @@
 			  <div class="details">
 			    <?php
 				    $path = 'product.php?id='.$ultimosProds[$i]->getId().'';
+				    $perfil = 'perfilVisitante.php?nickname='.$ultimosProds[$i]->getOwner().'';
 				    echo"<h1>".$ultimosProds[$i]->getNombre()."</h1>"; ?>
 				    <div class="author">
-				    	<img src="pica.jpg"/> <!-- Imagen que habra que cambiar cuando se tengan fotos del usuario -->
-				      	<h2><?php echo $ultimosProds[$i]->getOwner() ?></h2>
+				    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="pica.jpg"/>
+				    	<h2>'. $ultimosProds[$i]->getOwner() .'</h2></a>' ?>
 				    </div>
 				    <div class="category">
-				      	<?php 
-				      		switch ($ultimosProds[$i]->getCategoria()) {
-				      		 	case '0':
-				      		 		echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
-				      		 		break;
-				      		 	case '1':
-				      		 		echo "<a>Rincón de la Abuela</a>";
-				      		 		break;
-				      		 	case '2':
-				      		 		echo "<a>Figuras</a>";
-				      		 		break;
-				      		 	case '3':
-				      		 		echo "<a>Filatelia</a>";
-				      		 		break;
-				      		 	case '4':
-				      		 		echo "<a>Vinilos/Discos</a>";
-				      		 		break;
-				      		 	case '5':
-				      		 		echo "<a>Cromos</a>";
-				      		 		break;
-				      		 	case '6':
-				      		 		echo "<a>Libros/Comics</a>";
-				      		 		break;
-				      		 	case '7':
-				      		 		echo "<a>Trastero</a>";
-				      		 		break;
-				      		 }?>
-				      	
+				      	<h2><?php echo $ultimosProds[$i]->getCategoria() ?></h2>
 				    </div>
-				    <div class="precio">
-				      	<h2><?php echo $ultimosProds[$i]->getPrecio() ?>$</h2>
-				    </div>
-
 				    <div class="separator"></div>
 				    <p><?php echo $ultimosProds[$i]->getDescripcionCorta() ?></p>
-				    <?php echo '<a class="seemore" href='.$path.'><p>Ir al producto</p></a>'?>
+				    <?php echo '<a class="seemore" href='.$path.'><i class="right"></i><p>Ir al producto</p></a>'?>
 
 			  </div>
 			</div>

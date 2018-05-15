@@ -11,52 +11,22 @@ $prod = $sa->getProducto($_GET["nom"]);
 	  <div class="card">
 		  <?php echo '<div class="thumbnail"><img class="leftImg" src="img/'.$prod[$i]->getId().'.png"/></div>'; ?>
 		  <div class="details">
-			<?php
+		    <?php
 			    $path = 'product.php?id='.$prod[$i]->getId().'';
+			    $perfil = 'perfilVisitante.php?nickname='.$prod[$i]->getOwner().'';
 			    echo"<h1>".$prod[$i]->getNombre()."</h1>"; ?>
 			    <div class="author">
-			    	<img src="pica.jpg"/> <!-- Imagen que habra que cambiar cuando se tengan fotos del usuario -->
-			      	<h2><?php echo $prod[$i]->getOwner() ?></h2>
+			    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="pica.jpg"/>
+		              	<h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
 			    </div>
 			    <div class="category">
-			      	<?php 
-			      		switch ($prod[$i]->getCategoria()) {
-			      		 	case '0':
-			      		 		echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
-			      		 		break;
-			      		 	case '1':
-			      		 		echo "<a>Rincón de la Abuela</a>";
-			      		 		break;
-			      		 	case '2':
-			      		 		echo "<a>Figuras</a>";
-			      		 		break;
-			      		 	case '3':
-			      		 		echo "<a>Filatelia</a>";
-			      		 		break;
-			      		 	case '4':
-			      		 		echo "<a>Vinilos/Discos</a>";
-			      		 		break;
-			      		 	case '5':
-			      		 		echo "<a>Cromos</a>";
-			      		 		break;
-			      		 	case '6':
-			      		 		echo "<a>Libros/Comics</a>";
-			      		 		break;
-			      		 	case '7':
-			      		 		echo "<a>Trastero</a>";
-			      		 		break;
-			      		 }?>
-			      	
+			      	<h2><?php echo $prod[$i]->getCategoria() ?></h2>
 			    </div>
-			    <div class="precio">
-			      	<h2><?php echo $prod[$i]->getPrecio() ?>$</h2>
-			    </div>
-
 			    <div class="separator"></div>
-			    <p><?php echo $prod[$i]->getDescripcionCorta() ?></p>
-			    <?php echo '<a class="seemore" href='.$path.'><p>Ir al producto</p></a>'?>
+			    <p><?php echo $prod[$i]->getDescripcion() ?></p>
+			    <?php echo '<a class="seemore" href='.$path.'><i class="right"></i><p>Ir al producto</p></a>'?>
 
-			</div>
+		  </div>
 		</div>
 	<?php
 	}

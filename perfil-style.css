@@ -30,6 +30,30 @@
 .numis{
 	display: none;
 }
+.visitante{
+	display: flex;
+}
+.visitante .imagen{
+	flex-grow: 1;
+	margin-left: 150px;
+}
+
+.visitante .imagen img{
+	background-color: white;
+	height: 250px;
+	width: 250px;
+	border-radius: 50%;
+}
+.visitante .imagen .conectado img{
+	border: 5px solid green;
+}
+.visitante .imagen .desconectado img{
+	border: 5px solid #bfbdbd;
+}
+.visitante .details{
+	
+	flex-grow: 1;
+}
 .newProd{
 	display: flex;
 	

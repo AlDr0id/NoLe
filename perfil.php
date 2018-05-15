@@ -12,7 +12,6 @@
   <link rel="stylesheet" type="text/css" href="prod-styles.css">
   <link rel="stylesheet" type="text/css" href="popup-style.css">
   <link rel="stylesheet" type="text/css" href="perfil-style.css">
-  <link rel="stylesheet" type="text/css" href="actividadReciente-style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 </head>
@@ -101,9 +100,6 @@
           break;
         case 'verPerfil':
           echo '<script type="text/javascript" src="imagenes.js"></script>';
-          break;
-        case 'actividadReciente':
-          echo '<script type="text/javascript" src="valoracion.js"></script>';
           break;
        default:
          # code...
