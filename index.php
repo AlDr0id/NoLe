@@ -60,10 +60,11 @@
 			  <div class="details">
 			    <?php
 				    $path = 'product.php?id='.$ultimosProds[$i]->getId().'';
+				    $perfil = 'perfilVisitante.php?nickname='.$ultimosProds[$i]->getOwner().'';
 				    echo"<h1>".$ultimosProds[$i]->getNombre()."</h1>"; ?>
 				    <div class="author">
-				    	<img src="pica.jpg"/> <!-- Imagen que habra que cambiar cuando se tengan fotos del usuario -->
-				      	<h2><?php echo $ultimosProds[$i]->getOwner() ?></h2>
+				    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="pica.jpg"/>
+				    	<h2>'. $ultimosProds[$i]->getOwner() .'</h2></a>' ?>
 				    </div>
 				    <div class="category">
 				      	<?php 
