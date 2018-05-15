@@ -23,7 +23,9 @@
 		<div class="usuario">
 		  	<div class="imagen">
 				<h5>Imagen: </h5>	
-				<img src="pica.jgp" />
+				<center><input type="file" id="files" name="files[]" /></center>
+				<br />
+				<center><output id="list"></output></center>
 			</div>
 		  	<div class="details">
 		    <?php
