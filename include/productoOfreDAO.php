@@ -188,6 +188,27 @@ class productoOfreDAO extends DAO{
       }
     }
 
+    public function deleteProducto($idProducto) {
+           //conexión bbdd
+      if($ok = parent::conectar()) {
+        //consulta del usuario
+        $sql = "DELETE FROM producto_ofrecido WHERE ID='$idProducto'";
+        $consulta = mysqli_query($this->db, $sql);
+        if($consulta) { //si la base de datos no se modifica devuelve error
+             parent::desconectar();
+             return true;
+        }
+        else {
+          parent::desconectar();
+          return false;
+        }
+
+      }
+      else {
+        return false;
+      }
+    }
+
 }
 
 ?>
