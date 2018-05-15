@@ -24,14 +24,13 @@
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<link rel="stylesheet" type="text/css" href="card.css">
 	<link rel="stylesheet" type="text/css" href="menu.css">
-	<link rel="stylesheet" type="text/css" href="adv-search.css">
 	<link rel="stylesheet" type="text/css" href="arrows.css">
+	<link rel="stylesheet" type="text/css" href="adv-search.css">
 	<link rel="stylesheet" type="text/css" href="prod-styles.css">
 	<link rel="stylesheet" type="text/css" href="popup-style.css">
 	<link rel="stylesheet" type="text/css" href="perfil-style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -98,26 +97,19 @@
 		</div>
 		<h1><?php echo $prod->getNombre();  ?></h1>
 		<div class="producto">
+			
 			<div class="prod-cont">
-
+				<?php 
+				if ($editar){
+					$path = $prod->getId();
+					echo '<a class="seemore" href="perfil.php?opt=anadProd&id='.$path.'"><i class="right"></i><p>Editar producto</p></a>';
+						
+				}
+				?>
 				<div class="imagen">
 					<?php echo '<div class="thumbnail"><img class="left-prod" src="img/'.$prod->getId().'.png"/></div>'; ?>
 				</div>
 				<div class="info">
-					<div class="boton">
-						<?php 
-							if ($editar){
-								$path = $prod->getId();
-								echo '<a class="more autoriced delete" href="procesarBorrarProducto.php?id='.$path.'">Borrar <i class="fa fa-trash-o" aria-hidden="true"></i></a>';
-								echo '<a class="more autoriced" href="perfil.php?opt=anadProd&id='.$path.'">Editar <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';
-
-									
-							}
-							else{
-						?>
-						<button class="puja more">Pujar <i class="fa fa-bullhorn"></i></button>
-					<?php } ?>
-					</div>
 					<div class= "details">
 						<h2>Descripción:</h2>
 						<p><?php echo $prod->getDescripcion(); ?></p>
@@ -137,43 +129,19 @@
 						?>
 						<h2>Precio:</h2><p><?php echo $prod->getPrecio();?>$</p>
 					</div>
-					<div class="author">
-				    	<img src="rodri.jpg"/>
-				      	<h2><?php echo $prod->getOwner(); ?></h2>
-			    	</div>
 					<div class="category">
-				      	<?php 
-				      		switch ($prod->getCategoria()) {
-				      		 	case '0':
-				      		 		echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
-				      		 		break;
-				      		 	case '1':
-				      		 		echo "<a>Rincón de la Abuela</a>";
-				      		 		break;
-				      		 	case '2':
-				      		 		echo "<a>Figuras</a>";
-				      		 		break;
-				      		 	case '3':
-				      		 		echo "<a>Filatelia</a>";
-				      		 		break;
-				      		 	case '4':
-				      		 		echo "<a>Vinilos/Discos</a>";
-				      		 		break;
-				      		 	case '5':
-				      		 		echo "<a>Cromos</a>";
-				      		 		break;
-				      		 	case '6':
-				      		 		echo "<a>Libros/Comics</a>";
-				      		 		break;
-				      		 	case '7':
-				      		 		echo "<a>Trastero</a>";
-				      		 		break;
-				      		 }?>
-				      	
-				    </div>
-					
+						<h2><?php echo $prod->getCategoria(); ?></h2>
+					</div>
+					<div class="author">
+						<?php $perfil = 'perfilVisitante.php?nickname='.$prod[$i]->getOwner().'';
+						echo '<a class ="seemore" href='. $perfil . '></i><img src="pica.jpg"/>
+				    	<h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
+			    	</div>
 			    	<!-- Hacer opciones para cada botón. Si es pujar, poner oferta a pagar.
 			    		Si es hacer intercambio, mostrar desplegable con los productos que tiene el usuario -->
+					<div class="boton">
+						<button class="puja">Pujar</button>
+					</div>
 				</div>
 			</div>
 		</div>
