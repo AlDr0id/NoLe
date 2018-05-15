@@ -7,7 +7,7 @@ $('.popupCloseButton').click(function(){
     $('.popupPuja').hide();
     $('.popupValorar').hide();
 });
-function valorarPuja(id) {
-	var path = "procesarValoracion.php?id="+id;
+function valorarPuja(id,nickname) {
+	var path = "procesarValoracion.php?id="+id+"&nickname="+nickname;
 	$(".valForm").attr("action", path);
 }
