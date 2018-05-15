@@ -5,11 +5,11 @@ require_once('include/numismaticaSA.php');
 if (! isset($_GET['id']) ) {
 ?>
 <h2>Nuevo producto</h2>
-<form action= "procesarNuevoProducto.php" method = "POST">
+<form action= "procesarNuevoProducto.php" method = "POST" enctype="multipart/form-data">
 	<div class="newProd">
 		<div class="imagen">
 			<h5>Imagen: </h5>
-			<center><input type="file" id="files" name="files[]" /></center>
+			<center><input type="file" name="fotoProd" /></center>
 			<br />
 			<center><output id="list"></output></center>
 		</div>
@@ -17,7 +17,7 @@ if (! isset($_GET['id']) ) {
 		<div class="info">
 			<h5>Nombre del producto:</h5>
 			<input type="text" name="nomP" placeholder="Nombre del producto" required>
-			<h5>Decripción del producto:</h5>
+			<h5>Descripción del producto:</h5>
 			<textarea name="descP" placeholder="Descripción del producto"></textarea>
 			<h5>Precio:</h5>
 			<input type="number" name="precio" placeholder="Precio del producto" min=0 required>
@@ -68,7 +68,7 @@ else{
 <form action= "procesarEditarProducto.php" method = "POST">
 	<div class="newProd">
 		<div class="imagen">
-			<input type="file" id="files" name="files[]" />
+			<input type="file" name="fotoProd" />
 			<br />
 			<output id="list"></output>
 		</div>
@@ -77,7 +77,7 @@ else{
 			<input type="hidden"  name="idP" value="<?=$id ?>">
 			<h5>Nombre del producto:</h5>
 			<input type="text" name="nomP" placeholder="Nombre del producto" value="<?=$nomP ?>" required>
-			<h5>Decripción del producto:</h5>
+			<h5>Descripción del producto:</h5>
 			<textarea name="descP" placeholder="Descripción del producto" required><?=$descP ?></textarea>
 			<h5>Precio:</h5>
 			<input type="number" name="precio" placeholder="Precio del producto" min=0 value="<?=$precio ?>" required>
