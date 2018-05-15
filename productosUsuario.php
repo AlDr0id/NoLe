@@ -14,11 +14,10 @@
 		<div class="details">
 			<?php
 				$path = 'product.php?id='.$prod[$i]->getId().'';
-				$perfil = 'perfilVisitante.php?nickname='.$prod[$i]->getOwner().'';
 				echo"<h1>".$prod[$i]->getNombre()."</h1>"; ?>
 				<div class="author">
-					<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="pica.jpg"/>
-				    <h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
+					<img src="pica.jpg"/>
+					<h2><?php echo $prod[$i]->getOwner() ?></h2>
 				</div>
 				<div class="category">
 					<h2><?php echo $prod[$i]->getCategoria() ?></h2>
