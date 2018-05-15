@@ -7,7 +7,7 @@ class DAO {
     // métodos
     protected function conectar() {
 
-       if ($this->db = new mysqli("localhost", "root", "", "nole")) {
+       if ($this->db = new mysqli("localhost", "noleUser", "MAbqq3DquJh3bQvY", "nole")) {
         	return $this->db;
       }
         else
