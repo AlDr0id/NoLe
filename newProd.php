@@ -5,10 +5,10 @@ require_once('include/numismaticaSA.php');
 if (! isset($_GET['id']) ) {
 ?>
 <h2>Nuevo producto</h2>
-<form action= "include/procesarNuevoProducto.php" method = "POST">	
+<form action= "procesarNuevoProducto.php" method = "POST">
 	<div class="newProd">
 		<div class="imagen">
-			<h5>Imagen: </h5>	
+			<h5>Imagen: </h5>
 			<center><input type="file" id="files" name="files[]" /></center>
 			<br />
 			<center><output id="list"></output></center>
@@ -46,7 +46,7 @@ if (! isset($_GET['id']) ) {
 
 	</div>
 </form>
-<?php	
+<?php
 }
 else{
 	$id = $_GET['id'];
@@ -65,9 +65,9 @@ else{
 	}
 ?>
 <h2>Editar producto</h2>
-<form action= "include/procesarEditarProducto.php" method = "POST">	
+<form action= "procesarEditarProducto.php" method = "POST">
 	<div class="newProd">
-		<div class="imagen">	
+		<div class="imagen">
 			<input type="file" id="files" name="files[]" />
 			<br />
 			<output id="list"></output>
@@ -105,8 +105,7 @@ else{
 		</div>
 
 	</div>
-</form>	
+</form>
 <?php
 }
 ?>
-

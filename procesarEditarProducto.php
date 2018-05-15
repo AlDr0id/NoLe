@@ -5,19 +5,20 @@ require_once("include/productoOfreTransfer.php");
 require_once("include/numismaticaSA.php");
 require_once("include/numismaticaTransfer.php");
 
-function newProductControlador(productoOfreTransfer $producto){
- 		$productoSA = new productoOfreSA();
- 		$correcto=$productoSA->newProducto($producto);
- 		return $correcto;
- }
-
  		/*Atributos comunes*/
+ 		$idP = htmlspecialchars(trim(strip_tags($_POST['idP'])));
  		$nomP = htmlspecialchars(trim(strip_tags($_POST['nomP'])));
  		$cat = htmlspecialchars(trim(strip_tags($_POST['cateP'])));
  		$precio = htmlspecialchars(trim(strip_tags($_POST['precio'])));
  		$descP = htmlspecialchars(trim(strip_tags($_POST['descP'])));
- 		$producto = new productoOfreTransfer('',$_SESSION['nombre'],$nomP ,$cat,date('Y-m-d'),'1',$precio ,$descP,'0');
-		$id = newProductControlador($producto);
+ 		$productoSA = new productoOfreSA();
+ 		$producto = $productoSA->getProducto($idP);
+ 		$producto->setNombre($nomP);
+ 		$producto->setCategoria($cat);
+ 		$producto->setPrecio($precio);
+ 		$producto->setDescripcion($descP);
+
+		$id = $productoSA->editProducto($producto);
 
 		/*Atributos propios de la categoría*/
  		switch ($_POST['cateP']) {
@@ -26,9 +27,13 @@ function newProductControlador(productoOfreTransfer $producto){
  				$paisP = htmlspecialchars(trim(strip_tags($_POST['paisP'])));
 		 		$anioP = htmlspecialchars(trim(strip_tags($_POST['anioP'])));
 		 		$consP = htmlspecialchars(trim(strip_tags($_POST['consP'])));
- 				$productoNumi = new numismaticaTransfer($id, $paisP, $anioP , $consP);
  				$productoSA = new numismaticaSA();
- 				$id2 = $productoSA->newProductoNumi($productoNumi);
+ 				$productoNumi = $productoSA->getProductoNumi($idP);
+ 				$productoNumi->setPais($paisP);
+ 				$productoNumi->setAño($anioP);
+ 				$productoNumi->setConservacion($consP);
+
+ 				$id2 = $productoSA->editProductoNumi($productoNumi);
  				break;
 
  			default:
@@ -36,12 +41,11 @@ function newProductControlador(productoOfreTransfer $producto){
  		}
 
 		if($id && $id2) {
-			echo "<script>alert('Producto añadido');</script>";
+			echo "<script>alert('Producto modificado');</script>";
 		}
 		else {
-			echo "<script>alert('Fallo al añadir producto');</script>";
+			echo "<script>alert('Fallo al modificar producto');</script>";
 		}
-
  		header("Refresh: 0 ;URL= index.php");
 
  ?>
