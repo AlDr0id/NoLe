@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2018 a las 15:06:58
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.2
+-- Tiempo de generación: 15-05-2018 a las 18:30:22
+-- Versión del servidor: 10.1.26-MariaDB
+-- Versión de PHP: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -131,7 +131,7 @@ INSERT INTO `numismatica` (`Id`, `Pais`, `Anyo`, `Conservacion`) VALUES
 (7, 'Alemania', 1992, 'Monedero viejo'),
 (8, 'España', 2018, 'Nueva'),
 (9, 'Murcia', 1990, 'Buena'),
-(10, 'Jamaica', 2012, 'buena');
+(11, 'EspaÃ±a', 200, 'Buena');
 
 -- --------------------------------------------------------
 
@@ -148,25 +148,24 @@ CREATE TABLE `producto_ofrecido` (
   `Precio` float NOT NULL,
   `Descripcion` text COLLATE utf8_bin NOT NULL,
   `Categoria` int(11) NOT NULL,
-  `EnPuja` tinyint(1) NOT NULL,
-  `Foto` varchar(100) COLLATE utf8_bin NOT NULL
+  `EnPuja` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `producto_ofrecido`
 --
 
-INSERT INTO `producto_ofrecido` (`ID`, `Nombre`, `Usuario`, `Fecha`, `Disponible`, `Precio`, `Descripcion`, `Categoria`, `EnPuja`, `Foto`) VALUES
-(1, 'Moneda griega', 'alvo', '2000-02-25 04:28:00', 1, 25, 'Moneda griega posterior Cristo.', 0, 0, ''),
-(2, 'Peseta rara', 'JGuti', '2015-05-06 19:59:00', 1, 5.6, 'Peseta rara encontrada en el desván de mi abuelo', 0, 1, ''),
-(3, 'Moneda antigua', 'alexp', '2013-05-05 09:49:08', 1, 500, 'Moneda antigua. Algo sucia.', 0, 1, ''),
-(4, 'Céntimo Americano', 'alvo', '2015-03-23 12:38:00', 1, 1000, 'Céntimo americano original', 0, 1, ''),
-(5, 'Moneda china antigua', 'alvo', '2015-03-01 04:00:00', 1, 120, 'Creo que es china por las letras. Fecha no asegurada.', 0, 1, ''),
-(6, 'Moneda rusa', 'Pepe', '2015-03-15 09:10:00', 1, 15, 'Moneda rusa de mi viaje.', 0, 0, ''),
-(7, 'Moneda Alemana', 'rodribarro', '2015-03-10 00:00:00', 1, 15, 'Creo que es un marco alemán', 0, 0, ''),
-(8, 'Mnda oro nueva', 'manu', '2018-05-06 00:00:00', 1, 100, 'Oro puro.', 0, 0, ''),
-(9, 'Moneda Desierto', 'jose', '2018-05-12 14:58:15', 1, 15, 'a', 0, 0, ''),
-(10, 'moneda jamaica', 'manolo', '2018-05-12 14:59:15', 1, 23, 'a', 0, 0, '');
+INSERT INTO `producto_ofrecido` (`ID`, `Nombre`, `Usuario`, `Fecha`, `Disponible`, `Precio`, `Descripcion`, `Categoria`, `EnPuja`) VALUES
+(1, 'Moneda griega', 'alvo', '2000-02-25 04:28:00', 1, 25, 'Moneda griega posterior Cristo.', 0, 0),
+(2, 'Peseta rara', 'JGuti', '2015-05-06 19:59:00', 1, 5.6, 'Peseta rara encontrada en el desván de mi abuelo', 0, 1),
+(3, 'Moneda antigua', 'alexp', '2013-05-05 09:49:08', 1, 500, 'Moneda antigua. Algo sucia.', 0, 1),
+(4, 'Céntimo Americano', 'alvo', '2015-03-23 12:38:00', 1, 1000, 'Céntimo americano original', 0, 1),
+(5, 'Moneda china antigua', 'alvo', '2015-03-01 04:00:00', 1, 120, 'Creo que es china por las letras. Fecha no asegurada.', 0, 1),
+(6, 'Moneda rusa', 'Pepe', '2015-03-15 09:10:00', 1, 15, 'Moneda rusa de mi viaje.', 0, 0),
+(7, 'Moneda Alemana', 'rodribarro', '2015-03-10 00:00:00', 1, 15, 'Creo que es un marco alemán', 0, 0),
+(8, 'Mnda oro nueva', 'manu', '2018-05-06 00:00:00', 1, 100, 'Oro puro.', 0, 0),
+(9, 'Moneda Desierto', 'jose', '2018-05-12 14:58:15', 1, 15, 'a', 0, 0),
+(11, 'Pica moneda', 'pica', '2018-05-15 00:00:00', 1, 323, 'Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla blaBla bla blavBla bla blav Bla bla blav  vvvBla bla bla vv vBla bla blav vvBla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -191,12 +190,12 @@ CREATE TABLE `puja` (
 
 INSERT INTO `puja` (`Id`, `IdProducto`, `IdVendedor`, `IdPostor`, `Precio`, `IdTrueque`, `Fecha`, `Estado`) VALUES
 (1, 2, 'JGuti', 'manolo', 5.6, NULL, '2018-05-12 01:57:20', 'PENDIENTE'),
-(2, 10, 'manolo', 'jose', 23, NULL, '2018-05-12 01:58:34', 'GANADA'),
-(3, 10, 'manolo', 'marina', 24, NULL, '2018-05-12 01:58:54', 'PERDIDA'),
 (4, 9, 'marina', 'manolo', 15, NULL, '2018-05-12 02:56:15', 'PERDIDA'),
-(5, 10, 'jose', 'manolo', 23, NULL, '2018-05-12 02:56:21', 'GANADA'),
-(6, 10, 'jose', 'marina', 23, NULL, '2018-05-12 02:56:47', 'PERDIDA'),
-(7, 9, 'marina', 'jose', 15, NULL, '2018-05-12 02:57:08', 'GANADA');
+(7, 9, 'marina', 'jose', 15, NULL, '2018-05-12 02:57:08', 'GANADA'),
+(10, 2, 'JGuti', 'pica', 5.6, NULL, '2018-05-15 05:20:48', 'PENDIENTE'),
+(11, 2, 'JGuti', 'pica', 2000.6, NULL, '2018-05-15 05:21:11', 'PENDIENTE'),
+(12, 11, 'pica', 'manolo', 348, NULL, '2018-05-15 06:26:59', 'PENDIENTE'),
+(13, 11, 'pica', 'manolo', 343, NULL, '2018-05-15 06:28:41', 'PENDIENTE');
 
 -- --------------------------------------------------------
 
@@ -276,6 +275,7 @@ INSERT INTO `usuario` (`Nombre`, `Apellido`, `Nickname`, `Pass`, `Correo`, `Acti
 ('manolo', 'manolo', 'manolo', '$2y$10$rp3p8MpdkTSgwh0ORArMwuzJnd567RKz.6r27F8HbRSnMitTmlWfy', 'manolo', 1, '', '0', 0),
 ('manu', 'oreja', 'manu', 'lolo97', 'manu@hotmail.com', 0, '', '0', 0),
 ('marina', 'marina', 'marina', '$2y$10$jBIKJl6oK2mmrUcgDmqrz.JzttRX0is1ETgcp9us8653Ak9O4N7PK', 'marina', 1, '', '0', 0),
+('pica', 'pica', 'pica', '$2y$10$Bl3vhnbvmTTchEKWNt48leh.UQqrKLVFuC.cSpWkjKj6Ke2pXacN6', 'pica', 1, '', '0', 0),
 ('Rodrigo', 'Barroso', 'rodribarro', 'puma69', 'rodric@gmail.com', 0, '', '0', 0);
 
 -- --------------------------------------------------------
@@ -420,22 +420,22 @@ ALTER TABLE `libros_comics`
 -- Filtros para la tabla `numismatica`
 --
 ALTER TABLE `numismatica`
-  ADD CONSTRAINT `numismatica_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `numismatica_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `producto_ofrecido`
 --
 ALTER TABLE `producto_ofrecido`
-  ADD CONSTRAINT `producto_ofrecido_ibfk_1` FOREIGN KEY (`Usuario`) REFERENCES `usuario` (`Nickname`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `producto_ofrecido_ibfk_2` FOREIGN KEY (`Categoria`) REFERENCES `categoria` (`Id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `producto_ofrecido_ibfk_1` FOREIGN KEY (`Usuario`) REFERENCES `usuario` (`Nickname`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `producto_ofrecido_ibfk_2` FOREIGN KEY (`Categoria`) REFERENCES `categoria` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `puja`
 --
 ALTER TABLE `puja`
-  ADD CONSTRAINT `puja_ibfk_1` FOREIGN KEY (`IdProducto`) REFERENCES `producto_ofrecido` (`ID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `puja_ibfk_2` FOREIGN KEY (`IdTrueque`) REFERENCES `producto_ofrecido` (`ID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `puja_ibfk_3` FOREIGN KEY (`IdPostor`) REFERENCES `usuario` (`Nickname`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `puja_ibfk_1` FOREIGN KEY (`IdProducto`) REFERENCES `producto_ofrecido` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `puja_ibfk_2` FOREIGN KEY (`IdTrueque`) REFERENCES `producto_ofrecido` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `puja_ibfk_3` FOREIGN KEY (`IdPostor`) REFERENCES `usuario` (`Nickname`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `rincon_de_la_abuela`
