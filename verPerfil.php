@@ -30,10 +30,10 @@
 			    echo"<h1>".$us->getNickname()."</h1>"; 
 			?>
 			    <div class="author">
-			      	<h2><?php echo $us->getNombre() . " " . $us->getApellido() ?></h2>
+			      	<h2>Nombre y apellidos: <?php echo $us->getNombre() . " " . $us->getApellido() ?></h2>
 			    </div>
 			    <div class="mail">
-			      	<h2><?php echo $us->getCorreo() ?></h2>
+			      	<h2>Email: <?php echo $us->getCorreo() ?></h2>
 			    </div>
 			    <div class="separator"></div>
 			    <?php
@@ -63,8 +63,6 @@
 				<input type="text" name="nom" value=<?php echo $us->getNombre() ?>>
 				<p>Apellidos: </p>
 				<input type="text" name="ape" value=<?php echo $us->getApellido() ?>>
-				<p>Nickname: </p>
-				<input type="text" name="userReg" value=<?php echo $us->getNickname() ?>>
 				<p>Email: </p>
 				<input type="text" name="mail" value=<?php echo $us->getCorreo() ?>>
 			</form>
