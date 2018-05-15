@@ -19,6 +19,7 @@ function newProductControlador(productoOfreTransfer $producto){
  		$producto = new productoOfreTransfer('',$_SESSION['nombre'],$nomP ,$cat,date('Y-m-d'),'1',$precio ,$descP,'0');
 		$id = newProductControlador($producto);
 
+
 		/*Atributos propios de la categoría*/
  		switch ($_POST['cateP']) {
  			case '0':
@@ -28,20 +29,30 @@ function newProductControlador(productoOfreTransfer $producto){
 		 		$consP = htmlspecialchars(trim(strip_tags($_POST['consP'])));
  				$productoNumi = new numismaticaTransfer($id, $paisP, $anioP , $consP);
  				$productoSA = new numismaticaSA();
- 				$id2 = $productoSA->newProductoNumi($productoNumi);
+        echo $_FILES['fotoProd']['tmp_name'];
+        echo "img/" . $id . ".png";
+        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
+          $id3 = True;
+          $id2 = $productoSA->newProductoNumi($productoNumi);
+        }
+        else {
+          $id3 = False;
+          $id2 = False;
+        }
+
  				break;
 
  			default:
  				break;
  		}
 
-		if($id && $id2) {
+		if($id && $id2 && $id3) {
 			echo "<script>alert('Producto añadido');</script>";
 		}
 		else {
 			echo "<script>alert('Fallo al añadir producto');</script>";
 		}
 
- 		header("Refresh: 0 ;URL= index.php");
+ 		//header("Refresh: 0 ;URL= index.php");
 
  ?>
