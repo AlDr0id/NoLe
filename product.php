@@ -138,8 +138,9 @@
 						<h2>Precio:</h2><p><?php echo $prod->getPrecio();?>$</p>
 					</div>
 					<div class="author">
-				    	<img src="rodri.jpg"/>
-				      	<h2><?php echo $prod->getOwner(); ?></h2>
+						<?php $perfil = 'perfilVisitante.php?nickname='.$prod->getOwner().'';
+						echo '<a class ="seemore" href='. $perfil . '></i><img src="pica.jpg"/>
+				    	<h2>'. $prod->getOwner() .'</h2></a>' ?>
 			    	</div>
 					<div class="category">
 				      	<?php 

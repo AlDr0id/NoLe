@@ -13,10 +13,11 @@ $prod = $sa->getProducto($_GET["nom"]);
 		  <div class="details">
 			<?php
 			    $path = 'product.php?id='.$prod[$i]->getId().'';
+			    $perfil = 'perfilVisitante.php?nickname='.$prod[$i]->getOwner().'';
 			    echo"<h1>".$prod[$i]->getNombre()."</h1>"; ?>
-			    <div class="author">
-			    	<img src="pica.jpg"/> <!-- Imagen que habra que cambiar cuando se tengan fotos del usuario -->
-			      	<h2><?php echo $prod[$i]->getOwner() ?></h2>
+			    <div class="author"> <!--la imagen se debe cambiar cuando esten las del usuario -->
+			    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="pica.jpg"/> 
+		              	<h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
 			    </div>
 			    <div class="category">
 			      	<?php 

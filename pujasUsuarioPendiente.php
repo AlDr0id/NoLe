@@ -18,10 +18,11 @@ $pujas = $sa->getPujasPostor($_SESSION["nombre"], "PENDIENTE");
 				<?php
 					$p = $saProd->getProducto($pujas[$i]->getIdProducto());
 					$path = 'product.php?id='.$pujas[$i]->getIdProducto().'';
+					$perfil = 'perfilVisitante.php?nickname='.$p->getOwner().'';
 					echo"<h1>".$p->getNombre()."</h1>"; ?>
 					<div class="author">
-						<img src="pica.jpg"/>
-						<h2><?php echo $p->getOwner();?></h2>
+						<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="pica.jpg"/>
+		              		<h2>'. $p->getOwner() .'</h2></a>' ?>
 					</div>
 					<div class="precio">
 						<h2><?php 
