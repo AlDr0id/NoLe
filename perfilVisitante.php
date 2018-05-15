@@ -14,10 +14,11 @@
   <link rel="stylesheet" type="text/css" href="perfil-style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
 
-  <?php require_once("include/comun/cabecera.php"); 
+  <?php require_once("include/comun/cabecera.php");
   require_once("include/comun/menu.php");
 
   ?>
@@ -33,7 +34,7 @@
   	$user = new usuarioTransfer($nickname,"","","","",0,0,"");
 	$us = $sa->mostrarUsuario($user);
 	echo '<h1>Perfil de: '. $us->getNickname() . '</h1>';
-?>	
+?>
 		<div class="visitante">
 		  	<div class="imagen">
 		  		<?php if ($us->getActivo()== 1)	{ ?>
@@ -48,7 +49,7 @@
 					</div>
 				<?php
 				}
-				?>	
+				?>
 			</div>
 		  	<div class="details">
 			    <div class="author">
@@ -63,11 +64,10 @@
 			    </div>
 			    <div class="separator"></div>
 		  </div>
-		</div> 
+		</div>
 	</div>
 	<div class="footer">
 	    <p>Javier Picatoste - Rodrigo - Álvaro - Manu - Alex - Marcos - Dani - Alberto</p>
 	</div>
 </body>
 </html>
-		
