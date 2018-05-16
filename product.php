@@ -45,58 +45,66 @@
 	<div class="slider">
 		<img src="error/no-image.png">
 	</div>
+	<div class="popupImagen">
+	    <span class="helper"></span>
+	    <div>
+	        <div class="popupCloseButton">X</div>
+	        <?php echo '<img src="img/'.$prod->getId().'.png"/>'; ?>
+	    </div>
+	</div>
+	<div class="popupPuja">
+	    <span class="helper"></span>
+	    <div>
+	        <div class="popupCloseButton">X</div>
+	        <?php if (isset($_SESSION['login']) and $_SESSION['login'] and $prod->getEnPuja() and $propietario != $_SESSION['nombre']) { ?>
+	        <h1>Puja</h1>
+	        <form id=opt>
+		        <input class="din" type="radio" name="puja" value="dinero" checked>Pujar con dinero
+				<input class="prod" type="radio" name="puja" value="producto">Pujar con un producto
+			</form>
+	        <form class="formulario" action=<?php echo "'procesarPuja.php?idProd=".$_GET['id']."&idVend=".$propietario."'"; ?> method="POST">
+
+	        	<div class="popupPujaDin">
+			        <input class="valorPuja" type="number" name="valorPuja" value=<?php echo $prod->getPrecio();?> min= <?php echo $prod->getPrecio();?>>
+			        <button type="submit">Añadir puja</button>
+	        	</div>
+
+	        	<div class="popupPujaProd">
+					<select name="trueque">
+						<option value='-1' selected>-</option>
+						<?php
+							$productos=$sa->getProductoUsuarioInventario($_SESSION['nombre']);
+							if ($productos != NULL) {
+								for ($i=0; $i < sizeof($productos); $i++) {
+									echo "<option value='".$productos[$i]->getId()."''>".$productos[$i]->getNombre()."</option>";
+								}
+							}
+							else{
+								echo "<option value='-1'>No tienes productos con los que pujar</option>";
+							}
+
+						 ?>
+					</select>
+	            <button type="submit">Añadir puja</button>
+	        	</div>
+	        </form>
+	        <?php }
+		    else{
+		    	echo "<h2>No puedes pujar, ";
+		    	if(!$prod->getEnPuja()){
+		    		echo "este producto no es pujable.</h2>";
+				}
+				else if(isset($_SESSION['login']) and $propietario == $_SESSION['nombre']){
+					echo "el propietario no puede pujar por sus productos.</h2>";
+				}
+		    	else{
+		    		echo "haz login o regístrate para pujar.</h2>";
+		    	}
+		    }?>
+	    </div>
+	</div>
 	<div class="container">
-		<div class="popupPuja">
-		    <span class="helper"></span>
-		    <div>
-		        <div class="popupCloseButton">X</div>
-		        <?php if (isset($_SESSION['login']) and $_SESSION['login'] and $prod->getEnPuja() and $propietario != $_SESSION['nombre']) { ?>
-		        <h1>Puja</h1>
-		        <form id=opt>
-			        <input class="din" type="radio" name="puja" value="dinero" checked>Pujar con dinero
-					<input class="prod" type="radio" name="puja" value="producto">Pujar con un producto
-				</form>
-		        <form class="formulario" action=<?php echo "'procesarPuja.php?idProd=".$_GET['id']."&idVend=".$propietario."'"; ?> method="POST">
-
-		        	<div class="popupPujaDin">
-				        <input class="valorPuja" type="number" name="valorPuja" value=<?php echo $prod->getPrecio();?> min= <?php echo $prod->getPrecio();?>>
-				        <button type="submit">Añadir puja</button>
-		        	</div>
-
-		        	<div class="popupPujaProd">
-						<select name="trueque">
-							<option value='-1' selected>-</option>
-							<?php
-								$productos=$sa->getProductoUsuarioInventario($_SESSION['nombre']);
-								if ($productos != NULL) {
-									for ($i=0; $i < sizeof($productos); $i++) {
-										echo "<option value='".$productos[$i]->getId()."''>".$productos[$i]->getNombre()."</option>";
-									}
-								}
-								else{
-									echo "<option value='-1'>No tienes productos con los que pujar</option>";
-								}
-
-							 ?>
-						</select>
-		            <button type="submit">Añadir puja</button>
-		        	</div>
-		        </form>
-		        <?php }
-			    else{
-			    	echo "<h2>No puedes pujar, ";
-			    	if(!$prod->getEnPuja()){
-			    		echo "este producto no es pujable.</h2>";
-					}
-					else if(isset($_SESSION['login']) and $propietario == $_SESSION['nombre']){
-						echo "el propietario no puede pujar por sus productos.</h2>";
-					}
-			    	else{
-			    		echo "haz login o regístrate para pujar.</h2>";
-			    	}
-			    }?>
-		    </div>
-		</div>
+		
 		<h1><?php echo $prod->getNombre();  ?></h1>
 		<div class="producto">
 			<div class="prod-cont">
