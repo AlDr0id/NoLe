@@ -23,7 +23,9 @@
 		<div class="usuario">
 		  	<div class="imagen">
 				<h5>Imagen: </h5>	
-				<img src="pica.jgp" />
+				<?php
+				echo "<img src=\"img/" . $us->getNickname() . ".png\"/>";
+			?>
 			</div>
 		  	<div class="details">
 		    <?php
