@@ -9,11 +9,15 @@
 }
 .prod-cont .thumbnail {
 	overflow: hidden;
-	box-shadow: 1px 1px 10px 2px black;
-	background-color: white;
-	border-radius: 3px;
-	width: 380px;
-	margin:0 20px;
+    box-shadow: 1px 1px 10px 2px black;
+    background-color: white;
+    border-radius: 3px;
+    width: 380px;
+    margin: 0 20px;
+    border: 5px solid #545454FF;
+    border-bottom: 35px solid #545454FF;
+    padding: 5px;
+    cursor: zoom-in;
 }
 .prod-cont img.left-prod{
 	height: auto;	
@@ -97,6 +101,7 @@
 	transform: translateY(4px);
 }
 .popupPuja{
+	background:rgba(0,0,0,.4);
     display:none;
     height:100%;
     position:fixed;
@@ -159,4 +164,31 @@
 }
 .fa{
 	border:0;
+}
+
+.popupImagen{
+	background:rgba(0,0,0,.4);
+    display:none;
+    height:100%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+}
+.popupImagen > div{
+    background-color: #fff;
+    box-shadow: 10px 10px 60px black;
+    display: inline-block;
+    height: auto;
+    max-width: 500px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 5% 5% 20px;
+    overflow-y: scroll;
+    max-height: 500px;
+}
+.popupImagen img{
+	width: 100%;
 }

@@ -81,6 +81,7 @@
     line-height: 30px;
     width: 30px;
     text-align: center;
+    cursor: pointer;
 }
 .popupCloseButton:hover {
     background-color: #ccc;
