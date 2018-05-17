@@ -85,6 +85,20 @@
 							<input class="campo" type="text" name="cons">
 						</span>
 					</div>
+					<div class="cromosBuscar">
+						<span>
+							<p>Año: </p>
+							<input class="campo" type="number" name="anioCromos" min="-1" max="2018">
+						</span>
+						<span>
+							<p>Colección: </p>
+							<input class="campo" type="text" name="colecCromos">
+						</span>
+						<span>
+							<p>Número: </p>
+							<input class="campo" type="text" name="nCromos">
+						</span>
+					</div>
 					<button type="submit">Buscar</button>
 				</form>
 			</div>

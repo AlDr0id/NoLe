@@ -15,7 +15,14 @@
 	flex-grow: 1;
 	margin-bottom: 10px;
 }
-.numiBuscar{
+.numiBuscar,
+.cromosBuscar,
+.trasteroBuscar,
+.viniBuscar,
+.libBuscar,
+.rdlaBuscar,
+.figBuscar,
+.filBuscar{
 	display: none;
 }
 .adv-search span{
