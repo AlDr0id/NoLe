@@ -33,7 +33,12 @@
 	$sa = new UsuarioSA();
   	$user = new usuarioTransfer($nickname,"","","","",0,0,"");
 	$us = $sa->mostrarUsuario($user);
-	echo '<h1>Perfil de: '. $us->getNickname() . '</h1>';
+	if($us->getNickname() == $_SESSION["nombre"]){
+
+		header("Refresh: 0 ;URL= perfil.php?opt=verPerfil");
+	}
+	else{
+		echo '<h1>Perfil de: '. $us->getNickname() . '</h1>';
 ?>
 		<div class="visitante">
 		  	<div class="imagen">
@@ -84,5 +89,9 @@
 	<div class="footer">
 	    <p>Javier Picatoste - Rodrigo - Álvaro - Manu - Alex - Marcos - Dani - Alberto</p>
 	</div>
+	<?php 
+		}
+	?>
 </body>
 </html>
+
