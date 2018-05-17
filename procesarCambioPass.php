@@ -26,21 +26,25 @@ if ($nuevaPass == $nuevaPass2) {
       echo"<script language='JavaScript'>
               alert('Contraseña cambiada');
          </script>";
-      header("Refresh: 0 ;URL= index.php");
+
   }
   else {
     $data['success'] = False;
-    $data['errors'] = 'Contraseña incorrecta';
+    $data['errors'] = 'La contraseña antigua no es correcta';
+    echo"<script language='JavaScript'>
+            alert('La contraseña antigua no es correcta');
+       </script>";
   }
 
 }
 else{
-	/*echo"<script language='JavaScript'>
-          alert('Contraseñas incorrectas');
-     </script>";*/
+	echo"<script language='JavaScript'>
+          alert('Las contraseñas no coinciden');
+     </script>";
     $data['success'] = False;
     $data['errors'] = 'Las contraseñas no coinciden';
 }
 
-echo json_encode($data);
+//echo json_encode($data);
+header("Refresh: 0 ;URL= perfil.php?opt=camPass");
 ?>
