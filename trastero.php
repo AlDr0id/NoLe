@@ -2,7 +2,7 @@
 require_once('include/BusquedaSA.php');
 $busq = new BusquedaSA();
 $array = [
- "Categoria" => 0
+ "Categoria" => 7
 ];
 
 $prod = $busq->getProductoAvan($array);
@@ -37,7 +37,7 @@ $prod = $busq->getProductoAvan($array);
     <img src="error/no-image.png">
   </div>
   <div class="container">
-    <h1>Numismática</h1>
+    <h1>Trastero</h1>
 
     <?php
     for ($i=0; $i < sizeof($prod); $i++) {
@@ -56,7 +56,7 @@ $prod = $busq->getProductoAvan($array);
             <div class="category">
                 <?php
                   switch ($prod[$i]->getCategoria()) {
-                    case '0':
+                     case '0':
                       echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
                       break;
                     case '1':
