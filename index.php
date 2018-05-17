@@ -51,12 +51,12 @@
 			$ultimosProds = $tmp->getLastProducts(10);
 		?>
 			<h1>Últimos productos</h1>
-
+			<div class="productosCuadricula">
 			<?php
 
 		    for ($i=0; $i < sizeof($ultimosProds); $i++) {
 		    ?>
-			  <div class="card">
+			  <div class="card cuadricula">
 			  <?php echo '<div class="thumbnail"><img class="leftImg" src="img/'.$ultimosProds[$i]->getId().'.png"/></div>'; ?>
 			  <div class="details">
 			    <?php
@@ -109,6 +109,7 @@
 			</div>
 			<?php }
 			    ?>
+			</div>
 	</div>
 	<div class="footer">
 		<p>Javier Picatoste - Rodrigo - Álvaro - Manu - Alex - Marcos - Dani - Alberto</p>
