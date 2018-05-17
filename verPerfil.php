@@ -62,6 +62,8 @@
 				<input type="text" name="ape" value=<?php echo $us->getApellido() ?>>
 				<p>Email: </p>
 				<input type="text" name="mail" value=<?php echo $us->getCorreo() ?>>
+				<p>Inserta tu contraseña*: </p>
+				<input type="password" name="pass" required="true">
 				<!-- <p>Foto perfil: </p>
 				<input type="file" name="fotoPerfil" /> -->
 				<button type="submit" class="guardar">Guardar datos</button>
