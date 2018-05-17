@@ -15,6 +15,8 @@
   <link rel="stylesheet" type="text/css" href="actividadReciente-style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <script type="text/javascript" src="javascript.js"></script>
+    <script type="text/javascript" src="perfil.js"></script>
 </head>
 <body>
 
@@ -74,14 +76,14 @@
 
         </div>
         <div class="derecha">
-          <a href="perfil.php?opt=actividadReciente">Historial</a>
-          <a href="perfil.php?opt=verProds">Ver todos mis productos de inventario(No en puja)</a>
-          <a href="perfil.php?opt=verPujas">Ver todas mis pujas</a>
-          <a href="perfil.php?opt=verProdPuja">Ver todos mis productos en puja</a>
-          <a href="perfil.php?opt=anadProd">Añadir un producto</a>
-          <a href="perfil.php?opt=verPerfil" >Ver mi perfil</a> <!-- Dentro de aquí habrá una opción para editar perfil, salvo la contraseña que va aquí fuera  -->
-          <a href="perfil.php?opt=camPass">Cambiar contraseña</a>
-          <a href="perfil.php?opt=deleteCuenta">Eliminar mi cuenta</a>
+          <a class='actividadReciente' href="perfil.php?opt=actividadReciente" onclick="actualicePerfil()">Historial</a>
+          <a class="verProductos" href="perfil.php?opt=verProds" onclick="actualicePerfil()">Ver todos mis productos de inventario(No en puja)</a>
+          <a class="verPujas" href="perfil.php?opt=verPujas" onclick="actualicePerfil()">Ver todas mis pujas</a>
+          <a class="verProductosPuja" href="perfil.php?opt=verProdPuja" onclick="actualicePerfil()">Ver todos mis productos en puja</a>
+          <a class="anadirProducto" href="perfil.php?opt=anadProd" onclick="actualicePerfil()">Añadir un producto</a>
+          <a class="verPerfil" href="perfil.php?opt=verPerfil" onclick="actualicePerfil()">Ver mi perfil</a> <!-- Dentro de aquí habrá una opción para editar perfil, salvo la contraseña que va aquí fuera  -->
+          <a class='cambiarPass' href="perfil.php?opt=camPass" onclick="actualicePerfil()">Cambiar contraseña</a>
+          <a class='deleteCuenta' href="perfil.php?opt=deleteCuenta" onclick="actualicePerfil()">Eliminar mi cuenta</a>
 
         </div>
     </div>
@@ -90,8 +92,7 @@
     <p>Javier Picatoste - Rodrigo - Álvaro - Manu - Alex - Marcos - Dani - Alberto</p>
   </div>
 </body>
-<script type="text/javascript" src="javascript.js"></script>
-<script type="text/javascript" src="perfil.js"></script>
+
 <?php
   if (isset($_GET['opt'])) {
     switch ($_GET['opt']) {
