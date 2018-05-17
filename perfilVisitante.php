@@ -59,7 +59,22 @@
 			      	<h2>Email: <?php echo $us->getCorreo() ?></h2>
 			    </div>
 			    <div class="valoracion">
-			      	<h2>Valoración: *AQUÍ HAY QUE METER LA VALORACIÓN* <?php echo $us->getValoracion() ?></h2>
+			      	<h2>Valoración:	
+			      		<form>
+						  <span class="clasificacion">
+						   <input id="radio1" type="radio" name="estrellas" value="5" disabled <?php if ($us->getValoracion() > 4 and $us->getValoracion() <= 5) { echo "checked";}?>>
+					   		<label for="radio1">★</label><!--
+					    --><input id="radio2" type="radio" name="estrellas" value="4" disabled <?php if ($us->getValoracion() > 3 and $us->getValoracion() <= 4) { echo "checked";}?>><!--
+					    --><label for="radio2">★</label><!--
+					    --><input id="radio3" type="radio" name="estrellas" value="3" disabled <?php if ($us->getValoracion() > 2 and $us->getValoracion() <= 3) { echo "checked";}?>><!--
+					    --><label for="radio3">★</label><!--
+					    --><input id="radio4" type="radio" name="estrellas" value="2" disabled <?php if ($us->getValoracion() > 1 and $us->getValoracion() <= 2) { echo "checked";}?>><!--
+					    --><label for="radio4">★</label><!--
+					    --><input id="radio5" type="radio" name="estrellas" value="1" disabled <?php if ($us->getValoracion() > 0 and $us->getValoracion() <= 1) { echo "checked";}?>><!--
+					    --><label for="radio5">★</label>
+						  </span>
+						</form>
+						</h2>
 			      	<h4> <?php echo $us->getNumValoraciones() ?> valoraciones</h4>
 			    </div>
 			    <div class="separator"></div>

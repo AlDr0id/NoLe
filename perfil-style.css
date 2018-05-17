@@ -51,8 +51,38 @@
 	border: 5px solid #bfbdbd;
 }
 .visitante .details{
-	
 	flex-grow: 1;
+}
+.visitante input[type="radio"] {
+  display: none;
+}
+
+.visitante label {
+  color: grey;
+}
+
+.visitante .clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  
+}
+.visitante .valoracion form{
+	display: inline;
+    font-size: 26px;
+}
+
+.visitante input[type="radio"]:checked ~ label {
+  color: orange;
+}
+
+.visitante .valorar{
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+.visitante li{
+  margin-bottom: 10px;
 }
 .newProd{
 	display: flex;
