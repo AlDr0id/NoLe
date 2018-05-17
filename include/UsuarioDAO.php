@@ -116,10 +116,11 @@ class UsuarioDAO extends DAO{
   public function editUsuario(UsuarioTransfer $usuario) {
     if(parent::conectar()){
         $db=$this->db;
+        $nickname = $usuario->getNickname();
         $nombre = $usuario->getNombre();
         $apellido = $usuario->getApellido();
         $correo = $usuario->getCorreo();
-        $sql ="UPDATE usuario SET Nombre = '$nombre', Apellido = '$Apellido', Correo = '$Correo' WHERE Nickname LIKE '$nickname'";
+        $sql ="UPDATE usuario SET nombre = '$nombre', apellido = '$apellido', correo = '$correo' WHERE Nickname LIKE '$nickname'";
         $consulta = mysqli_query($db, $sql);
         if($consulta){
           parent::desconectar();
