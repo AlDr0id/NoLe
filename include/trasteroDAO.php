@@ -58,10 +58,10 @@ class trasteroDAO extends DAO{
         $id = $trastero->getId();
         if($id != -1) {
            $anyo = $trastero->getAnyo();
-           $pais = $trastero->getPais();
+           $pais = $trastero->getOrigen();
           
             //consulta del usuario
-            $sql = "INSERT INTO trastero (Id, Anyo, Pais) VALUES ('$id', '$anyo', '$pais')";
+            $sql = "INSERT INTO trastero (Id, Anyo, Origen) VALUES ('$id', '$anyo', '$pais')";
             $consulta = mysqli_query($this->db, $sql);
             if($consulta) {
                  parent::desconectar();
