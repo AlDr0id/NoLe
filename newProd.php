@@ -12,18 +12,18 @@ if (! isset($_GET['id']) ) {
 		<div class="info">
 			<div class="imagen">
 				<h5>Imagen: </h5>
-				<input type="file" name="fotoProd" required/>
+				<input type="file" name="fotoProd" />
 				<br />
 				<output id="list"></output>
 			</div>
 			<h5>Nombre del producto:</h5>
-			<input type="text" name="nomP" placeholder="Nombre del producto" required>
+			<input type="text" name="nomP" placeholder="Nombre del producto" >
 			<h5>Descripción del producto:</h5>
 			<textarea name="descP" placeholder="Descripción del producto"></textarea>
 			<h5>Precio:</h5>
-			<input type="number" name="precio" placeholder="Precio del producto" min=0 required>
+			<input type="number" name="precio" placeholder="Precio del producto" min=0 >
 			<h5>Categoria:</h5>
-			<select class="cateP" name ="cateP" required>
+			<select class="cateP" name ="cateP" >
 				<option value="-1">---</option>
 				<option value="0">Numismática</option>
 				<option value="1">El Rincón de la Abuela</option>
@@ -34,15 +34,15 @@ if (! isset($_GET['id']) ) {
 				<option value="6">Libros/Comics</option>
 				<option value="7">Trastero</option>
 			</select>
-			<div class="numis" hidden>
+			<div class="numis" >
 				<h5>Pais:</h5>
-				<input type="text" name="paisP" placeholder="Pais de origen" required>
+				<input type="text" name="paisP" placeholder="Pais de origen" >
 				<h5>Conservación: </h5>
-				<input type="text" name="consP" placeholder="Estado de conservación" required>
+				<input type="text" name="consP" placeholder="Estado de conservación" >
 				<h5>Año:</h5>
-				<input type="number" name="anioP" placeholder="Año" min=0 max=2018 required>
+				<input type="number" name="anioP" placeholder="Año" min=0 max=2018 >
 			</div>
-			<div class="rdla" hidden>
+			<div class="rdla" >
 				<h5>Tipo:</h5>
 				<select name="rclaTipo">
 					<option value="0">Dedal</option>
@@ -51,65 +51,65 @@ if (! isset($_GET['id']) ) {
 					<option value="3">Otro</option>
 				</select>
 				<h5>Origen:</h5>
-				<input type="text" name="rclaOrigen" placeholder="Origen del producto" required>
+				<input type="text" name="rclaOrigen" placeholder="Origen del producto" >
 			</div>
-			<div class="fig" hidden>
+			<div class="fig" >
 				<h5>Alto</h5>
-				<input type="number" name="figAlto" min="0" required="">
+				<input type="number" name="figAlto" min="0" ="">
 				<h5>Ancho</h5>
-				<input type="number" name="figAncho" min="0" required="">
+				<input type="number" name="figAncho" min="0" ="">
 				<h5>Largo</h5>
-				<input type="number" name="figLargo" min="0" required="">
+				<input type="number" name="figLargo" min="0" ="">
 				<h5>Tema:</h5>
-				<input type="text" name="figTema" placeholder="Tema del producto" required>
+				<input type="text" name="figTema" placeholder="Tema del producto" >
 				<h5>Material:</h5>
-				<input type="text" name="figMaterial" placeholder="Material del que está hecho el producto" required>
+				<input type="text" name="figMaterial" placeholder="Material del que está hecho el producto" >
 				<h5>Fabricante:</h5>
-				<input type="text" name="figFabricante" placeholder="Fabricante del producto" required>
+				<input type="text" name="figFabricante" placeholder="Fabricante del producto" >
 			</div>
-			<div class="fil" hidden>
+			<div class="fil" >
 				<h5>Pais:</h5>
-				<input type="text" name="filPais" placeholder="Pais de origen" required>
+				<input type="text" name="filPais" placeholder="Pais de origen" >
 				<h5>Año:</h5>
-				<input type="number" name="filAnyo" placeholder="Año" min=0 max=2018 required>
+				<input type="number" name="filAnyo" placeholder="Año" min=0 max=2018 >
 			</div>
-			<div class="vini" hidden>
+			<div class="vini" >
 				<h5>Año:</h5>
-				<input type="number" name="viniAnyo" placeholder="Año" min=0 max=2018 required>
+				<input type="number" name="viniAnyo" placeholder="Año" min=0 max=2018 >
 				<h5>Compositor:</h5>
-				<input type="text" name="viniComp" placeholder="Autor/Compositor del producto" required>
+				<input type="text" name="viniComp" placeholder="Autor/Compositor del producto" >
 				<h5>Grupo o Cantante:</h5>
-				<input type="text" name="viniGrupo" placeholder="Grupo/Cantante del producto" required>
+				<input type="text" name="viniGrupo" placeholder="Grupo/Cantante del producto" >
 				<h5>Género:</h5>
-				<input type="text" name="viniGenero" placeholder="Género musical del producto" required>
+				<input type="text" name="viniGenero" placeholder="Género musical del producto" >
 			</div>
-			<div class="cromos" hidden>
+			<div class="cromos" >
 				<h5>Año:</h5>
-				<input type="number" name="cromosAnyo" placeholder="Año" min=0 max=2018 required>
+				<input type="number" name="cromosAnyo" placeholder="Año" min=0 max=2018 >
 				<h5>Colección:</h5>
-				<input type="text" name="cromosColec" placeholder="Colección a la que pertenece el producto" required>
+				<input type="text" name="cromosColec" placeholder="Colección a la que pertenece el producto" >
 				<h5>Número o identificador:</h5>
-				<input type="text" name="cromosNum" placeholder="Número o identificador del producto" required>
+				<input type="text" name="cromosNum" placeholder="Número o identificador del producto" >
 			</div>
-			<div class="libros" hidden>
+			<div class="libros" >
 				<h5>Año:</h5>
-				<input type="number" name="librosAnyo" placeholder="Año" min=0 max=2018 required>
+				<input type="number" name="librosAnyo" placeholder="Año" min=0 max=2018 >
 				<h5>Autor:</h5>
-				<input type="text" name="librosAutor" placeholder="Autor del producto" required>
+				<input type="text" name="librosAutor" placeholder="Autor del producto" >
 				<h5>Editorial:</h5>
-				<input type="text" name="librosEditorial" placeholder="Editorial del producto" required>
+				<input type="text" name="librosEditorial" placeholder="Editorial del producto" >
 				<h5>Género:</h5>
-				<input type="text" name="librosGenero" placeholder="Género literario del producto" required>
+				<input type="text" name="librosGenero" placeholder="Género literario del producto" >
 				<h5>Idioma:</h5>
-				<input type="text" name="librosIdioma" placeholder="Idioma del producto" required>
+				<input type="text" name="librosIdioma" placeholder="Idioma del producto" >
 				<h5>Formato:</h5>
-				<input type="text" name="librosFormato" placeholder="Formato del producto" required>
+				<input type="text" name="librosFormato" placeholder="Formato del producto" >
 			</div>
-			<div class="trastero" hidden>
+			<div class="trastero" >
 				<h5>Año:</h5>
-				<input type="number" name="trasteroAnyo" placeholder="Año" min=0 max=2018 required>
+				<input type="number" name="trasteroAnyo" placeholder="Año" min=0 max=2018 >
 				<h5>Origen:</h5>
-				<input type="text" name="trasteroOrigen" placeholder="Origen del producto" required>
+				<input type="text" name="trasteroOrigen" placeholder="Origen del producto" >
 			</div>
 			<button class="crear">Crear Producto</button>
 		</div>
@@ -197,13 +197,13 @@ else{
 		</div>
 
 		<div class="info">
-			<input type="hidden"  name="idP" value="<?=$id ?>">
+			<input type=""  name="idP" value="<?=$id ?>">
 			<h5>Nombre del producto:</h5>
-			<input type="text" name="nomP" placeholder="Nombre del producto" value="<?=$nomP ?>" required>
+			<input type="text" name="nomP" placeholder="Nombre del producto" value="<?=$nomP ?>" >
 			<h5>Descripción del producto:</h5>
-			<textarea name="descP" placeholder="Descripción del producto" required><?=$descP ?></textarea>
+			<textarea name="descP" placeholder="Descripción del producto" ><?=$descP ?></textarea>
 			<h5>Precio:</h5>
-			<input type="number" name="precio" placeholder="Precio del producto" min=0 value="<?=$precio ?>" required>
+			<input type="number" name="precio" placeholder="Precio del producto" min=0 value="<?=$precio ?>" >
 			<h5>Categoria:</h5>
 			<select class="cateP" name ="cateP" value="Elige Categoria">
 				<option value="-1">---</option>
@@ -216,15 +216,15 @@ else{
 				<option value="6">Libros/Comics</option>
 				<option value="7">Trastero</option>
 			</select>
-			<div class="numis" hidden>
+			<div class="numis" >
 				<h5>Pais:</h5>
-				<input type="text" name="paisP" placeholder="Pais de origen" value="<?=$paisP ?>" required>
+				<input type="text" name="paisP" placeholder="Pais de origen" value="<?=$paisP ?>" >
 				<h5>Conservación: </h5>
-				<input type="text" name="consP" placeholder="Estado de conservación" value="<?=$consP ?>" required>
+				<input type="text" name="consP" placeholder="Estado de conservación" value="<?=$consP ?>" >
 				<h5>Año:</h5>
-				<input type="number" name="anioP" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" required>
+				<input type="number" name="anioP" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" >
 			</div>
-			<div class="rdla" hidden>
+			<div class="rdla" >
 				<h5>Tipo:</h5>
 				<select name="rclaTipo">
 					<option value="0">Dedal</option>
@@ -233,65 +233,65 @@ else{
 					<option value="3">Otro</option>
 				</select>
 				<h5>Origen:</h5>
-				<input type="text" name="rclaOrigen" placeholder="Origen del producto" value="<?=$origP ?>" required>
+				<input type="text" name="rclaOrigen" placeholder="Origen del producto" value="<?=$origP ?>" >
 			</div>
-			<div class="fig" hidden>
+			<div class="fig" >
 				<h5>Alto</h5>
-				<input type="number" name="figAlto" min="0" value="<?=$altoP ?>" required="">
+				<input type="number" name="figAlto" min="0" value="<?=$altoP ?>" ="">
 				<h5>Ancho</h5>
-				<input type="number" name="figAncho" min="0" value="<?=$anchoP ?>" required="">
+				<input type="number" name="figAncho" min="0" value="<?=$anchoP ?>" ="">
 				<h5>Largo</h5>
-				<input type="number" name="figLargo" min="0" value="<?=$largoP ?>" required="">
+				<input type="number" name="figLargo" min="0" value="<?=$largoP ?>" ="">
 				<h5>Tema:</h5>
-				<input type="text" name="figTema" placeholder="Tema del producto" value="<?=$temaP ?>" required>
+				<input type="text" name="figTema" placeholder="Tema del producto" value="<?=$temaP ?>" >
 				<h5>Material:</h5>
-				<input type="text" name="figMaterial" placeholder="Material del que está hecho el producto" value="<?=$matP ?>" required>
+				<input type="text" name="figMaterial" placeholder="Material del que está hecho el producto" value="<?=$matP ?>" >
 				<h5>Fabricante:</h5>
-				<input type="text" name="figFabricante" placeholder="Fabricante del producto" value="<?=$fabrP ?>" required>
+				<input type="text" name="figFabricante" placeholder="Fabricante del producto" value="<?=$fabrP ?>" >
 			</div>
-			<div class="fil" hidden>
+			<div class="fil" >
 				<h5>Pais:</h5>
-				<input type="text" name="filPais" placeholder="Pais de origen" value="<?=$paisP ?>" required>
+				<input type="text" name="filPais" placeholder="Pais de origen" value="<?=$paisP ?>" >
 				<h5>Año:</h5>
-				<input type="number" name="filAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" required>
+				<input type="number" name="filAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" >
 			</div>
-			<div class="vini" hidden>
+			<div class="vini" >
 				<h5>Año:</h5>
-				<input type="number" name="viniAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" required>
+				<input type="number" name="viniAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" >
 				<h5>Compositor:</h5>
-				<input type="text" name="viniComp" placeholder="Autor/Compositor del producto" value="<?=$autCompP ?>" required>
+				<input type="text" name="viniComp" placeholder="Autor/Compositor del producto" value="<?=$autCompP ?>" >
 				<h5>Grupo o Cantante:</h5>
-				<input type="text" name="viniGrupo" placeholder="Grupo/Cantante del producto" value="<?=$grupCantP ?>" required>
+				<input type="text" name="viniGrupo" placeholder="Grupo/Cantante del producto" value="<?=$grupCantP ?>" >
 				<h5>Género:</h5>
-				<input type="text" name="viniGenero" placeholder="Género musical del producto" value="<?=$genP ?>" required>
+				<input type="text" name="viniGenero" placeholder="Género musical del producto" value="<?=$genP ?>" >
 			</div>
-			<div class="cromos" hidden>
+			<div class="cromos" >
 				<h5>Año:</h5>
-				<input type="number" name="cromosAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" required>
+				<input type="number" name="cromosAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" >
 				<h5>Colección:</h5>
-				<input type="text" name="cromosColec" placeholder="Colección a la que pertenece el producto" value="<?=$coleccP ?>" required>
+				<input type="text" name="cromosColec" placeholder="Colección a la que pertenece el producto" value="<?=$coleccP ?>" >
 				<h5>Número o identificador:</h5>
-				<input type="text" name="cromosNum" placeholder="Número o identificador del producto" value="<?=$cromoP ?>" required>
+				<input type="text" name="cromosNum" placeholder="Número o identificador del producto" value="<?=$cromoP ?>" >
 			</div>
-			<div class="libros" hidden>
+			<div class="libros" >
 				<h5>Año:</h5>
-				<input type="number" name="librosAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" required>
+				<input type="number" name="librosAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" >
 				<h5>Autor:</h5>
-				<input type="text" name="librosAutor" placeholder="Autor del producto" value="<?=$autorP ?>" required>
+				<input type="text" name="librosAutor" placeholder="Autor del producto" value="<?=$autorP ?>" >
 				<h5>Editorial:</h5>
-				<input type="text" name="librosEditorial" placeholder="Editorial del producto" value="<?=$editP ?>" required>
+				<input type="text" name="librosEditorial" placeholder="Editorial del producto" value="<?=$editP ?>" >
 				<h5>Género:</h5>
-				<input type="text" name="librosGenero" placeholder="Género literario del producto" value="<?=$genP ?>" required>
+				<input type="text" name="librosGenero" placeholder="Género literario del producto" value="<?=$genP ?>" >
 				<h5>Idioma:</h5>
-				<input type="text" name="librosIdioma" placeholder="Idioma del producto" value="<?=$idiomaP ?>" required>
+				<input type="text" name="librosIdioma" placeholder="Idioma del producto" value="<?=$idiomaP ?>" >
 				<h5>Formato:</h5>
-				<input type="text" name="librosFormato" placeholder="Formato del producto" value="<?=$formP ?>" required>
+				<input type="text" name="librosFormato" placeholder="Formato del producto" value="<?=$formP ?>" >
 			</div>
-			<div class="trastero" hidden>
+			<div class="trastero" >
 				<h5>Año:</h5>
-				<input type="number" name="trasteroAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" required>
+				<input type="number" name="trasteroAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" >
 				<h5>Origen:</h5>
-				<input type="text" name="trasteroOrigen" placeholder="Origen del producto" value="<?=$origP ?>" required>
+				<input type="text" name="trasteroOrigen" placeholder="Origen del producto" value="<?=$origP ?>" >
 			</div>
 			<button class="crear">Guardar cambios</button>
 		</div>

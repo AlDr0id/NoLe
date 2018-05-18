@@ -1,6 +1,6 @@
 <?php
 	require_once("include/productoOfreSA.php");
-	require_once("include/numismaticaSA.php");
+	
 	session_start();
 	if (isset($_GET["id"])) {
 		$id = $_GET["id"];
@@ -134,9 +134,52 @@
 						<?php
 						switch ($prod->getCategoria()) {
 							case '0':
+								require_once("include/numismaticaSA.php");
 								$saNumi = new numismaticaSA();
 								$prodNumi = $saNumi->getProductoNumi($id);
 								echo '<p>Año: '.$prodNumi->getAño().'</p> <p>País: '.$prodNumi->getPais().'</p> <p>Conservación: '.$prodNumi->getConservacion().'</p>';
+								break;
+							case '1':
+								require_once("include/rinconAbSA.php");
+								$saRdla = new rinconAbSA();
+								$prodRdla = $saRdla->getProductoRinconAb($id);
+								echo '<p>Tipo: '.$prodRdla->getTipo().'</p> <p>Origen: '.$prodRdla->getOrigen().'</p>';
+								break;
+							case '2':
+								require_once("include/figurasSA.php");
+								$saFiguras = new figurasSA();
+								$prodFiguras = $saFiguras->getProductoFiguras($id);
+								echo '<p>Alto: '.$prodFiguras->getAlto().'</p> <p>Ancho: '.$prodFiguras->getAncho().'</p> <p>Largo: '.$prodFiguras->getLargo().'</p> <p>Tema: '.$prodFiguras->getTema().'</p> <p>Material: '.$prodFiguras->getMaterial().'</p> <p>Fabricante: '.$prodFiguras->getFabricante().'</p>';
+								break;
+							case '3':
+								require_once("include/filateliaSA.php");
+								$saFilatelia = new filateliaSA();
+								$prodFilatelia = $saFilatelia->getProductoFilatelia($id);
+								echo '<p>Año: '.$prodFilatelia->getAnyo().'</p> <p>País: '.$prodFilatelia->getPais().'</p>';
+								break;
+							case '4':
+								require_once("include/vinilosDiscosSA.php");
+								$saVini = new vinilosDiscosSA();
+								$prodVini = $saVini->getProductoVinilosDiscos($id);
+								echo '<p>Año: '.$prodVini->getAnyo().'</p> <p>Autor/Compositor: '.$prodVini->getAutorCompositor().'</p> <p>Grupo o Cantante: '.$prodVini->getGrupoCantante().'</p> <p>Género musical: '.$prodVini->getGenero().'</p>';
+								break;
+							case '5':
+								require_once("include/cromosSA.php");
+								$saCromos = new cromosSA();
+								$prodCromos = $saCromos->getProductoCromos($id);
+								echo '<p>Año: '.$prodCromos->getAnyo().'</p> <p>Colección: '.$prodCromos->getColeccion().'</p> <p>Número o Identificador: '.$prodCromos->getNCromo().'</p>';
+								break;
+							case '6':
+								require_once("include/librosComicsSA.php");
+								$saLibros = new librosComicsSA();
+								$prodLibros = $saLibros->getProductoLibrosComics($id);
+								echo '<p>Año: '.$prodLibros->getAnyo().'</p> <p>Autor: '.$prodLibros->getAutor().'</p> <p>Editorial: '.$prodLibros->getEditorial().'</p> <p>Género literario: '.$prodLibros->getGenero().'</p> <p>Idioma: '.$prodLibros->getIdioma().'</p> <p>Formato: '.$prodLibros->getFormato().'</p>';
+								break;
+							case '7':
+								require_once("include/trasteroSA.php");
+								$saTrastero = new trasteroSA();
+								$prodTrastero = $saTrastero->getProductoTrastero($id);
+								echo '<p>Año: '.$prodTrastero->getAnyo().'</p> <p>Origen: '.$prodTrastero->getOrigen().'</p>';
 								break;
 
 							default:
