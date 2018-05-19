@@ -7,14 +7,12 @@ if (! isset($_GET['id']) ) {
 <h2>Nuevo producto</h2>
 <form action= "procesarNuevoProducto.php" method = "POST" enctype="multipart/form-data">
 	<div class="newProd">
-
-
 		<div class="info">
 			<div class="imagen">
 				<h5>Imagen: </h5>
 				<input type="file" name="fotoProd" />
-				<br />
-				<output id="list"></output>
+				<!-- <br />
+				<output id="list"></output> -->
 			</div>
 			<h5>Nombre del producto:</h5>
 			<input type="text" name="nomP" placeholder="Nombre del producto" >
@@ -188,18 +186,16 @@ else{
 	}
 ?>
 <h2>Editar producto</h2>
-<form action= "procesarEditarProducto.php" method = "POST">
+<form action= "procesarEditarProducto.php" method = "POST" enctype="multipart/form-data">
 	<div class="newProd">
-		<div class="imagen">
-			<input type="file" name="fotoProd" />
-			<br />
-			<output id="list"></output>
-		</div>
-
 		<div class="info">
-			<input type=""  name="idP" value="<?=$id ?>">
+			<input type="hidden" name="idP" value="<?=$id ?>">
 			<h5>Nombre del producto:</h5>
 			<input type="text" name="nomP" placeholder="Nombre del producto" value="<?=$nomP ?>" >
+			<div class="imagen">
+				<h5>Imagen del producto:</h5>
+				<input type="file" name="fotoProd" />
+			</div>
 			<h5>Descripción del producto:</h5>
 			<textarea name="descP" placeholder="Descripción del producto" ><?=$descP ?></textarea>
 			<h5>Precio:</h5>

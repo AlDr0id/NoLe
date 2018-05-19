@@ -17,7 +17,6 @@ require_once("include/numismaticaTransfer.php");
  		$producto->setCategoria($cat);
  		$producto->setPrecio($precio);
  		$producto->setDescripcion($descP);
-
 		$id = $productoSA->editProducto($producto);
 
 		/*Atributos propios de la categoría*/
@@ -40,12 +39,21 @@ require_once("include/numismaticaTransfer.php");
  				break;
  		}
 
-		if($id && $id2) {
-			echo "<script>alert('Producto modificado');</script>";
-		}
-		else {
-			echo "<script>alert('Fallo al modificar producto');</script>";
-		}
- 		header("Refresh: 0 ;URL= index.php");
+$id3 = move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $idP . ".png");
+
+if($id && $id2) {
+  if($id3) {
+    echo "<script>alert('Producto modificado');</script>";
+  }
+  else {
+    echo "<script>alert('Producto modificado pero error al modificar la foto del producto');</script>";
+  }
+
+}
+else {
+  echo "<script>alert('Fallo al modificar producto');</script>";
+}
+
+ 		header("Refresh: 0 ;URL= perfil.php?opt=verProds");
 
  ?>
