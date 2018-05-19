@@ -12,9 +12,8 @@
   <link rel="stylesheet" type="text/css" href="prod-styles.css">
   <link rel="stylesheet" type="text/css" href="popup-style.css">
   <link rel="stylesheet" type="text/css" href="perfil-style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
-  <script type="text/javascript" src="javascript.js"></script>
+  
+  
 </head>
 <body>
 
@@ -33,7 +32,13 @@
 	$sa = new UsuarioSA();
   	$user = new usuarioTransfer($nickname,"","","","",0,0,"");
 	$us = $sa->mostrarUsuario($user);
-	if($us->getNickname() == $_SESSION["nombre"]){
+
+	$nombre="";
+	if (isset($_SESSION['login'])){
+		$nombre =$_SESSION ["nombre"];
+	}
+	
+	if($us->getNickname() == $nombre){
 
 		header("Refresh: 0 ;URL= perfil.php?opt=verPerfil");
 	}
@@ -93,5 +98,8 @@
 		}
 	?>
 </body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  	<script type="text/javascript" src="javascript.js"></script>
 </html>
 
