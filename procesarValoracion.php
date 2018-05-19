@@ -14,8 +14,6 @@
 
 	$puja->setValorada(1);
 	$sap->editPuja($puja);
-	
-
 
 	header("Location: perfil.php?opt=actividadReciente");
 ?>

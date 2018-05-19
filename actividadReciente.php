@@ -52,10 +52,13 @@ $pujasVendidas = $sa->getPujasVendedorCerradas($_SESSION["nombre"]);
 					echo "<b>".$pujasGanadas[$i]->getPrecio()."$</b>.";
 				}
 			?>
+
 			Vendedor: <a href=<?php echo "perfilVisitante.php?nickname=".$pujasGanadas[$i]->getIdVendedor();?>><?php echo $pujasGanadas[$i]->getIdVendedor();?></a>
 			<?php if(!$pujasGanadas[$i]->getValorada()){ ?>
 			<a class='valorar' onclick= <?php echo "valorarPuja(".$pujasGanadas[$i]->getId().")"; ?>>Valorar vendedor</a>
 			<?php } ?>
+
+		
 		</li>
 	<?php
 		}
@@ -98,6 +101,7 @@ $pujasVendidas = $sa->getPujasVendedorCerradas($_SESSION["nombre"]);
 		$p = $saProd->getProducto($pujasVendidas[$i]->getIdProducto());
 	?>
 		<li><em><?php echo $pujasVendidas[$i]->getFecha()?></em> - <a href=<?php echo "perfilVisitante.php?nickname=".$pujasVendidas[$i]->getIdPostor();?>><?php echo $pujasVendidas[$i]->getIdPostor();?></a> te ha comprado este <a href=<?php echo $path; ?>>producto</a> a cambio de 
+
 			<?php 
 				if($pujasVendidas[$i]->getIdTrueque()!=NULL){
 					echo "<a href=".$pathOfer.">producto ofertado</a>.";

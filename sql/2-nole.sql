@@ -7,6 +7,7 @@
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -167,6 +168,7 @@ INSERT INTO `producto_ofrecido` (`ID`, `Nombre`, `Usuario`, `Fecha`, `Disponible
 (9, 'Moneda Desierto', 'jose', '2018-05-12 14:58:15', 1, 15, 'a', 0, 0),
 (11, 'Pica moneda', 'marina', '2018-05-18 23:55:01', 1, 323, 'Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla blaBla bla blavBla bla blav Bla bla blav  vvvBla bla bla vv vBla bla blav vvBla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla', 0, 0);
 
+
 -- --------------------------------------------------------
 
 --
@@ -188,7 +190,6 @@ CREATE TABLE `puja` (
 --
 -- Volcado de datos para la tabla `puja`
 --
-
 INSERT INTO `puja` (`Id`, `IdProducto`, `IdVendedor`, `IdPostor`, `Precio`, `IdTrueque`, `Fecha`, `Estado`, `Valorada`) VALUES
 (1, 2, 'JGuti', 'manolo', 5.6, NULL, '2018-05-12 01:57:20', 'PENDIENTE', 0),
 (4, 9, 'marina', 'manolo', 15, NULL, '2018-05-12 02:56:15', 'PERDIDA', 0),
@@ -280,7 +281,7 @@ INSERT INTO `usuario` (`Nombre`, `Apellido`, `Nickname`, `Pass`, `Correo`, `Acti
 ('manu', 'oreja', 'manu', 'lolo97', 'manu@hotmail.com', 0, '', '0', 0),
 ('marina', 'marina', 'marina', '$2y$10$jBIKJl6oK2mmrUcgDmqrz.JzttRX0is1ETgcp9us8653Ak9O4N7PK', 'marina', 1, '', '0', 0),
 ('pica', 'pica', 'pica', '$2y$10$Bl3vhnbvmTTchEKWNt48leh.UQqrKLVFuC.cSpWkjKj6Ke2pXacN6', 'pica', 1, '', '4', 1),
-('Rodrigo', 'Barroso', 'rodribarro', 'puma69', 'rodric@gmail.com', 0, '', '0', 0);
+
 
 -- --------------------------------------------------------
 
