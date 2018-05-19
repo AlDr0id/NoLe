@@ -1,9 +1,19 @@
 <?php 
 	require_once('include/UsuarioSA.php');
+	require_once('include/pujaSA.php');
 
-	$sa = new UsuarioSA();
+	$sap = new pujaSA();
+	$sau = new UsuarioSA();
 
-	$sa->valorarUsuario($_GET['nickname'],$_POST['estrellas']);
+	$idpuja = $_GET['idpuja'];
+	$puja = $sap->getPuja($idpuja);
+	
+	$vendedor = $puja->getIdVendedor();
+	
+	$sau->valorarUsuario($vendedor, $_POST['estrellas']);
+
+	$puja->setValorada(1);
+	$sap->editPuja($puja);
 
 	header("Location: perfil.php?opt=actividadReciente");
 ?>

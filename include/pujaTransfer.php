@@ -9,8 +9,8 @@ class pujaTransfer{
 	private $fecha;
 	private $estado;
 	private $idVendedor;
-
-	public function __construct($id, $idProducto, $idVendedor, $idPostor, $precio, $idTrueque, $fecha, $estado){
+	private $valorada;
+	public function __construct($id, $idProducto, $idVendedor, $idPostor, $precio, $idTrueque, $fecha, $estado, $valorada){
 		$this->id = $id;
 		$this->idProducto = $idProducto;
 		$this->idPostor = $idPostor;
@@ -19,6 +19,7 @@ class pujaTransfer{
 		$this->fecha = $fecha;
 		$this->estado = $estado;
 		$this->idVendedor = $idVendedor;
+		$this->valorada = $valorada;
 	}
 
 	public function getId(){
@@ -53,6 +54,10 @@ class pujaTransfer{
 		return $this->estado;
 	}
 
+	public function getValorada(){
+		return $this->valorada;
+	}
+
 	public function setId($id){
 		$this->id = $id ;
 	}
@@ -83,6 +88,10 @@ class pujaTransfer{
 
 	public function setEstado($estado){
 		$this->estado = $estado ;
+	}
+
+	public function setValorada($valorada){
+		$this->valorada = $valorada ;
 	}
 
 }

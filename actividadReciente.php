@@ -52,8 +52,13 @@ $pujasVendidas = $sa->getPujasVendedorCerradas($_SESSION["nombre"]);
 					echo "<b>".$pujasGanadas[$i]->getPrecio()."$</b>.";
 				}
 			?>
-			Vendedor: <a href=<?php echo "perfilVisitante.php?nickname=".$p->getOwner();?>></a><?php echo $p->getOwner();?>
-			<a class='valorar' onclick= <?php echo "valorarPuja(".$pujasGanadas[$i]->getId().",'".$p->getOwner()."')"; ?>>Valorar vendedor</a>
+
+			Vendedor: <a href=<?php echo "perfilVisitante.php?nickname=".$pujasGanadas[$i]->getIdVendedor();?>><?php echo $pujasGanadas[$i]->getIdVendedor();?></a>
+			<?php if(!$pujasGanadas[$i]->getValorada()){ ?>
+			<a class='valorar' onclick= <?php echo "valorarPuja(".$pujasGanadas[$i]->getId().")"; ?>>Valorar vendedor</a>
+			<?php } ?>
+
+		
 		</li>
 	<?php
 		}
@@ -78,7 +83,7 @@ $pujasVendidas = $sa->getPujasVendedorCerradas($_SESSION["nombre"]);
 					echo "<b>".$pujasPerdidas[$i]->getPrecio()."$</b>.";
 				}
 			?>
-			Vendedor: <a href=<?php echo "perfilVisitante.php?nickname=".$p->getOwner();?>></a><?php echo $p->getOwner();?>
+			Vendedor: <a href=<?php echo "perfilVisitante.php?nickname=".$pujasPerdidas[$i]->getIdVendedor();?>><?php echo $pujasPerdidas[$i]->getIdVendedor();?></a>
 		</li>
 	<?php
 		}
@@ -95,7 +100,8 @@ $pujasVendidas = $sa->getPujasVendedorCerradas($_SESSION["nombre"]);
 		$pathOfer = '"product.php?id='.$pujasVendidas[$i]->getIdTrueque().'"';
 		$p = $saProd->getProducto($pujasVendidas[$i]->getIdProducto());
 	?>
-		<li><em><?php echo $pujasVendidas[$i]->getFecha()?></em> - <a href=<?php echo "perfilVisitante.php?nickname=".$p->getOwner();?>></a><?php echo $p->getOwner();?> te ha comprado este <a href=<?php echo $path; ?>>producto</a> a cambio de 
+		<li><em><?php echo $pujasVendidas[$i]->getFecha()?></em> - <a href=<?php echo "perfilVisitante.php?nickname=".$pujasVendidas[$i]->getIdPostor();?>><?php echo $pujasVendidas[$i]->getIdPostor();?></a> te ha comprado este <a href=<?php echo $path; ?>>producto</a> a cambio de 
+
 			<?php 
 				if($pujasVendidas[$i]->getIdTrueque()!=NULL){
 					echo "<a href=".$pathOfer.">producto ofertado</a>.";

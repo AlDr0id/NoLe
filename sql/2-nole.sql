@@ -1,11 +1,12 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-05-2018 a las 18:30:22
--- Versión del servidor: 10.1.26-MariaDB
--- Versión de PHP: 7.1.9
+-- Tiempo de generación: 19-05-2018 a las 00:09:16
+-- Versión del servidor: 10.1.30-MariaDB
+-- Versión de PHP: 7.2.2
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -165,7 +166,8 @@ INSERT INTO `producto_ofrecido` (`ID`, `Nombre`, `Usuario`, `Fecha`, `Disponible
 (7, 'Moneda Alemana', 'rodribarro', '2015-03-10 00:00:00', 1, 15, 'Creo que es un marco alemán', 0, 0),
 (8, 'Mnda oro nueva', 'manu', '2018-05-06 00:00:00', 1, 100, 'Oro puro.', 0, 0),
 (9, 'Moneda Desierto', 'jose', '2018-05-12 14:58:15', 1, 15, 'a', 0, 0),
-(11, 'Pica moneda', 'pica', '2018-05-15 00:00:00', 1, 323, 'Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla blaBla bla blavBla bla blav Bla bla blav  vvvBla bla bla vv vBla bla blav vvBla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla', 0, 1);
+(11, 'Pica moneda', 'marina', '2018-05-18 23:55:01', 1, 323, 'Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla blaBla bla blavBla bla blav Bla bla blav  vvvBla bla bla vv vBla bla blav vvBla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla', 0, 0);
+
 
 -- --------------------------------------------------------
 
@@ -181,21 +183,24 @@ CREATE TABLE `puja` (
   `Precio` float NOT NULL,
   `IdTrueque` int(11) DEFAULT NULL,
   `Fecha` datetime NOT NULL,
-  `Estado` varchar(20) COLLATE utf8_bin NOT NULL
+  `Estado` varchar(20) COLLATE utf8_bin NOT NULL,
+  `Valorada` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `puja`
 --
-
-INSERT INTO `puja` (`Id`, `IdProducto`, `IdVendedor`, `IdPostor`, `Precio`, `IdTrueque`, `Fecha`, `Estado`) VALUES
-(1, 2, 'JGuti', 'manolo', 5.6, NULL, '2018-05-12 01:57:20', 'PENDIENTE'),
-(4, 9, 'marina', 'manolo', 15, NULL, '2018-05-12 02:56:15', 'PERDIDA'),
-(7, 9, 'marina', 'jose', 15, NULL, '2018-05-12 02:57:08', 'GANADA'),
-(10, 2, 'JGuti', 'pica', 5.6, NULL, '2018-05-15 05:20:48', 'PENDIENTE'),
-(11, 2, 'JGuti', 'pica', 2000.6, NULL, '2018-05-15 05:21:11', 'PENDIENTE'),
-(12, 11, 'pica', 'manolo', 348, NULL, '2018-05-15 06:26:59', 'PENDIENTE'),
-(13, 11, 'pica', 'manolo', 343, NULL, '2018-05-15 06:28:41', 'PENDIENTE');
+INSERT INTO `puja` (`Id`, `IdProducto`, `IdVendedor`, `IdPostor`, `Precio`, `IdTrueque`, `Fecha`, `Estado`, `Valorada`) VALUES
+(1, 2, 'JGuti', 'manolo', 5.6, NULL, '2018-05-12 01:57:20', 'PENDIENTE', 0),
+(4, 9, 'marina', 'manolo', 15, NULL, '2018-05-12 02:56:15', 'PERDIDA', 0),
+(7, 9, 'marina', 'jose', 15, NULL, '2018-05-12 02:57:08', 'GANADA', 0),
+(10, 2, 'JGuti', 'pica', 5.6, NULL, '2018-05-15 05:20:48', 'PENDIENTE', 0),
+(11, 2, 'JGuti', 'pica', 2000.6, NULL, '2018-05-15 05:21:11', 'PENDIENTE', 0),
+(12, 11, 'pica', 'manolo', 348, NULL, '2018-05-15 06:26:59', 'PERDIDA', 0),
+(13, 11, 'pica', 'manolo', 343, NULL, '2018-05-15 06:28:41', 'PERDIDA', 0),
+(14, 2, 'JGuti', 'marina', 5.6, NULL, '2018-05-18 11:53:54', 'PENDIENTE', 0),
+(15, 2, 'JGuti', 'marina', 5.6, NULL, '2018-05-18 11:53:56', 'PENDIENTE', 0),
+(16, 11, 'pica', 'marina', 323, NULL, '2018-05-18 11:54:18', 'GANADA', 1);
 
 -- --------------------------------------------------------
 
@@ -275,8 +280,8 @@ INSERT INTO `usuario` (`Nombre`, `Apellido`, `Nickname`, `Pass`, `Correo`, `Acti
 ('manolo', 'manolo', 'manolo', '$2y$10$rp3p8MpdkTSgwh0ORArMwuzJnd567RKz.6r27F8HbRSnMitTmlWfy', 'manolo', 1, '', '0', 0),
 ('manu', 'oreja', 'manu', 'lolo97', 'manu@hotmail.com', 0, '', '0', 0),
 ('marina', 'marina', 'marina', '$2y$10$jBIKJl6oK2mmrUcgDmqrz.JzttRX0is1ETgcp9us8653Ak9O4N7PK', 'marina', 1, '', '0', 0),
-('pica', 'pica', 'pica', '$2y$10$Bl3vhnbvmTTchEKWNt48leh.UQqrKLVFuC.cSpWkjKj6Ke2pXacN6', 'pica', 1, '', '0', 0),
-('Rodrigo', 'Barroso', 'rodribarro', 'puma69', 'rodric@gmail.com', 0, '', '0', 0);
+('pica', 'pica', 'pica', '$2y$10$Bl3vhnbvmTTchEKWNt48leh.UQqrKLVFuC.cSpWkjKj6Ke2pXacN6', 'pica', 1, '', '4', 1),
+
 
 -- --------------------------------------------------------
 

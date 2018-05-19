@@ -14,7 +14,7 @@ public function getPuja($id) {
         if($consulta){
             $fila = mysqli_fetch_assoc($consulta);
             parent::desconectar();
-            return new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
+            return new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"], $fila["Valorada"]);
         }
         else {
           parent::desconectar();
@@ -36,7 +36,7 @@ public function getPuja($id) {
         if(mysqli_num_rows($consulta) > 0){  //devuelve error si no devuelve ninguna fila
           $pujas = array();
           while( $fila = mysqli_fetch_assoc($consulta)){
-            $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
+            $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"], $fila["Valorada"]);
             $pujas[] = $puja;
           }
 
@@ -65,7 +65,7 @@ public function getPuja($id) {
       if(mysqli_num_rows($consulta) > 0){  //devuelve error si no devuelve ninguna fila
         $pujas = array();
         while( $fila = mysqli_fetch_assoc($consulta)){
-          $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
+          $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"], $fila["Valorada"]);
           $pujas[] = $puja;
         }
 
@@ -91,7 +91,7 @@ public function getPuja($id) {
       if(mysqli_num_rows($consulta) > 0){  //devuelve error si no devuelve ninguna fila
         $pujas = array();
         while( $fila = mysqli_fetch_assoc($consulta)){
-          $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"]);
+          $puja = new pujaTransfer($fila["Id"], $fila["IdProducto"], $fila["IdVendedor"], $fila["IdPostor"], $fila["Precio"], $fila["IdTrueque"], $fila["Fecha"], $fila["Estado"], $fila["Valorada"]);
           $pujas[] = $puja;
         }
 
@@ -122,11 +122,12 @@ public function getPuja($id) {
            $idTrueque = $puja->getIdTrueque();
            $fecha = $puja->getFecha();
            $estado = $puja->getEstado();
+           $valorada = $puja->getValorada();
 
            if($idTrueque == NULL)
-            $sql = "INSERT INTO puja (Id, IdProducto, idVendedor, IdPostor, Precio, IdTrueque, Fecha, Estado) VALUES ('$id', '$idProducto', '$idVendedor', '$idPostor', '$precio', NULL, '$fecha', '$estado')";
+            $sql = "INSERT INTO puja (Id, IdProducto, idVendedor, IdPostor, Precio, IdTrueque, Fecha, Estado, Valorada) VALUES ('$id', '$idProducto', '$idVendedor', '$idPostor', '$precio', NULL, '$fecha', '$estado', $valorada)";
            else
-            $sql = "INSERT INTO puja (Id, IdProducto, idVendedor, IdPostor, Precio, IdTrueque, Fecha, Estado) VALUES ('$id', '$idProducto', '$idVendedor', '$idPostor', 0, '$idTrueque', '$fecha', '$estado')";
+            $sql = "INSERT INTO puja (Id, IdProducto, idVendedor, IdPostor, Precio, IdTrueque, Fecha, Estado, Valorada) VALUES ('$id', '$idProducto', '$idVendedor', '$idPostor', 0, '$idTrueque', '$fecha', '$estado', $valorada)";
 
             $consulta = mysqli_query($this->db, $sql);
            if($consulta){
@@ -174,9 +175,10 @@ public function getPuja($id) {
    if($ok = parent::conectar()){
      $id = $puja->getId();
      $estado = $puja->getEstado();
+     $valorada = $puja->getValorada();
 
      //consulta del usuario
-     $sql = "UPDATE puja SET Estado = '".$estado."' WHERE Id = ".$id;
+     $sql = "UPDATE puja SET Estado = '$estado', Valorada = $valorada WHERE Id = ".$id;
      $consulta = mysqli_query($this->db, $sql);
      if($consulta){ //si la base de datos no se modifica devuelve error
           parent::desconectar();
