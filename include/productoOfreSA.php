@@ -62,6 +62,14 @@ class productoOfreSA {
           $aux= $this->dao;
       return $aux->editProducto($producto);
     }
+    public function deleteProducto($idProducto) {
+
+      if(!$this->dao){
+          $this->dao= new productoOfreDAO();
+        }
+          $aux= $this->dao;
+      return $aux->deleteProducto($idProducto);
+    }
 
 }
 
