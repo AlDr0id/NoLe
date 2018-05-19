@@ -48,7 +48,7 @@
 			// $prod = $sa->getProducto("");
 			require_once("include/productoOfreSA.php");
 			$tmp = new productoOfreSA();
-			$ultimosProds = $tmp->getLastProducts(10);
+			$ultimosProds = $tmp->getLastProducts(12);
 		?>
 			<h1>Últimos productos</h1>
 			<div class="productosCuadricula">
