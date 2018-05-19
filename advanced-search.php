@@ -85,18 +85,108 @@
 							<input class="campo" type="text" name="cons">
 						</span>
 					</div>
-					<div class="cromosBuscar">
+					<div class="rdlaBuscar" >
 						<span>
-							<p>Año: </p>
-							<input class="campo" type="number" name="anioCromos" min="-1" max="2018">
+							<p>Tipo:</p>
+							<select class="campo" name="rclaTipo">
+								<option value="-1">Todos</option>
+								<option value="0">Dedal</option>
+								<option value="1">Vajilla</option>
+								<option value="2">Imán</option>
+								<option value="3">Otro</option>
+							</select>
 						</span>
 						<span>
-							<p>Colección: </p>
-							<input class="campo" type="text" name="colecCromos">
+							<p>Origen:</p>
+							<input class="campo" type="text" name="rclaOrigen" placeholder="Origen del producto" >
+						</span>
+					</div>
+					<div class="figBuscar" >
+						<span>
+							<p>Tema:</p>
+							<input class="campo" type="text" name="figTema" placeholder="Tema del producto" >
 						</span>
 						<span>
-							<p>Número: </p>
-							<input class="campo" type="text" name="nCromos">
+							<p>Material:</p>
+							<input class="campo" type="text" name="figMaterial" placeholder="Material del que está hecho el producto" >
+						</span>
+						<span>
+							<p>Fabricante:</p>
+							<input class="campo" type="text" name="figFabricante" placeholder="Fabricante del producto" >
+						</span>
+					</div>
+					<div class="filBuscar" >
+						<span>
+							<p>Pais:</p>
+							<input class="campo" type="text" name="filPais" placeholder="Pais de origen" >
+						</span>
+						<span>
+							<p>Año:</p>
+							<input class="campo" type="number" name="filAnyo" placeholder="Año" min=0 max=2018 >
+						</span>
+					</div>
+					<div class="viniBuscar" >
+						<span>
+							<p>Año:</p>
+							<input class="campo" type="number" name="viniAnyo" placeholder="Año" min=0 max=2018 >
+						</span>
+						<span>
+							<p>Compositor:</p>
+							<input class="campo" type="text" name="viniComp" placeholder="Autor/Compositor del producto" >
+						</span>
+						<span>
+							<p>Grupo o Cantante:</p>
+							<input class="campo" type="text" name="viniGrupo" placeholder="Grupo/Cantante del producto" >
+						</span>
+						<span>
+							<p>Género:</p>
+							<input class="campo" type="text" name="viniGenero" placeholder="Género musical del producto" >
+						</span>
+					</div>
+					<div class="cromosBuscar" >
+						<span>
+							<p>Año:</p>
+							<input class="campo" type="number" name="cromosAnyo" placeholder="Año" min=0 max=2018 >
+						</span>
+						<span>
+							<p>Colección:</p>
+							<input class="campo" type="text" name="cromosColec" placeholder="Colección a la que pertenece el producto" >
+						</span>
+						<span>
+							<p>Número o identificador:</p>
+							<input class="campo" type="text" name="cromosNum" placeholder="Número o identificador del producto" >
+						</span>
+					</div>
+					<div class="librosBuscar" >
+						<span>
+							<p>Año:</p>
+							<input class="campo" type="number" name="librosAnyo" placeholder="Año" min=0 max=2018 >
+						</span>
+						<span>
+							<p>Autor:</p>
+							<input class="campo" type="text" name="librosAutor" placeholder="Autor del producto" >
+						</span>
+						<span>
+							<p>Editorial:</p>
+							<input class="campo" type="text" name="librosEditorial" placeholder="Editorial del producto" >
+						</span>
+						<span>
+							<p>Género:</p>
+							<input class="campo" type="text" name="librosGenero" placeholder="Género literario del producto" >
+						</span>
+						<span>
+							<p>Idioma:</p>
+							<input class="campo" type="text" name="librosIdioma" placeholder="Idioma del producto" >
+						</span>
+					</div>
+					<div class="trasteroBuscar" >
+						<span>
+							<p>Año:</p>
+							<input class="campo" type="number" name="trasteroAnyo" placeholder="Año" min=0 max=2018 >
+						</span>
+						<span>
+							<p>Origen:</p>
+							<input class="campo" type="text" name="trasteroOrigen" placeholder="Origen del producto" >
 						</span>
 					</div>
 					<button type="submit">Buscar</button>

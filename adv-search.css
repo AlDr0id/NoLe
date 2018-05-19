@@ -22,7 +22,8 @@
 .libBuscar,
 .rdlaBuscar,
 .figBuscar,
-.filBuscar{
+.filBuscar,
+.librosBuscar{
 	display: none;
 }
 .adv-search span{
@@ -44,7 +45,11 @@
 .adv-search span input{
 	margin-top: 15px;
 	padding-bottom: 1px;
+	width: 100%;
 }
 .productos h2{
 	margin-top: 0;
+}
+.opciones p{
+	font-size: 20px;
 }
