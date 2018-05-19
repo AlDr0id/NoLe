@@ -2,7 +2,7 @@
 require_once('include/BusquedaSA.php');
 $busq = new BusquedaSA();
 $array = [
- "Categoria" => 0
+ "Categoria" => 6
 ];
 
 $prod = $busq->getProductoAvan($array);
@@ -37,7 +37,7 @@ $prod = $busq->getProductoAvan($array);
     <img src="error/no-image.png">
   </div>
   <div class="container">
-    <h1>Numismática</h1>
+    <h1>Libros/Comics</h1>
 
     <?php
     for ($i=0; $i < sizeof($prod); $i++) {

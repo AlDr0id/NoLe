@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>NoLe</title>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<link rel="stylesheet" type="text/css" href="card.css">
 	<link rel="stylesheet" type="text/css" href="menu.css">
@@ -28,7 +29,7 @@
 	<div class="container">
 		<h1>Búsqueda avanzada</h1>
 		<div class="busc">
-			<div class="adv-search-div">	
+			<div class="adv-search-div">
 				<form class="formulario adv-search" action="procesarBusquedaAvanzada.php" method="POST">
 					<div class="opciones">
 						<span>
@@ -54,7 +55,7 @@
 							<select name="minPre" class="ran campo">
 								<option value="-1" selected>Min</option>
 								<?php
-									for ($i=0; $i <=200 ; $i=$i+10) { 
+									for ($i=0; $i <=200 ; $i=$i+10) {
 										echo '<option value="'.$i.'">'.$i.'</option>';
 									}
 								?>
@@ -62,7 +63,7 @@
 							<select name="maxPre" class="ran campo" >
 								<option value="-1" selected>Max</option>
 								<?php
-									for ($i=0; $i <=200 ; $i=$i+10) { 
+									for ($i=0; $i <=200 ; $i=$i+10) {
 										echo '<option value="'.$i.'">'.$i.'</option>';
 									}
 								?>
@@ -84,11 +85,25 @@
 							<input class="campo" type="text" name="cons">
 						</span>
 					</div>
+					<div class="cromosBuscar">
+						<span>
+							<p>Año: </p>
+							<input class="campo" type="number" name="anioCromos" min="-1" max="2018">
+						</span>
+						<span>
+							<p>Colección: </p>
+							<input class="campo" type="text" name="colecCromos">
+						</span>
+						<span>
+							<p>Número: </p>
+							<input class="campo" type="text" name="nCromos">
+						</span>
+					</div>
 					<button type="submit">Buscar</button>
 				</form>
 			</div>
 			<div class="productos">
-				
+
 			</div>
 		</div>
 	</div>

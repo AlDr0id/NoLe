@@ -1,9 +1,13 @@
 
 $('.popupCloseButton').click(function(){
     $('.popupPuja').hide();
+    $('.popupImagen').hide();
 });
 $(".puja").click(function(){
    	$('.popupPuja').show();
+});
+$(".thumbnail").click(function(){
+    $('.popupImagen').show();
 });
 $("#opt").change(function(){
 	var selected_value = $("input[name='puja']:checked").val();

@@ -1,9 +1,9 @@
-<?php session_start();
-?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>NoLe</title>
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <link rel="stylesheet" type="text/css" href="card.css">
   <link rel="stylesheet" type="text/css" href="menu.css">
@@ -12,12 +12,15 @@
   <link rel="stylesheet" type="text/css" href="prod-styles.css">
   <link rel="stylesheet" type="text/css" href="popup-style.css">
   <link rel="stylesheet" type="text/css" href="perfil-style.css">
+  <link rel="stylesheet" type="text/css" href="actividadReciente-style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <script type="text/javascript" src="javascript.js"></script>
+    <script type="text/javascript" src="perfil.js"></script>
 </head>
 <body>
 
-  <?php require_once("include/comun/cabecera.php"); 
+  <?php require_once("include/comun/cabecera.php");
   require_once("include/comun/menu.php");
 
   ?>
@@ -31,11 +34,11 @@
         <!-- Aquí tiene que haber dos apartados. A la derecha las opciones, y cuando se seleccione una debe aparecer en la izquierda
               Por defecto debe aparecer la actividad reciente al entrar a perfil.php -->
         <div class="izquierda">
-          <?php 
+          <?php
           if (isset($_GET['opt'])) {
             switch ($_GET['opt']) {
                case 'activRec':
-                    
+
                  break;
                 case 'verProds':
                     require_once('productosUsuario.php');
@@ -49,8 +52,8 @@
                 case 'anadProd':
                     require_once('newProd.php');
                   break;
-                case 'verPerfil':                
-                    require_once('verPerfil.php');                
+                case 'verPerfil':
+                    require_once('verPerfil.php');
                   break;
                 case 'camPass':
                       require_once('cambiaPass.php');
@@ -73,14 +76,14 @@
 
         </div>
         <div class="derecha">
-          <a href="perfil.php?opt=actividadReciente">Historial</a>
-          <a href="perfil.php?opt=verProds">Ver todos mis productos de inventario(No en puja)</a>
-          <a href="perfil.php?opt=verPujas">Ver todas mis pujas</a>
-          <a href="perfil.php?opt=verProdPuja">Ver todos mis productos en puja</a>
-          <a href="perfil.php?opt=anadProd">Añadir un producto</a>
-          <a href="perfil.php?opt=verPerfil" >Ver mi perfil</a> <!-- Dentro de aquí habrá una opción para editar perfil, salvo la contraseña que va aquí fuera  -->
-          <a href="perfil.php?opt=camPass">Cambiar contraseña</a>
-          <a href="perfil.php?opt=deleteCuenta">Eliminar mi cuenta</a>
+          <a class='actividadReciente' href="perfil.php?opt=actividadReciente" onclick="actualicePerfil()">Historial</a>
+          <a class="verProductos" href="perfil.php?opt=verProds" onclick="actualicePerfil()">Ver todos mis productos de inventario(No en puja)</a>
+          <a class="verPujas" href="perfil.php?opt=verPujas" onclick="actualicePerfil()">Ver todas mis pujas</a>
+          <a class="verProductosPuja" href="perfil.php?opt=verProdPuja" onclick="actualicePerfil()">Ver todos mis productos en puja</a>
+          <a class="anadirProducto" href="perfil.php?opt=anadProd" onclick="actualicePerfil()">Añadir un producto</a>
+          <a class="verPerfil" href="perfil.php?opt=verPerfil" onclick="actualicePerfil()">Ver mi perfil</a> <!-- Dentro de aquí habrá una opción para editar perfil, salvo la contraseña que va aquí fuera  -->
+          <a class='cambiarPass' href="perfil.php?opt=camPass" onclick="actualicePerfil()">Cambiar contraseña</a>
+          <a class='deleteCuenta' href="perfil.php?opt=deleteCuenta" onclick="actualicePerfil()">Eliminar mi cuenta</a>
 
         </div>
     </div>
@@ -89,9 +92,8 @@
     <p>Javier Picatoste - Rodrigo - Álvaro - Manu - Alex - Marcos - Dani - Alberto</p>
   </div>
 </body>
-<script type="text/javascript" src="javascript.js"></script>
-<script type="text/javascript" src="perfil.js"></script>
-<?php 
+
+<?php
   if (isset($_GET['opt'])) {
     switch ($_GET['opt']) {
         case 'anadProd':
@@ -101,6 +103,9 @@
         case 'verPerfil':
           echo '<script type="text/javascript" src="imagenes.js"></script>';
           break;
+        case 'actividadReciente':
+          echo '<script type="text/javascript" src="valoracion.js"></script>';
+          break;
        default:
          # code...
          break;
@@ -108,19 +113,3 @@
   }
 ?>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

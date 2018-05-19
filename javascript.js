@@ -99,5 +99,29 @@ $(document).ready(function(){
         event.preventDefault();
     });
 
+    function correoValido(correo) {
+        var arroba = correo.indexOf("@");
+        correo = correo.substring(arroba,correo.length);
+        var punto = correo.indexOf(".");
+        correo = correo.substring(punto + 1,correo.length);
+
+        return ( arroba > 0 && punto > 1 && correo.length > 0);
+    }
+
+    $("#mail").change(function(){
+
+        if (correoValido($("#mail").val() ) ) {
+
+            $("#correoNoValido").hide();
+
+        } else {
+
+            $("#correoNoValido").show();
+
+        }
+    });
+
+    
+
     
 });
