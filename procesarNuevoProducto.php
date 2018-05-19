@@ -14,7 +14,7 @@ function newProductControlador(productoOfreTransfer $producto){
  		$cat = htmlspecialchars(trim(strip_tags($_POST['cateP'])));
  		$precio = htmlspecialchars(trim(strip_tags($_POST['precio'])));
  		$descP = htmlspecialchars(trim(strip_tags($_POST['descP'])));
- 		$producto = new productoOfreTransfer('',$_SESSION['nombre'],$nomP ,$cat,date('Y-m-d'),'1',$precio ,$descP,'0');
+ 		$producto = new productoOfreTransfer('',$_SESSION['nombre'],$nomP ,$cat,date('Y/m/d h:i:s', time()),'1',$precio ,$descP,'0');
 		$id = newProductControlador($producto);
 
 
@@ -192,6 +192,6 @@ function newProductControlador(productoOfreTransfer $producto){
 			echo "<script>alert('Fallo!".$id."+".$id2."+".$id3."');</script>";
 		}
 */
- 		header("Refresh: 0 ;URL= index.php");
+ 		header("Refresh: 0 ;URL= product.php?id=".$id);
 
  ?>
