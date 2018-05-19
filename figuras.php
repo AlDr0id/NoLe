@@ -38,11 +38,11 @@ $prod = $busq->getProductoAvan($array);
   </div>
   <div class="container">
     <h1>Figuras</h1>
-
+    <div class="productosCuadricula">
     <?php
     for ($i=0; $i < sizeof($prod); $i++) {
       ?>
-      <div class="card">
+      <div class="card cuadricula">
         <?php echo '<div class="thumbnail"><img class="leftImg" src="img/'.$prod[$i]->getId().'.png"/></div>'; ?>
         <div class="details">
           <?php
@@ -94,10 +94,8 @@ $prod = $busq->getProductoAvan($array);
         </div>
       </div>
       <?php
-    }
-
-
-     ?>
+    } ?>
+   </div>
   </div>
   <div class="footer">
     <p>Javier Picatoste - Rodrigo - Álvaro - Manu - Alex - Marcos - Dani - Alberto</p>

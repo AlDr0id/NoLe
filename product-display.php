@@ -15,14 +15,77 @@
 	if ($_GET['Categoria'] >= 0) {
 		$data['Categoria'] = $_GET['Categoria'];
 
-		if ($_GET['Fecha'] !='') {
-			$data['Fecha'] = $_GET['Fecha'];
+		if ($_GET['numiFecha'] !='') {
+			$data['numiFecha'] = $_GET['numiFecha'];
 		}
-		if ($_GET['pais'] !='') {
-			$data['pais'] = $_GET['pais'];
+		if ($_GET['numipais'] !='') {
+			$data['numipais'] = $_GET['numipais'];
 		}
-		if ($_GET['conservacion'] != '') {
-			$data['conservacion'] = $_GET['conservacion'];
+		if ($_GET['numiconservacion'] != '') {
+			$data['numiconservacion'] = $_GET['numiconservacion'];
+		}
+		if ($_GET['rdlaTipo'] >= 0) {
+			$data['rdlaTipo'] = $_GET['rdlaTipo'];
+		}
+		if ($_GET['rdlaOrigen'] !='') {
+			$data['rdlaOrigen'] = $_GET['rdlaOrigen'];
+		}
+		if ($_GET['figTema'] != '') {
+			$data['figTema'] = $_GET['figTema'];
+		}
+		if ($_GET['figMaterial'] !='') {
+			$data['figMaterial'] = $_GET['figMaterial'];
+		}
+		if ($_GET['figFabricante'] !='') {
+			$data['figFabricante'] = $_GET['figFabricante'];
+		}
+		if ($_GET['filPais'] != '') {
+			$data['filpais'] = $_GET['filPais'];
+		}
+		if ($_GET['filFecha'] !='') {
+			$data['filFecha'] = $_GET['filFecha'];
+		}
+		if ($_GET['viniFecha'] !='') {
+			$data['viniFecha'] = $_GET['viniFecha'];
+		}
+		if ($_GET['viniAutor'] != '') {
+			$data['viniAutor'] = $_GET['viniAutor'];
+		}
+		if ($_GET['viniGrupo'] !='') {
+			$data['viniGrupo'] = $_GET['viniGrupo'];
+		}
+		if ($_GET['viniGenero'] !='') {
+			$data['viniGenero'] = $_GET['viniGenero'];
+		}
+		if ($_GET['cromosFecha'] != '') {
+			$data['cromosFecha'] = $_GET['cromosFecha'];
+		}
+		if ($_GET['cromosColeccion'] !='') {
+			$data['cromosColeccion'] = $_GET['cromosColeccion'];
+		}
+		if ($_GET['cromosNcomro'] !='') {
+			$data['cromosNcomro'] = $_GET['cromosNcomro'];
+		}
+		if ($_GET['librosFecha'] != '') {
+			$data['librosFecha'] = $_GET['librosFecha'];
+		}
+		if ($_GET['librosAutor'] !='') {
+			$data['librosAutor'] = $_GET['librosAutor'];
+		}
+		if ($_GET['librosEditorial'] !='') {
+			$data['librosEditorial'] = $_GET['librosEditorial'];
+		}
+		if ($_GET['librosGenero'] != '') {
+			$data['librosGenero'] = $_GET['librosGenero'];
+		}
+		if ($_GET['librosIdioma'] !='') {
+			$data['librosIdioma'] = $_GET['librosIdioma'];
+		}
+		if ($_GET['trasteroFecha'] !='') {
+			$data['trasteroFecha'] = $_GET['trasteroFecha'];
+		}
+		if ($_GET['trasteroOrigen'] != '') {
+			$data['trasteroOrigen'] = $_GET['trasteroOrigen'];
 		}
 	}
 	$prod = $sa->getProductoAvan($data);
