@@ -1,7 +1,15 @@
 <?php
 
 require_once('include/productoOfreSA.php');
+require_once('include/cromosSA.php');
+require_once('include/filateliaSA.php');
+require_once('include/librosComicsSA.php');
+require_once('include/trasteroSA.php');
+require_once('include/rinconAbSA.php');
+require_once('include/vinilosDiscosSA.php');
+require_once('include/figurasSA.php');
 require_once('include/numismaticaSA.php');
+
 if (! isset($_GET['id']) ) {
 ?>
 <h2>Nuevo producto</h2>
@@ -10,18 +18,18 @@ if (! isset($_GET['id']) ) {
 		<div class="info">
 			<div class="imagen">
 				<h5>Imagen: </h5>
-				<input type="file" name="fotoProd" />
+				<input type="file" name="fotoProd" required />
 				<!-- <br />
 				<output id="list"></output> -->
 			</div>
 			<h5>Nombre del producto:</h5>
-			<input type="text" name="nomP" placeholder="Nombre del producto" >
+			<input type="text" name="nomP" placeholder="Nombre del producto" required >
 			<h5>Descripción del producto:</h5>
 			<textarea name="descP" placeholder="Descripción del producto"></textarea>
 			<h5>Precio:</h5>
-			<input type="number" name="precio" placeholder="Precio del producto" min=0 >
+			<input type="number" name="precio" placeholder="Precio del producto" min=0 required >
 			<h5>Categoria:</h5>
-			<select class="cateP" name ="cateP" >
+			<select class="cateP" name ="cateP" required >
 				<option value="-1">---</option>
 				<option value="0">Numismática</option>
 				<option value="1">El Rincón de la Abuela</option>
@@ -183,6 +191,10 @@ else{
 		$trast = $saTrast->getProductoTrastero($id);
 		$origP = $trast->getOrigen();
 		$anioP = $trast->getAnyo();
+	}
+	else{
+		header("Refresh: 0 ;URL= perfil.php?opt=anadProd");
+
 	}
 ?>
 <h2>Editar producto</h2>

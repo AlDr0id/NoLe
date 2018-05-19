@@ -49,7 +49,7 @@ function newProductControlador(productoOfreTransfer $producto){
 
 		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
 		          $id3 = True;
-		          $id2 = $productoSA->newProductoRinconAb($productoNumi);
+		          $id2 = $productoSA->newProductoRinconAb($productoRdla);
 		        }
 		        else {
 		          $id3 = False;
@@ -178,17 +178,20 @@ function newProductControlador(productoOfreTransfer $producto){
  				break;
 
  			default:
+ 					header("Refresh: 0 ;URL= perfil.php?opt=anadProd");
  				break;
  		}
 
+
+/*
 		if($id and $id2 and $id3) {
-			/*echo "<script>alert('Producto añadido');</script>";*/
+			/*echo "<script>alert('Producto añadido');</script>";
 			header("Refresh: 0 ;URL= product.php?id=".$id);
 		}
 		else {
 			echo "<script>alert('Fallo!".$id."+".$id2."+".$id3."');</script>";
 		}
-
- 		/*header("Refresh: 0 ;URL= index.php");*/
+*/
+ 		header("Refresh: 0 ;URL= index.php");
 
  ?>
