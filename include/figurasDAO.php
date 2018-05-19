@@ -64,7 +64,7 @@ class figurasDAO extends DAO{
            $material = $figuras->getMaterial();
            $fabricante = $figuras->getFabricante();
             //consulta del usuario
-            $sql = "INSERT INTO figuras (Id, Alto, Ancho, Largo, Tema, Material, Fabricante) VALUES ('$id', ' $alto', '$ancho', '$largo', ' $tema', '$material', '$fabricante)";
+            $sql = "INSERT INTO figuras (Id, Alto, Ancho, Largo, Tema, Material, Fabricante) VALUES ('$id', ' $alto', '$ancho', '$largo', ' $tema', '$material', '$fabricante')";
             $consulta = mysqli_query($this->db, $sql);
             if($consulta) {
                  parent::desconectar();
