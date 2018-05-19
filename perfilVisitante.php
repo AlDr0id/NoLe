@@ -12,8 +12,8 @@
   <link rel="stylesheet" type="text/css" href="prod-styles.css">
   <link rel="stylesheet" type="text/css" href="popup-style.css">
   <link rel="stylesheet" type="text/css" href="perfil-style.css">
-  
-  
+
+
 </head>
 <body>
 
@@ -37,7 +37,7 @@
 	if (isset($_SESSION['login'])){
 		$nombre =$_SESSION ["nombre"];
 	}
-	
+
 	if($us->getNickname() == $nombre){
 
 		header("Refresh: 0 ;URL= perfil.php?opt=verPerfil");
@@ -49,13 +49,13 @@
 		  	<div class="imagen">
 		  		<?php if ($us->getActivo()== 1)	{ ?>
 					<div class="conectado">
-						<img src="img/2.png" />
+						<?php echo "<img src=\"img/" . $us->getNickname() . ".png\" />" ?>
 					</div>
 				<?php
 				}
 				else{ ?>
 					<div class="desconectado">
-						<img src="img/2.png" />
+						<?php echo "<img src=\"img/\"" . $us->getNickname() . "\".png\" />" ?>
 					</div>
 				<?php
 				}
@@ -69,7 +69,7 @@
 			      	<h2>Email: <?php echo $us->getCorreo() ?></h2>
 			    </div>
 			    <div class="valoracion">
-			      	<h2>Valoración:	
+			      	<h2>Valoración:
 			      		<form>
 						  <span class="clasificacion">
 						   <input id="radio1" type="radio" name="estrellas" value="5" disabled <?php if ($us->getValoracion() > 4 and $us->getValoracion() <= 5) { echo "checked";}?>>
@@ -94,7 +94,7 @@
 	<div class="footer">
 	    <p>Javier Picatoste - Rodrigo - Álvaro - Manu - Alex - Marcos - Dani - Alberto</p>
 	</div>
-	<?php 
+	<?php
 		}
 	?>
 </body>
@@ -102,4 +102,3 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
   	<script type="text/javascript" src="javascript.js"></script>
 </html>
-
