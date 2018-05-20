@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    setTimeout(function() {
+      $(".alert").fadeOut('slow ').empty();
+    }, 6000);
     $(".login").click(function(){
         $('.popupReg').hide();
         $('.popupLogin').show();

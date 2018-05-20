@@ -23,6 +23,70 @@
   <?php require_once("include/comun/cabecera.php");
   require_once("include/comun/menu.php");
 
+  if(isset($_GET['okCod'])){
+      if ($_GET['okCod'] == 1) {?>
+        <div class="alert success">
+          <p><strong>Hecho!</strong> Contraseña cambiada</p>
+        </div>
+      <?php
+      }
+      if ($_GET['okCod'] == 2) {?>
+        <div class="alert success">
+          <p><strong>Hecho!</strong> Perfil editado con éxito</p>
+        </div>
+      <?php
+      }
+    }
+  if(isset($_GET['errCod'])){
+      if ($_GET['errCod'] == 1) {?>
+        <div class="alert">
+          <p><strong>Error!</strong> Ha habido un problema al añadir el producto, inténtelo de nuevo</p>
+        </div>
+      <?php
+      }
+      if ($_GET['errCod'] == 2) {?>
+        <div class="alert">
+          <p><strong>Error!</strong> Ha habido un problema al editar el producto, inténtelo de nuevo</p>
+        </div>
+      <?php
+      }
+      if ($_GET['errCod'] == 3) {?>
+        <div class="alert">
+          <p><strong>Error!</strong> La contraseña antigua no es correcta.</p>
+        </div>
+      <?php
+      }
+      if ($_GET['errCod'] == 4) {?>
+        <div class="alert">
+          <p><strong>Error!</strong> Las cotraseñas no coinciden</p>
+        </div>
+      <?php
+      }
+      if ($_GET['errCod'] == 5) {?>
+        <div class="alert">
+          <p><strong>Error!</strong> La cuenta no ha podido ser borrada</p>
+        </div>
+      <?php
+      }
+      if ($_GET['errCod'] == 6) {?>
+        <div class="alert">
+          <p><strong>Error!</strong> La imagen no ha podido ser editada</p>
+        </div>
+      <?php
+      }
+      if ($_GET['errCod'] == 7) {?>
+        <div class="alert">
+          <p><strong>Error!</strong> El perfil no ha podido ser editado</p>
+        </div>
+      <?php
+      }
+      if ($_GET['errCod'] == 8) {?>
+        <div class="alert">
+          <p><strong>Error!</strong> Contraseña incorrecta</p>
+        </div>
+      <?php
+      }
+    }
   ?>
 
   <div class="slider">
@@ -37,9 +101,6 @@
           <?php
           if (isset($_GET['opt'])) {
             switch ($_GET['opt']) {
-               case 'activRec':
-
-                 break;
                 case 'verProds':
                     require_once('productosUsuario.php');
                  break;
@@ -74,9 +135,12 @@
                       require_once('actividadReciente.php');
                   break;
                default:
-                 # code...
+                  require_once('actividadReciente.php');
                  break;
             }
+          }
+          else{
+             require_once('actividadReciente.php'); 
           }
         ?>
 

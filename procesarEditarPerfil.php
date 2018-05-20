@@ -31,27 +31,25 @@ if($user != NULL) {
 
   if($anadido) {
     if($id) {
-      echo "<script>alert('Usuario modificado');</script>";
         $data['success'] = True;
+        header("Refresh: 0 ;URL= perfil.php?opt=verPerfil&okCod=2");
     }
     else {
-      echo "<script>alert('Usuario modificado pero error al cambiar la imagen');</script>";
         $data['success'] = True;
         $data['errors']='Usuario modificado pero error al cambiar la imagen';
+        header("Refresh: 0 ;URL= perfil.php?opt=verPerfil&errCod=6");
     }
   }
   else {
-  	echo "<script>alert('No se ha podido modificar el usuario');</script>";
       $data['errors']='No se ha podido modificar el usuario';
       $data['success'] = False;
+      header("Refresh: 0 ;URL= perfil.php?opt=verPerfil&errCod=7");
     }
 }
 else {
-  echo "<script>alert('La contraseña es errónea');</script>";
     $data['errors']='La contraseña es errónea';
     $data['success'] = False;
+    header("Refresh: 0 ;URL= perfil.php?opt=verPerfil&errCod=8");
 }
 
-
-header("Refresh: 0 ;URL= perfil.php");
 ?>

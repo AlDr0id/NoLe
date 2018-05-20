@@ -169,12 +169,11 @@ function newProductControlador(productoOfreTransfer $producto){
 		 		$trasteroOrigen = htmlspecialchars(trim(strip_tags($_POST['trasteroOrigen'])));
  				$productoTras = new trasteroTransfer($id, $trasteroAnyo, $trasteroOrigen);
  				$productoSA = new trasteroSA();
- 				$id2 = $productoSA->newProductoTrastero($productoTras);
+ 				
 
 		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
 		          $id3 = True;
-		         
-  				 
+		          $id2 = $productoSA->newProductoTrastero($productoTras);
 		        }
 		        
 		        else {
@@ -190,15 +189,12 @@ function newProductControlador(productoOfreTransfer $producto){
  		}
 
 
-/*
+
 		if($id and $id2 and $id3) {
-			/*echo "<script>alert('Producto añadido');</script>";
-			header("Refresh: 0 ;URL= product.php?id=".$id);
+			header("Refresh: 0 ;URL= product.php?id=".$id."&okCod=1");
 		}
 		else {
-			echo "<script>alert('Fallo!".$id."+".$id2."+".$id3."');</script>";
+			header("Refresh: 0 ;URL= perfil.php?opt=anadProd&errCod=1");
 		}
-*/
- 		header("Refresh: 0 ;URL= product.php?id=".$id);
 
  ?>

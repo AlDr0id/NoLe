@@ -40,6 +40,35 @@
 
 	require_once("include/comun/menu.php");
 
+	if(isset($_GET['okCod'])){
+		if ($_GET['okCod'] == 1) {?>
+			<div class="alert success">
+			  <p><strong>Enhorabuena!</strong> El producto ha sido creado correctamente</p>
+			</div>
+		<?php
+		}
+		if ($_GET['okCod'] == 2) {?>
+			<div class="alert success">
+			  <p><strong>Genial!</strong> El producto ha sido editado correctamente. (Puede que la imagen tarde en actualizarse)</p>
+			</div>
+		<?php
+		}
+	}
+	if(isset($_GET['errCod'])){	
+
+		if ($_GET['errCod'] == 1) {?>
+			<div class="alert">
+			  <p><strong>Error!</strong> Error al editar la imagen del producto.</p>
+			</div>
+		<?php
+		}
+		if ($_GET['errCod'] == 2) {?>
+			<div class="alert">
+			  <p><strong>Error!</strong> No se ha podido borrar el producto.</p>
+			</div>
+		<?php
+		}
+	}
 	?>
 
 	<div class="slider">
@@ -191,36 +220,36 @@
 					</div>
 					<div class="author">
 						<?php $perfil = 'perfilVisitante.php?nickname='.$prod->getOwner().'';
-						echo '<a class ="seemore" href='. $perfil . '></i><img src="pica.jpg"/>
+						echo '<a class ="seemore" href='. $perfil . '></i><img src="img/'.$prod->getOwner()	.'.png"/>
 				    	<h2>'. $prod->getOwner() .'</h2></a>' ?>
 			    	</div>
 					<div class="category">
 				      	<?php
 				      		switch ($prod->getCategoria()) {
 				      		 	case '0':
-				      		 		echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
-				      		 		break;
-				      		 	case '1':
-				      		 		echo "<a>Rincón de la Abuela</a>";
-				      		 		break;
-				      		 	case '2':
-				      		 		echo "<a>Figuras</a>";
-				      		 		break;
-				      		 	case '3':
-				      		 		echo "<a>Filatelia</a>";
-				      		 		break;
-				      		 	case '4':
-				      		 		echo "<a>Vinilos/Discos</a>";
-				      		 		break;
-				      		 	case '5':
-				      		 		echo "<a>Cromos</a>";
-				      		 		break;
-				      		 	case '6':
-				      		 		echo "<a>Libros/Comics</a>";
-				      		 		break;
-				      		 	case '7':
-				      		 		echo "<a>Trastero</a>";
-				      		 		break;
+			                      echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
+			                      break;
+			                    case '1':
+			                      echo "<a class='catLink' href='rinconAbuela.php'>Rincón de la Abuela</a>";
+			                      break;
+			                    case '2':
+			                      echo "<a class='catLink' href='figuras.php'>Figuras</a>";
+			                      break;
+			                    case '3':
+			                      echo "<a class='catLink' href='filatelia.php'>Filatelia</a>";
+			                      break;
+			                    case '4':
+			                      echo "<a class='catLink' href='vinilosDiscos.php'>Vinilos/Discos</a>";
+			                      break;
+			                    case '5':
+			                      echo "<a class='catLink' href='cromos.php'>Cromos</a>";
+			                      break;
+			                    case '6':
+			                      echo "<a class='catLink' href='librosComics.php'>Libros/Comics</a>";
+			                      break;
+			                    case '7':
+			                      echo "<a class='catLink' href='trastero.php'>Trastero</a>";
+			                      break;
 				      		 }?>
 
 				    </div>

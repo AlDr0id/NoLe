@@ -23,28 +23,21 @@ if ($nuevaPass == $nuevaPass2) {
   if($anadido != NULL){
 
       $data['success'] = True;
-      echo"<script language='JavaScript'>
-              alert('Contraseña cambiada');
-         </script>";
+      header("Refresh: 0 ;URL= perfil.php?okCod=1");
 
   }
   else {
     $data['success'] = False;
     $data['errors'] = 'La contraseña antigua no es correcta';
-    echo"<script language='JavaScript'>
-            alert('La contraseña antigua no es correcta');
-       </script>";
+    header("Refresh: 0 ;URL= perfil.php?opt=camPass&errCod=3");
   }
 
 }
 else{
-	echo"<script language='JavaScript'>
-          alert('Las contraseñas no coinciden');
-     </script>";
     $data['success'] = False;
     $data['errors'] = 'Las contraseñas no coinciden';
+    header("Refresh: 0 ;URL= perfil.php?opt=camPass&errCod=4");
 }
 
 //echo json_encode($data);
-header("Refresh: 0 ;URL= perfil.php?opt=camPass");
 ?>
