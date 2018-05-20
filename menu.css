@@ -3,6 +3,8 @@
 	list-style-type: none;
     background-color: white;
     box-shadow: 1px 1px 10px grey;
+    position: sticky;
+    top: 0;
 }
 .menu span{
 	flex-grow: 1;
