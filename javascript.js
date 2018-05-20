@@ -17,6 +17,15 @@ $(document).ready(function(){
         window.location = 'index.php';
     });
 
+    function correoValido(correo) {
+        var arroba = correo.indexOf("@");
+        correo = correo.substring(arroba,correo.length);
+        var punto = correo.indexOf(".");
+        correo = correo.substring(punto + 1,correo.length);
+
+        return ( arroba > 0 && punto > 1 && correo.length > 0);
+    }
+
     $('.buscNombre').submit(function(event) {
         var formData = {
             'buscNom'              : $('input[name=buscNom]').val()
@@ -77,6 +86,9 @@ $(document).ready(function(){
             'passReg'              : $('input[name=passReg]').val(),
             'passReg2'              : $('input[name=passReg2]').val()
         };
+        // while (!correoValido($("#mail").val())) {
+        //   // No permitimos hacer nada mientras no se ponga bien el correo
+        // }
         console.log(formData);
         $.ajax({
             type        : 'POST',
@@ -99,15 +111,6 @@ $(document).ready(function(){
         event.preventDefault();
     });
 
-    function correoValido(correo) {
-        var arroba = correo.indexOf("@");
-        correo = correo.substring(arroba,correo.length);
-        var punto = correo.indexOf(".");
-        correo = correo.substring(punto + 1,correo.length);
-
-        return ( arroba > 0 && punto > 1 && correo.length > 0);
-    }
-
     $("#mail").change(function(){
 
         if (correoValido($("#mail").val() ) ) {
@@ -121,7 +124,7 @@ $(document).ready(function(){
         }
     });
 
-    
 
-    
+
+
 });
