@@ -33,6 +33,15 @@ class productoSolicitadoSA {
 
       return $aux->newProducto($producto);
     }
+     public function eliminar($id) {
+       if(!$this->dao){
+          $this->dao= new productoSolicitadoDAO();
+        }
+         $aux= $this->dao;
+
+       return $aux->eliminar($id);
+
+    }
 }
 
 
