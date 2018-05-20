@@ -199,6 +199,6 @@ function newProductControlador(productoOfreTransfer $producto){
 			echo "<script>alert('Fallo!".$id."+".$id2."+".$id3."');</script>";
 		}
 */
- 		//header("Refresh: 0 ;URL= product.php?id=".$id);
+ 		header("Refresh: 0 ;URL= product.php?id=".$id);
 
  ?>
