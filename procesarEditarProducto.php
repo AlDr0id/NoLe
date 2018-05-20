@@ -8,14 +8,14 @@ require_once("include/numismaticaTransfer.php");
  		/*Atributos comunes*/
  		$idP = htmlspecialchars(trim(strip_tags($_POST['idP'])));
  		$nomP = htmlspecialchars(trim(strip_tags($_POST['nomP'])));
- 		$cat = htmlspecialchars(trim(strip_tags($_POST['cateP'])));
- 		$precio = htmlspecialchars(trim(strip_tags($_POST['precio'])));
+		$cat = htmlspecialchars(trim(strip_tags($_POST['cateP'])));
+		if(isset($_POST['precio'])) $precio = htmlspecialchars(trim(strip_tags($_POST['precio'])));
  		$descP = htmlspecialchars(trim(strip_tags($_POST['descP'])));
  		$productoSA = new productoOfreSA();
  		$producto = $productoSA->getProducto($idP);
  		$producto->setNombre($nomP);
  		$producto->setCategoria($cat);
- 		$producto->setPrecio($precio);
+ 		if(isset($_POST['precio'])) $producto->setPrecio($precio);
  		$producto->setDescripcion($descP);
 		$id = $productoSA->editProducto($producto);
 
@@ -46,7 +46,7 @@ if($id && $id2) {
     echo "<script>alert('Producto modificado');</script>";
   }
   else {
-    echo "<script>alert('Producto modificado pero error al modificar la foto del producto');</script>";
+    echo "<script>alert('Producto modificado, pero error al modificar la foto del producto');</script>";
   }
 
 }
