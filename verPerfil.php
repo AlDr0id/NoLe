@@ -53,8 +53,7 @@
 	else{
 		$editarperfil=false;
 ?>
-		<div class="cambiarDatos"> <!-- Hay que hacer que esto se muestre unicamente cuando se haga clic en el boton de arriba de Editar mi perfil -->
-			<!-- El CSS de este apartado está en el drive subido por Rodri -->
+		<div class="cambiarDatos">
 			<form class="formulario" action="procesarEditarPerfil.php" method="POST" enctype="multipart/form-data">
 				<p>Nombre: </p>
 				<input type="text" name="nom" value=<?php echo $us->getNombre() ?>>
@@ -64,8 +63,8 @@
 				<input type="text" name="mail" value=<?php echo $us->getCorreo() ?>>
 				<p>Inserta tu contraseña*: </p>
 				<input type="password" name="pass" required="true">
-				<!-- <p>Foto perfil: </p>
-				<input type="file" name="fotoPerfil" /> -->
+				<p>Foto perfil: </p>
+				<input type="file" name="fotoPerfil" />
 				<button type="submit" class="guardar">Guardar datos</button>
 			</form>
 

@@ -27,12 +27,21 @@ if($user != NULL) {
   $user->setCorreo($email);
   $anadido=regUserControlador($user);
 
+  $id = move_uploaded_file($_FILES['fotoPerfil']['tmp_name'], "img/" . $user->getNickname() . ".png");
+
   if($anadido) {
-  	echo "<script>alert('Usuario modificado');</script>";
-      $data['success'] = True;
+    if($id) {
+      echo "<script>alert('Usuario modificado');</script>";
+        $data['success'] = True;
     }
+    else {
+      echo "<script>alert('Usuario modificado pero error al cambiar la imagen');</script>";
+        $data['success'] = True;
+        $data['errors']='Usuario modificado pero error al cambiar la imagen';
+    }
+  }
   else {
-  	echo "<script>alert('No se pudo modificar el usuario');</script>";
+  	echo "<script>alert('No se ha podido modificar el usuario');</script>";
       $data['errors']='No se ha podido modificar el usuario';
       $data['success'] = False;
     }
@@ -44,5 +53,5 @@ else {
 }
 
 
-header("Refresh: 0 ;URL= perfil.php?opt=verPerfil");
+header("Refresh: 0 ;URL= perfil.php");
 ?>
