@@ -12,6 +12,4 @@ $producto = new productoSolicitadoTransfer('',$_SESSION['nombre'],$nomP ,$cat,''
 $productoSA = new productoSolicitadoSA();
 $id=$productoSA->newProducto($producto);
 
-echo $id . "  Habrá salio bien no?";
-
-//header("Refresh: 0 ;URL= index.php");
+header("Refresh: 0 ;URL= perfil.php");
