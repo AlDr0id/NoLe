@@ -13,7 +13,8 @@
 		<?php echo '<div class="thumbnail"><img class="leftImg" src="img/'.$prod[$i]->getId().'.png"/></div>'; ?>
 		<div class="details">
 			<?php
-				$path = 'product.php?id='.$prod[$i]->getId().'';
+				$path = 'product.php?id='.$prod[$i]->getId();
+				$pathEnPuja = 'procesarPonerEnPuja.php?idProducto='.$prod[$i]->getId();
 				$perfil = 'perfilVisitante.php?nickname='.$prod[$i]->getOwner().'';
 				echo"<h1>".$prod[$i]->getNombre()."</h1>"; ?>
 				<div class="author">
@@ -26,6 +27,7 @@
 				<div class="separator"></div>
 				<p><?php echo $prod[$i]->getDescripcionCorta() ?></p>
 				<?php echo '<a class="seemore" href='.$path.'><i class="right"></i><p>Ir al producto</p></a>'?>
+				<?php echo '<a class="seemore" href='.$pathEnPuja.'><p>Poner en puja</p></a>'?>
 
 		</div>
 		</div>

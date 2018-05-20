@@ -132,6 +132,7 @@ else{
 	$descP = $producto->getDescripcion();
 	$precio = $producto->getPrecio();
 	$cateP = $producto->getCategoria();
+	$enPuja = $producto->getEnPuja();
 	if ($cateP == 0){
 		$saNumi = new numismaticaSA();
 		$numis = $saNumi->getProductoNumi($id);
@@ -210,8 +211,10 @@ else{
 			</div>
 			<h5>Descripción del producto:</h5>
 			<textarea name="descP" placeholder="Descripción del producto" ><?=$descP ?></textarea>
+			<?php if(!$enPuja){ ?>
 			<h5>Precio:</h5>
 			<input type="number" name="precio" placeholder="Precio del producto" min=0 value="<?=$precio ?>" >
+			<?php } ?>
 			<h5>Categoria:</h5>
 			<select class="cateP" name ="cateP" value="Elige Categoria">
 				<option value="-1">---</option>
