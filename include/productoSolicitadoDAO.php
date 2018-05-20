@@ -33,11 +33,16 @@ class productoSolicitadoDAO extends DAO{
           if($num!=0) {
             $contador = 0;
             
-            while ($info = $consulta->fetch_object()) {
-      
-                 if($info->id_Producto==NULL && $info->activo==1 &&( stripos($nomP,$info->nombreP)!==false ||stripos($des,$info->palabrasClave)!==false )){
+           while ($info = $consulta->fetch_object()) {     
+                 if($info->id_Producto==NULL && $info->activo==1){
+                    $ok=( stripos($nomP,$info->nombreP)!==false);
+                    $palabras = explode(" ", $info->palabrasClave);
+                    foreach ($palabras as $valor) {
+                    $ok=$ok||(stripos($des,$valor)!==false);
+                   }
+                  if($ok){
                      $sql = "UPDATE producto_solicitado SET id_Producto='$idP'   WHERE  id= '$info->id'";
-                     mysqli_query($this->db, $sql);
+                     mysqli_query($this->db, $sql);}
                    }
             }
             parent::desconectar();
@@ -51,7 +56,28 @@ class productoSolicitadoDAO extends DAO{
       else
         return false;
     }
-
+    
+    public function eliminar($id) {
+          //conexión bbdd
+        if($ok = parent::conectar()) {
+          //consulta del usuario
+        
+          $sql = "UPDATE producto_solicitado SET activo=0 where id LIKE '$id'  ";
+      
+          $consulta = mysqli_query($this->db, $sql);
+          echo $sql;
+          if(($consulta)){
+            return true;
+            }
+          else {
+          parent::desconectar();
+           return NULL;
+          }
+        }
+        else {
+          return NULL;
+        }
+      }
 
   public function getProductoSolicitado($id) {
           //conexión bbdd
