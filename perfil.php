@@ -49,6 +49,9 @@
                 case 'verProdPuja':
                     require_once('productosPuja.php');
                  break;
+                case 'verProdSol':
+                    require_once('verProductosSolicitados.php');
+                 break; 
                 case 'anadProd':
                     require_once('newProd.php');
                   break;
@@ -83,6 +86,7 @@
           <a class="verProductos" href="perfil.php?opt=verProds" onclick="actualicePerfil()">Ver todos mis productos de inventario(No en puja)</a>
           <a class="verPujas" href="perfil.php?opt=verPujas" onclick="actualicePerfil()">Ver todas mis pujas</a>
           <a class="verProductosPuja" href="perfil.php?opt=verProdPuja" onclick="actualicePerfil()">Ver todos mis productos en puja</a>
+          <a class="verProductosSolicitados" href="perfil.php?opt=verProdSolic" onclick="actualicePerfil()">Ver mis productos solicitados</a>
           <a class="anadirProducto" href="perfil.php?opt=anadProd" onclick="actualicePerfil()">Añadir un producto</a>
           <a class="solicitarProducto" href="perfil.php?opt=solicitarProd" onclick="actualicePerfil()">Solicitar un producto</a>
           <a class="verPerfil" href="perfil.php?opt=verPerfil" onclick="actualicePerfil()">Ver mi perfil</a> <!-- Dentro de aquí habrá una opción para editar perfil, salvo la contraseña que va aquí fuera  -->

@@ -12,4 +12,4 @@ $producto = new productoSolicitadoTransfer('',$_SESSION['nombre'],$nomP ,$cat,''
 $productoSA = new productoSolicitadoSA();
 $id=$productoSA->newProducto($producto);
 
-header("Refresh: 0 ;URL= perfil.php");
+header("Refresh: 0 ;URL= perfil.php?opt=verProdSolic");
