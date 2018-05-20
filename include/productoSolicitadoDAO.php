@@ -87,7 +87,7 @@ class productoSolicitadoDAO extends DAO{
         if(mysqli_num_rows($consulta) > 0) {  //devuelve error si no devuelve ninguna fila
           $productosS = array();
           while( $fila = mysqli_fetch_assoc($consulta)) {
-            $producto = new productoSolicitadoTransfer($fila["id"], $fila["id_user"], $fila["nombreP"], $fila["categoria"], $fila["id_Producto"], $fila["activo"], $fila["palabrasClave"]);
+            $productoS = new productoSolicitadoTransfer($fila["id"], $fila["id_user"], $fila["nombreP"], $fila["categoria"], $fila["id_Producto"], $fila["activo"], $fila["palabrasClave"]);
             $productosS[] = $productoS;
           }
 
