@@ -2,6 +2,7 @@
 session_start();
 require_once("include/productoOfreSA.php");
 require_once("include/productoOfreTransfer.php");
+require_once("include/productoSolicitadoSA.php");
 
 function newProductControlador(productoOfreTransfer $producto){
  		$productoSA = new productoOfreSA();
@@ -16,6 +17,9 @@ function newProductControlador(productoOfreTransfer $producto){
  		$descP = htmlspecialchars(trim(strip_tags($_POST['descP'])));
  		$producto = new productoOfreTransfer('',$_SESSION['nombre'],$nomP ,$cat,date('Y/m/d h:i:s', time()),'1',$precio ,$descP,'0');
 		$id = newProductControlador($producto);
+		$producto->setId($id);
+		$productoSolSA = new productoSolicitadoSA();
+		$productoSolSA->comprobarProducto($producto);
 
 
 		/*Atributos propios de la categoría*/
@@ -128,6 +132,7 @@ function newProductControlador(productoOfreTransfer $producto){
 		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
 		          $id3 = True;
 		          $id2 = $productoSA->newProductoCromos($productoCromos);
+		         
 		        }
 		        else {
 		          $id3 = False;
@@ -168,6 +173,8 @@ function newProductControlador(productoOfreTransfer $producto){
 
 		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
 		          $id3 = True;
+		         
+  				 
 		        }
 		        
 		        else {
@@ -192,6 +199,6 @@ function newProductControlador(productoOfreTransfer $producto){
 			echo "<script>alert('Fallo!".$id."+".$id2."+".$id3."');</script>";
 		}
 */
- 		header("Refresh: 0 ;URL= product.php?id=".$id);
+ 		//header("Refresh: 0 ;URL= product.php?id=".$id);
 
  ?>
