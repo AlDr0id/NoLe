@@ -49,7 +49,7 @@
                 case 'verProdPuja':
                     require_once('productosPuja.php');
                  break;
-                case 'verProdSol':
+                case 'verProdSolic':
                     require_once('verProductosSolicitados.php');
                  break; 
                 case 'anadProd':
