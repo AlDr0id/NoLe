@@ -25,15 +25,13 @@ if ($op == '1') {
       session_destroy();
       session_unset();
 
-      echo"<script language='JavaScript'>
-              alert('Cuenta eliminada');
-         </script>";
-      header("Refresh: 0 ;URL= index.php");
+      header("Refresh: 0 ;URL= index.php?okCod=2");
 
   }
   else {
       $data['success'] = False;
       $data['errors'] = 'No se ha podido eliminar la cuenta';
+      header("Refresh: 0 ;URL= perfil.php?errCod=5");
   }
 }
 

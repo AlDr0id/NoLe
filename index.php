@@ -20,8 +20,6 @@
 
 	<?php require_once("include/comun/cabecera.php"); ?>
 
-	<?php if (!isset($_GET["nom"]) and !isset($_GET["cat"])) {
-	?>
 	<div class="hero-banner">
 		<img src="hero/colec3.jpeg">
 		<form action="procesarBusqueda.php" class="formulario buscNombre" method="POST">
@@ -31,15 +29,26 @@
 			<button type="submit">Buscar</button>-->
 		</form>
 	</div>
-	<?php }
+	<?php 
 
 	require_once("include/comun/menu.php");
 
+	if(isset($_GET['okCod'])){
+		if ($_GET['okCod'] == 1) {?>
+			<div class="alert success">
+			  <p><strong>Correcto!</strong> El producto ha sido borrado correctamente</p>
+			</div>
+		<?php
+		}
+		if ($_GET['okCod'] == 2) {?>
+			<div class="alert success">
+			  <p><strong>Correcto!</strong> La cuenta ha sido borrada correctamente</p>
+			</div>
+		<?php
+		}
+	}
 	?>
 
-	<div class="slider">
-		<img src="error/no-image.png">
-	</div>
 	<div class="container">
 		<?php
 		/*AQUÍ VA EL SA DE ULTIMOS PRODUCTOS*/

@@ -1,4 +1,4 @@
-function archivo(evt) {
+/*function archivo(evt) {
     var files = evt.target.files; // FileList object
              
     // Obtenemos la imagen del campo "file".
@@ -21,4 +21,4 @@ function archivo(evt) {
     }
 }
              
-document.getElementById('files').addEventListener('change', archivo, false);
+document.getElementById('files').addEventListener('change', archivo, false);*/

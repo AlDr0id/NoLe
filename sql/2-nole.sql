@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-05-2018 a las 15:53:04
--- Versión del servidor: 10.1.28-MariaDB
--- Versión de PHP: 7.1.10
+-- Tiempo de generación: 20-05-2018 a las 23:52:21
+-- Versión del servidor: 10.1.26-MariaDB
+-- Versión de PHP: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -131,7 +131,8 @@ INSERT INTO `numismatica` (`Id`, `Pais`, `Anyo`, `Conservacion`) VALUES
 (7, 'Alemania', 1992, 'Monedero viejo'),
 (8, 'España', 2018, 'Nueva'),
 (9, 'Murcia', 1990, 'Buena'),
-(11, 'EspaÃ±a', 200, 'Buena');
+(11, 'EspaÃ±a', 200, 'Buena'),
+(12, 'css', 13, 'sac');
 
 -- --------------------------------------------------------
 
@@ -165,7 +166,8 @@ INSERT INTO `producto_ofrecido` (`ID`, `Nombre`, `Usuario`, `Fecha`, `Disponible
 (7, 'Moneda Alemana', 'rodribarro', '2015-03-10 00:00:00', 1, 15, 'Creo que es un marco alemán', 0, 0),
 (8, 'Mnda oro nueva', 'manu', '2018-05-06 00:00:00', 1, 100, 'Oro puro.', 0, 0),
 (9, 'Moneda Desierto', 'jose', '2018-05-12 14:58:15', 1, 15, 'a', 0, 0),
-(11, 'Pica moneda', 'marina', '2018-05-18 23:55:01', 1, 323, 'Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla blaBla bla blavBla bla blav Bla bla blav  vvvBla bla bla vv vBla bla blav vvBla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla', 0, 0);
+(11, 'Pica moneda', 'marina', '2018-05-18 23:55:01', 1, 323, 'Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla blaBla bla blavBla bla blav Bla bla blav  vvvBla bla bla vv vBla bla blav vvBla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla Bla bla bla', 0, 0),
+(12, 'Figura mario', 'pica', '2018-05-20 08:12:25', 1, 65, 'mario mario mario', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -188,7 +190,9 @@ CREATE TABLE `producto_solicitado` (
 --
 
 INSERT INTO `producto_solicitado` (`id`, `id_user`, `nombreP`, `palabrasClave`, `categoria`, `id_Producto`, `activo`) VALUES
-(1, 'tito', 'dedal frances', 'dedal viejo francia', 1, 46, 0);
+(1, 'tito', 'dedal frances', 'dedal viejo francia', 1, 46, 0),
+(2, 'pica', 'Figura mario', 'mario', 0, 12, 1),
+(3, 'pica', 'mario', 'mario', 0, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -302,7 +306,8 @@ INSERT INTO `usuario` (`Nombre`, `Apellido`, `Nickname`, `Pass`, `Correo`, `Acti
 ('manolo', 'manolo', 'manolo', '$2y$10$rp3p8MpdkTSgwh0ORArMwuzJnd567RKz.6r27F8HbRSnMitTmlWfy', 'manolo', 1, '', '0', 0),
 ('manu', 'oreja', 'manu', 'lolo97', 'manu@hotmail.com', 0, '', '0', 0),
 ('marina', 'marina', 'marina', '$2y$10$jBIKJl6oK2mmrUcgDmqrz.JzttRX0is1ETgcp9us8653Ak9O4N7PK', 'marina', 1, '', '0', 0),
-('pica', 'pica', 'pica', '$2y$10$Bl3vhnbvmTTchEKWNt48leh.UQqrKLVFuC.cSpWkjKj6Ke2pXacN6', 'pica', 1, '', '4', 1),
+('Manolo', 'Ramirez', 'paco', '$2y$10$O/N7sfE01vCWtrwXkKXWWOnXEb6WjFRJGUs/.FR2df6s7wS7/UoCi', 'man', 0, '', '0', 0),
+('picatoste', 'pica', 'pica', '$2y$10$Bl3vhnbvmTTchEKWNt48leh.UQqrKLVFuC.cSpWkjKj6Ke2pXacN6', 'pica', 1, '', '4', 1),
 ('Rodrigo', 'Barroso', 'rodribarro', 'puma69', 'rodric@gmail.com', 0, '', '0', 0),
 ('tito', 'tito', 'tito', '$2y$10$fUYBT20C85rYQqAI6YAHq.wT85t1axiLUzw5xpUliW7A.FokGjDD2', 'tito', 1, '', '0', 0);
 
@@ -424,25 +429,25 @@ ALTER TABLE `vinilos_discos`
 -- Filtros para la tabla `cromos`
 --
 ALTER TABLE `cromos`
-  ADD CONSTRAINT `cromos_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `cromos_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `figuras`
 --
 ALTER TABLE `figuras`
-  ADD CONSTRAINT `figuras_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `figuras_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `filatelia`
 --
 ALTER TABLE `filatelia`
-  ADD CONSTRAINT `filatelia_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `filatelia_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `libros_comics`
 --
 ALTER TABLE `libros_comics`
-  ADD CONSTRAINT `libros_comics_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `libros_comics_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `numismatica`
@@ -469,20 +474,20 @@ ALTER TABLE `puja`
 -- Filtros para la tabla `rincon_de_la_abuela`
 --
 ALTER TABLE `rincon_de_la_abuela`
-  ADD CONSTRAINT `rincon_de_la_abuela_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `rincon_de_la_abuela_ibfk_2` FOREIGN KEY (`Tipo`) REFERENCES `tipo` (`Id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `rincon_de_la_abuela_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `rincon_de_la_abuela_ibfk_2` FOREIGN KEY (`Tipo`) REFERENCES `tipo` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `trastero`
 --
 ALTER TABLE `trastero`
-  ADD CONSTRAINT `trastero_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `trastero_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `vinilos_discos`
 --
 ALTER TABLE `vinilos_discos`
-  ADD CONSTRAINT `vinilos_discos_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `vinilos_discos_ibfk_1` FOREIGN KEY (`Id`) REFERENCES `producto_ofrecido` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
