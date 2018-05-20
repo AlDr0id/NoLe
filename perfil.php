@@ -52,6 +52,9 @@
                 case 'anadProd':
                     require_once('newProd.php');
                   break;
+                case 'solicitarProd':
+                    require_once('productoSolicitado.php');
+                  break;    
                 case 'verPerfil':
                     require_once('verPerfil.php');
                   break;
@@ -81,6 +84,7 @@
           <a class="verPujas" href="perfil.php?opt=verPujas" onclick="actualicePerfil()">Ver todas mis pujas</a>
           <a class="verProductosPuja" href="perfil.php?opt=verProdPuja" onclick="actualicePerfil()">Ver todos mis productos en puja</a>
           <a class="anadirProducto" href="perfil.php?opt=anadProd" onclick="actualicePerfil()">Añadir un producto</a>
+          <a class="solicitarProducto" href="perfil.php?opt=solicitarProd" onclick="actualicePerfil()">Solicitar un producto</a>
           <a class="verPerfil" href="perfil.php?opt=verPerfil" onclick="actualicePerfil()">Ver mi perfil</a> <!-- Dentro de aquí habrá una opción para editar perfil, salvo la contraseña que va aquí fuera  -->
           <a class='cambiarPass' href="perfil.php?opt=camPass" onclick="actualicePerfil()">Cambiar contraseña</a>
           <a class='deleteCuenta' href="perfil.php?opt=deleteCuenta" onclick="actualicePerfil()">Eliminar mi cuenta</a>
