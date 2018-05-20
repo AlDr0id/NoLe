@@ -23,7 +23,8 @@ class productoSolicitadoDAO extends DAO{
         if($consulta) {
 
           $num =$consulta->num_rows;
-          echo $sql;
+          $producto->getId();
+
         }
         else {
           parent::desconectar();
@@ -33,7 +34,8 @@ class productoSolicitadoDAO extends DAO{
             $contador = 0;
             
             while ($info = $consulta->fetch_object()) {
-                 if($info->id_Producto==NULL && $info->activo==1 &&( strpos($nomP,'marvel')!==false ||strpos($des,$info->palabrasClave)!==false )){
+      
+                 if($info->id_Producto==NULL && $info->activo==1 &&( stripos($nomP,$info->nombreP)!==false ||stripos($des,$info->palabrasClave)!==false )){
                      $sql = "UPDATE producto_solicitado SET id_Producto='$idP'   WHERE  id= '$info->id'";
                      mysqli_query($this->db, $sql);
                    }
@@ -103,7 +105,7 @@ class productoSolicitadoDAO extends DAO{
 
 
 
-    public function newProducto(productoOfreTransfer $producto) {
+    public function newProducto(productoSolicitadoTransfer $producto) {
           //conexión bbdd
       if($ok = parent::conectar()) {
         $id = $this->nextIdProductoS();
@@ -116,7 +118,7 @@ class productoSolicitadoDAO extends DAO{
            $palabrasClave = $producto->getPalabrasClave();
            
            //consulta del usuario
-           $sql = "INSERT INTO producto_solicitado (id, id_user, nombreP, categoria, id_Producto, activo, palabrasClave) VALUES ('$id', '$id_user', '$nombreP', '$categoria', '$id_Producto', '$activo', '$palabrasClave')";
+           $sql = "INSERT INTO producto_solicitado (id, id_user, nombreP, categoria, id_Producto, activo, palabrasClave) VALUES ('$id', '$id_user', '$nombreP', '$categoria', NULL, '$activo', '$palabrasClave')";
            $consulta = mysqli_query($this->db, $sql);
            if($consulta) {
                  parent::desconectar();
