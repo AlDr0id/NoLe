@@ -104,7 +104,7 @@
 			    $perfil = 'perfilVisitante.php?nickname='.$prod[$i]->getOwner().'';
 			    echo"<h1>".$prod[$i]->getNombre()."</h1>"; ?>
 			    <div class="author"><!-- Imagen que habra que cambiar cuando se tengan fotos del usuario -->
-			    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="pica.jpg"/>
+			    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="img/'.$prod[$i]->getOwner().'.png"/>
 				    <h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
 			    </div>
 			    <div class="category">
