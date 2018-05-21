@@ -8,11 +8,12 @@
   <link rel="stylesheet" type="text/css" href="card.css">
   <link rel="stylesheet" type="text/css" href="menu.css">
   <link rel="stylesheet" type="text/css" href="arrows.css">
-  <link rel="stylesheet" type="text/css" href="adv-search.css">
-  <link rel="stylesheet" type="text/css" href="prod-styles.css">
   <link rel="stylesheet" type="text/css" href="popup-style.css">
+  <link rel="stylesheet" type="text/css" href="cabecera.css">
   <link rel="stylesheet" type="text/css" href="perfil-style.css">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  	<script type="text/javascript" src="javascript.js"></script>
 
 </head>
 <body>
@@ -39,7 +40,6 @@
 	}
 
 	if($us->getNickname() == $nombre){
-
 		header("Refresh: 0 ;URL= perfil.php?opt=verPerfil");
 	}
 	else{
@@ -91,14 +91,10 @@
 		  </div>
 		</div>
 	</div>
-	<div class="footer">
-	    <p>Javier Picatoste - Rodrigo - Álvaro - Manu - Alex - Marcos - Dani - Alberto</p>
-	</div>
+	<?php require_once("include/comun/footer.php") ?>
 	<?php
 		}
 	?>
 </body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
-  	<script type="text/javascript" src="javascript.js"></script>
+
 </html>
