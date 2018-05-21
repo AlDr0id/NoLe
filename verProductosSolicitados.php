@@ -31,13 +31,15 @@
 					              <h2>'."Ir al producto".'</h2></a>' ?>
 							
 							</div>
+
+							<div class="imagen">
+							<?php echo '<div class="thumbnail"><img class="left-prod" height="200" width="200" src="img/'.$prod[$i]->getId_Producto().'.png"/></div>'; ?>
+							</div>
 					<?php
 						}
 					?>
 
-					<div class="imagen">
-					<?php echo '<div class="thumbnail"><img class="left-prod" height="200" width="200" src="img/'.$prod[$i]->getId_Producto().'.png"/></div>'; ?>
-					</div>
+					
 					<div class="separator"></div>
 					<p>Palabras clave: <?php echo $prod[$i]->getPalabrasClave() ?></p>
 					<div class="eliminar">
