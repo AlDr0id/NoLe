@@ -1,4 +1,18 @@
-<?php session_start();?>
+<?php session_start();
+	require_once("include/UsuarioSA.php");
+	$nickname = $_GET["nickname"];
+	$sa = new UsuarioSA();
+  	$user = new usuarioTransfer($nickname,"","","","",0,0,"");
+	$us = $sa->mostrarUsuario($user);
+
+	$nombre="";
+	if (isset($_SESSION['login'])){
+		$nombre =$_SESSION ["nombre"];
+	}
+
+	if($us->getNickname() == $nombre){
+		header("Refresh: 0 ;URL= perfil.php?opt=verPerfil");
+	}?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,21 +42,7 @@
   </div>
   <div class="container">
 <?php
-	require_once("include/UsuarioSA.php");
-	$nickname = $_GET["nickname"];
-	$sa = new UsuarioSA();
-  	$user = new usuarioTransfer($nickname,"","","","",0,0,"");
-	$us = $sa->mostrarUsuario($user);
 
-	$nombre="";
-	if (isset($_SESSION['login'])){
-		$nombre =$_SESSION ["nombre"];
-	}
-
-	if($us->getNickname() == $nombre){
-		header("Refresh: 0 ;URL= perfil.php?opt=verPerfil");
-	}
-	else{
 		echo '<h1>Perfil de: '. $us->getNickname() . '</h1>';
 ?>
 		<div class="visitante">
@@ -93,7 +93,7 @@
 	</div>
 	<?php require_once("include/comun/footer.php") ?>
 	<?php
-		}
+		
 	?>
 </body>
 
