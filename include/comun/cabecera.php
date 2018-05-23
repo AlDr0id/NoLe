@@ -41,7 +41,7 @@
 </div>
 
 <div class="cabecera">
-	<div class="logo"><img src="img/logotipo.png"></div>
+	<div class="logo"><img class="logoImg" src="img/logotipo.png"></div>
 	<div class="buscar">
 		<form action="procesarBusqueda.php" class="formulario buscNombre" method="POST">
 			<input name="buscNom" type="text" placeholder="Busca aquí lo que quieras">
@@ -53,6 +53,9 @@
 	<?php
   if (isset($_SESSION["login"]) and $_SESSION["login"]) {
 		echo "<p>Bienvenido <a class='perfil' href='perfil.php'>".$_SESSION["nombre"]."</a>. <a href='logout.php'>Logout</a></p>";
+        ?>
+        <?php
+        
 	}
 	else {
   ?>
