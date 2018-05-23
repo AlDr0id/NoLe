@@ -20,7 +20,7 @@
 
 					?>
 							<div class="imagen">
-							<?php echo '<div class="thumbnail"><img class="left-prod" height="200" width="200" src="img/prodSolic/'.$prod[$i]->getId_Producto().'.png"/></div>'; ?>
+							<?php echo '<div class="thumbnail"><img class="left-prod" height="200" width="200" src="img/prods/'.$prod[$i]->getId_Producto().'.png"/></div>'; ?>
 							</div>
 
 							<div class="producto">
