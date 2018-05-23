@@ -60,11 +60,11 @@ if (! isset($_GET['id']) ) {
 				<input type="text" name="rclaOrigen" placeholder="Origen del producto" >
 			</div>
 			<div class="fig" >
-				<h5>Alto</h5>
+				<h5>Alto (cm)</h5>
 				<input type="number" name="figAlto" min="0" ="">
-				<h5>Ancho</h5>
+				<h5>Ancho (cm)</h5>
 				<input type="number" name="figAncho" min="0" ="">
-				<h5>Largo</h5>
+				<h5>Largo (cm)</h5>
 				<input type="number" name="figLargo" min="0" ="">
 				<h5>Tema:</h5>
 				<input type="text" name="figTema" placeholder="Tema del producto" >
