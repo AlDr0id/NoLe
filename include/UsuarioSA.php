@@ -2,6 +2,9 @@
 //session_start();
 require_once('UsuarioDAO.php');
 require_once('UsuarioTransfer.php');
+require_once('productoOfreSA.php');
+require_once('pujaSA.php');
+
 class UsuarioSA {
 
     // Atributos
@@ -46,7 +49,15 @@ class UsuarioSA {
          $this->dao = new UsuarioDAO();
       }
       $aux= $this->dao;
-      return $aux->eliminaCuenta($usuario);
+      $prodSA=new productoOfreSA();
+      $pujaSA=new pujaSA();
+     if($prodSA->getProductoUsuarioPuja($usuario->getNickname())==NULL){
+        $prodSA->eliminarProductos($usuario->getNickname());
+        $pujaSA->eliminarPendientes($usuario->getNickname());
+        return $aux->eliminaCuenta($usuario);
+      }
+     return NULL;
+     
 
     }
 
