@@ -28,13 +28,13 @@
             <input type="text" name="ape" placeholder="Introduce apellido" required>
             <p>Nombre de Usuario:</p>
             <input type="text" name="userReg" placeholder="Introduce nickname" required>
-            <p>Correo electrónico:</p>
-            <input type="text" id="mail" name="mail" placeholder="Introduce email" required> 
+            <p>Correo electrónico:</p> <p class="regError" id="errMail">(Introduzca un correo válido)</p>
+            <input type="text" id="mail" name="mail" placeholder="Introduce email" required>
             <p>Contraseña:</p>
-            <input type="password" name="passReg" placeholder="Introduce contraseña" required>
-            <p>Repite Contraseña:</p>
-            <input type="password" name="passReg2" placeholder="Repite la contraseña" required>
-            <button type="submit">Enviar</button>
+            <input type="password" id="passReg" name="passReg" placeholder="Introduce contraseña" required>
+            <p>Repite Contraseña:</p> <p class="regError" id="errPass">(Las contraseñas no coinciden)</p>
+            <input type="password" id="passReg2" name="passReg2" placeholder="Repite la contraseña" required>
+            <button type="submit" id="regSubmit">Enviar</button>
             <span class="info">Ya tienes cuenta? <a class="login">Login</a></span>
         </form>
     </div>
