@@ -1,7 +1,7 @@
 <h2>Eliminar cuenta</h2>
 <div class="elimina">
   <p> ¿Está seguro de que quiere eliminar su cuenta? </p>
-  <form action="procesarEliminarCuenta.php" method="POST">
+  <form class="formulario" action="procesarEliminarCuenta.php" method="POST">
     <p><label>Opciones: </label>
       <select name="op">
         <option value="0">No</option>

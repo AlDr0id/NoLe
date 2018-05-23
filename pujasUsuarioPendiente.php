@@ -42,7 +42,7 @@ $pujas = $sa->getPujasPostor($_SESSION["nombre"], "PENDIENTE");
 					</div>
 					<div class="separator"></div>
 					<!-- <p><?php //echo $pujas[$i]->getDescripcion() ?></p> -->
-					<?php echo '<a class="seemore" href='.$path.'><i class="right"></i><p>Ir al producto</p></a>'?>
+					<?php echo '<a class="seemore" href='.$path.'><p>Ir al producto</p></a>'?>
 
 			</div>
 			</div>

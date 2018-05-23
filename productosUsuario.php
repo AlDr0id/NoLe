@@ -52,7 +52,7 @@
 				</div>
 				<div class="separator"></div>
 				<p><?php echo $prod[$i]->getDescripcionCorta() ?></p>
-				<?php echo '<a class="seemore" href='.$path.'><i class="right"></i><p>Ir al producto</p></a>'?>
+				<?php echo '<a class="seemore" href='.$path.'><p>Ir al producto</p></a>'?>
 				<?php echo '<a class="seemore" href='.$pathEnPuja.'><p>Poner en puja</p></a>'?>
 
 		</div>
