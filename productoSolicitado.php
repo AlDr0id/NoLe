@@ -16,7 +16,7 @@
 				<option value="6">Libros/Comics</option>
 				<option value="7">Trastero</option>
 			</select>
-			<h5>Palabras clave:</h5>
+			<h5>Palabras clave (separadas por espacios):</h5>
 			<input type="text" name="palabrasP" placeholder="Palabras clave" required >
 			<button class="crear">Solicitar</button>
 		</div>
