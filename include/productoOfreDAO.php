@@ -114,7 +114,7 @@ class productoOfreDAO extends DAO{
            $precio = $producto->getPrecio();
            $descripcion = $producto->getDescripcion();
            $categoria = $producto->getCategoria();
-           $enPuja = 1;
+           $enPuja = $producto->getEnPuja();
            //consulta del usuario
            $sql = "INSERT INTO producto_ofrecido (ID, Nombre, Usuario, Fecha, Disponible, Precio, Descripcion, Categoria, EnPuja) VALUES ('$id', '$nombre', '$usuario', '$fechaSalida', '$disponible', '$precio', '$descripcion', '$categoria', '$enPuja')";
            $consulta = mysqli_query($this->db, $sql);
