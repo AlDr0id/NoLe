@@ -19,7 +19,7 @@ require_once("include/numismaticaTransfer.php");
  		if(isset($_POST['precio'])) $producto->setPrecio($precio);
  		$producto->setDescripcion($descP);
 		$id = $productoSA->editProducto($producto);
-    $id3 = move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $idP . ".png");
+    $id3 = move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/prods/" . $idP . ".png");
 
 		/*Atributos propios de la categoría*/
  		switch ($cat) {
@@ -126,7 +126,7 @@ require_once("include/numismaticaTransfer.php");
         $trasteroOrigen = htmlspecialchars(trim(strip_tags($_POST['trasteroOrigen'])));
         $productoTras = new trasteroTransfer($id, $trasteroAnyo, $trasteroOrigen);
         $productoSA = new trasteroSA();
-        
+
         $productoTras->setId($idP);
         $id2 = $productoSA->newProductoTrastero($productoTras);
         break;
@@ -148,6 +148,6 @@ else {
   header("Refresh: 0 ;URL= perfil.php?opt=anadProd&id=".$idP."&errCod=2");
 }
 
- 		/*header("Refresh: 0 ;URL= perfil.php?opt=verProds");*/  
+ 		/*header("Refresh: 0 ;URL= perfil.php?opt=verProds");*/
 
  ?>

@@ -13,7 +13,7 @@ $pujas = $sa->getPujasPostor($_SESSION["nombre"], "PENDIENTE");
 	for ($i=0; $i < sizeof($pujas); $i++) {
 	?>
 		<div class="card">
-		<div class="thumbnail"><img class="leftImg" src="img/puja.jpg"/></div>
+    <?php echo '<div class="thumbnail"><img class="leftImg" src="img/prods/'.$pujas[$i]->getIdProducto().'.png"/></div>'; ?>
 			<div class="details">
 				<?php
 					$p = $saProd->getProducto($pujas[$i]->getIdProducto());
@@ -25,7 +25,7 @@ $pujas = $sa->getPujasPostor($_SESSION["nombre"], "PENDIENTE");
 		              		<h2>'. $p->getOwner() .'</h2></a>' ?>
 					</div>
 					<div class="precio">
-						<h2><?php 
+						<h2><?php
 						if($pujas[$i]->getIdTrueque()!=NULL){
 							echo "Ofertado producto ".$pujas[$i]->getIdTrueque();
 						}
@@ -48,5 +48,5 @@ $pujas = $sa->getPujasPostor($_SESSION["nombre"], "PENDIENTE");
 			</div>
 	<?php
 		}
-  } else echo "El usuario no tiene pujas";	
+  } else echo "El usuario no tiene pujas";
 	    ?>

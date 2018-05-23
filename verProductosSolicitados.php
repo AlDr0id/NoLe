@@ -12,7 +12,7 @@
 		<div class="card">
 			<div class="details">
 				<?php
-						
+
 					$perfil = 'perfilVisitante.php?nickname='.$prod[$i]->getId_user().'';
 					echo"<h1>".$prod[$i]->getNombreP()."</h1>"; ?>
 					<?php
@@ -20,13 +20,13 @@
 
 					?>
 							<div class="imagen">
-							<?php echo '<div class="thumbnail"><img class="left-prod" height="200" width="200" src="img/'.$prod[$i]->getId_Producto().'.png"/></div>'; ?>
+							<?php echo '<div class="thumbnail"><img class="left-prod" height="200" width="200" src="img/prodSolic/'.$prod[$i]->getId_Producto().'.png"/></div>'; ?>
 							</div>
 
 							<div class="producto">
 								<?php echo '<a class ="seemore" href=product.php?id='. $prod[$i]->getId_Producto() . '>
 					              <p>'."Ir al producto".'</p></a>' ?>
-							
+
 							</div>
 					<?php
 						}
@@ -69,14 +69,14 @@
 						}
 						?>
 					</div>
-					
+
 					<div class="separator"></div>
 					<p>Palabras clave: <?php echo $prod[$i]->getPalabrasClave() ?></p>
 					<div class="eliminar">
-						<?php echo '<a class ="seemore" href=procesarEliminarSolicitado.php?id='. $prod[$i]->getId() .'&idP='. $prod[$i]->getId_Producto() .'> 
+						<?php echo '<a class ="seemore" href=procesarEliminarSolicitado.php?id='. $prod[$i]->getId() .'&idP='. $prod[$i]->getId_Producto() .'>
 			              <p>'."Eliminar".'</p></a>' ?>
 					</div>
-				
+
 
 			</div>
 		</div>

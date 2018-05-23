@@ -207,7 +207,7 @@ else{
 			<input type="text" name="nomP" placeholder="Nombre del producto" value="<?=$nomP ?>" >
 			<div class="imagen">
 				<h5>Imagen del producto:</h5>
-				<input type="file" name="fotoProd" value="/img/<?=$id ?>.png" />
+				<input type="file" name="fotoProd" value="/img/prods/<?=$id ?>.png" />
 			</div>
 			<h5>Descripción del producto:</h5>
 			<textarea name="descP" placeholder="Descripción del producto" ><?=$descP ?></textarea>
@@ -248,9 +248,9 @@ else{
 							break;
 					}
 				 ?>
-				
+
 			</select>
-			<?php 
+			<?php
 				switch ($cateP) {
 						case '0':
 							?>

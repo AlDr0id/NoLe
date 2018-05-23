@@ -33,7 +33,7 @@ function newProductControlador(productoOfreTransfer $producto){
  				$productoNumi = new numismaticaTransfer($id, $paisP, $anioP , $consP);
  				$productoSA = new numismaticaSA();
 
-		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
+		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/prods/" . $id . ".png")) {
 		          $id3 = True;
 		          $id2 = $productoSA->newProductoNumi($productoNumi);
 		        }
@@ -51,7 +51,7 @@ function newProductControlador(productoOfreTransfer $producto){
 		 		$productoRdla = new rinconAbTransfer($id, $rclaTipo, $rclaOrigen);
  				$productoSA = new rinconAbSA();
 
-		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
+		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/prods/" . $id . ".png")) {
 		          $id3 = True;
 		          $id2 = $productoSA->newProductoRinconAb($productoRdla);
 		        }
@@ -72,7 +72,7 @@ function newProductControlador(productoOfreTransfer $producto){
 		 		$figFabricante = htmlspecialchars(trim(strip_tags($_POST['figFabricante'])));
  				$productofiguras = new figurasTransfer($id, $figAlto, $figAncho, $figLargo, $figTema, $figMaterial,$figFabricante);
  				$productoSA = new figurasSA();
-		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
+		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/prods/" . $id . ".png")) {
 		          $id3 = True;
 		          $id2 = $productoSA->newProductoFiguras($productofiguras);
 		        }
@@ -90,7 +90,7 @@ function newProductControlador(productoOfreTransfer $producto){
  				$productoFil = new filateliaTransfer($id, $filAnyo, $filPais);
  				$productoSA = new filateliaSA();
 
-		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
+		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/prods/" . $id . ".png")) {
 		          $id3 = True;
 		          $id2 = $productoSA->newProductoFilatelia($productoFil);
 		        }
@@ -110,7 +110,7 @@ function newProductControlador(productoOfreTransfer $producto){
  				$productoVini = new vinilosDiscosTransfer($id, $viniAnyo, $viniComp , $viniGrupo, $viniGenero);
  				$productoSA = new vinilosDiscosSA();
 
-		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
+		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/prods/" . $id . ".png")) {
 		          $id3 = True;
 		          $id2 = $productoSA->newProductoVinilosDiscos($productoVini);
 		        }
@@ -129,10 +129,10 @@ function newProductControlador(productoOfreTransfer $producto){
  				$productoCromos = new cromosTransfer($id, $cromosAnyo, $cromosColec , $cromosNum);
  				$productoSA = new cromosSA();
 
-		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
+		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/prods/" . $id . ".png")) {
 		          $id3 = True;
 		          $id2 = $productoSA->newProductoCromos($productoCromos);
-		         
+
 		        }
 		        else {
 		          $id3 = False;
@@ -152,7 +152,7 @@ function newProductControlador(productoOfreTransfer $producto){
  				$productoLib = new librosComicsTransfer($id, $librosAnyo, $librosAutor , $librosEditorial, $librosGenero, $librosIdioma, $librosFormato);
  				$productoSA = new librosComicsSA();
 
-		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
+		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/prods/" . $id . ".png")) {
 		          $id3 = True;
 		          $id2 = $productoSA->newProductoLibrosComics($productoLib);
 		        }
@@ -169,13 +169,13 @@ function newProductControlador(productoOfreTransfer $producto){
 		 		$trasteroOrigen = htmlspecialchars(trim(strip_tags($_POST['trasteroOrigen'])));
  				$productoTras = new trasteroTransfer($id, $trasteroAnyo, $trasteroOrigen);
  				$productoSA = new trasteroSA();
- 				
 
-		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/" . $id . ".png")) {
+
+		        if(move_uploaded_file($_FILES['fotoProd']['tmp_name'], "img/prods/" . $id . ".png")) {
 		          $id3 = True;
 		          $id2 = $productoSA->newProductoTrastero($productoTras);
 		        }
-		        
+
 		        else {
 		          $id3 = False;
 		          $id2 = False;

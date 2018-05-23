@@ -27,7 +27,7 @@
 			<button type="submit">Buscar</button>-->
 		</form>
 	</div>
-	<?php 
+	<?php
 
 	require_once("include/comun/menu.php");
 
@@ -64,7 +64,7 @@
 		    for ($i=0; $i < sizeof($ultimosProds); $i++) {
 		    ?>
 			  <div class="card cuadricula">
-			  <?php echo '<div class="thumbnail"><img class="leftImg" src="img/'.$ultimosProds[$i]->getId().'.png"/></div>'; ?>
+			  <?php echo '<div class="thumbnail"><img class="leftImg" src="img/prods/'.$ultimosProds[$i]->getId().'.png"/></div>'; ?>
 			  <div class="details">
 			    <?php
 				    $path = 'product.php?id='.$ultimosProds[$i]->getId().'';

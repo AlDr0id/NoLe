@@ -41,14 +41,14 @@ $prod = $busq->getProductoAvan($array);
     for ($i=0; $i < sizeof($prod); $i++) {
       ?>
       <div class="card cuadricula">
-        <?php echo '<div class="thumbnail"><img class="leftImg" src="img/'.$prod[$i]->getId().'.png"/></div>'; ?>
+        <?php echo '<div class="thumbnail"><img class="leftImg" src="img/prods/'.$prod[$i]->getId().'.png"/></div>'; ?>
         <div class="details">
           <?php
             $path = 'product.php?id='.$prod[$i]->getId().'';
             echo"<h1>".$prod[$i]->getNombre()."</h1>"; ?>
             <div class="author"><!-- Imagen que habra que cambiar cuando se tengan fotos del usuario -->
             <?php $perfil = 'perfilVisitante.php?nickname='.$prod[$i]->getOwner().'';
-              echo '<a class ="seemore" href='. $perfil . '></i><img src="'.$prod[$i]->getOwner().'.jpg"/>
+              echo '<a class ="seemore" href='. $perfil . '></i><img src="img/'.$prod[$i]->getOwner().'.png"/>
               <h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
           </div>
             <div class="category">

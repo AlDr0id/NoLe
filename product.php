@@ -1,6 +1,6 @@
 <?php
 	require_once("include/productoOfreSA.php");
-	
+
 	session_start();
 	if (isset($_GET["id"])) {
 		$id = $_GET["id"];
@@ -33,7 +33,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="javascript.js"></script>
-	
+
 </head>
 <body>
 
@@ -55,7 +55,7 @@
 		<?php
 		}
 	}
-	if(isset($_GET['errCod'])){	
+	if(isset($_GET['errCod'])){
 
 		if ($_GET['errCod'] == 1) {?>
 			<div class="alert">
@@ -79,7 +79,7 @@
 	    <span class="helper"></span>
 	    <div>
 	        <div class="popupCloseButton">X</div>
-	        <?php echo '<img src="img/'.$prod->getId().'.png"/>'; ?>
+	        <?php echo '<img src="img/prods/'.$prod->getId().'.png"/>'; ?>
 	    </div>
 	</div>
 	<div class="popupPuja">
@@ -134,13 +134,13 @@
 	    </div>
 	</div>
 	<div class="container">
-		
+
 		<h1><?php echo $prod->getNombre();  ?></h1>
 		<div class="producto">
 			<div class="prod-cont">
 
 				<div class="imagen">
-					<?php echo '<div class="thumbnail"><img class="left-prod" src="img/'.$prod->getId().'.png"/></div>'; ?>
+					<?php echo '<div class="thumbnail"><img class="left-prod" src="img/prods/'.$prod->getId().'.png"/></div>'; ?>
 				</div>
 				<div class="info">
 					<div class="boton">

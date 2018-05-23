@@ -10,7 +10,7 @@
 		for ($i=0; $i < sizeof($prod); $i++) {
 		?>
 		<div class="card">
-		<?php echo '<div class="thumbnail"><img class="leftImg" src="img/'.$prod[$i]->getId().'.png"/></div>'; ?>
+		<?php echo '<div class="thumbnail"><img class="leftImg" src="img/prods/'.$prod[$i]->getId().'.png"/></div>'; ?>
 		<div class="details">
 			<?php
 				$path = 'product.php?id='.$prod[$i]->getId().'';

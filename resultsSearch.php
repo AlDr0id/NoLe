@@ -9,7 +9,7 @@ $prod = $sa->getProducto($_GET["nom"]);
     for ($i=0; $i < sizeof($prod); $i++) {
     ?>
 	  <div class="card">
-		  <?php echo '<div class="thumbnail"><img class="leftImg" src="img/'.$prod[$i]->getId().'.png"/></div>'; ?>
+		  <?php echo '<div class="thumbnail"><img class="leftImg" src="img/prods/'.$prod[$i]->getId().'.png"/></div>'; ?>
 		  <div class="details">
 			<?php
 			    $path = 'product.php?id='.$prod[$i]->getId().'';
@@ -20,7 +20,7 @@ $prod = $sa->getProducto($_GET["nom"]);
 		              	<h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
 			    </div>
 			    <div class="category">
-			      	<?php 
+			      	<?php
 			      		switch ($prod[$i]->getCategoria()) {
 			      		 	case '0':
 		                      echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
@@ -47,7 +47,7 @@ $prod = $sa->getProducto($_GET["nom"]);
 		                      echo "<a class='catLink' href='trastero.php'>Trastero</a>";
 		                      break;
 			      		 }?>
-			      	
+
 			    </div>
 			    <div class="precio">
 			      	<h2><?php echo $prod[$i]->getPrecio() ?>$</h2>
