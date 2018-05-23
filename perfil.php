@@ -21,7 +21,9 @@
 
   <?php require_once("include/comun/cabecera.php");
   require_once("include/comun/menu.php");
-
+  if (!isset($_SESSION["login"])){
+    header("Refresh: 0 ;URL= index.php");
+  }
   if(isset($_GET['okCod'])){
       if ($_GET['okCod'] == 1) {?>
         <div class="alert success">
