@@ -31,10 +31,7 @@ if($pass == $pass2) {
     $data['success'] = False;
   }
 }
-else{
-  $data['errors'] = 'Las contraseñas no coinciden';
-  $data['success'] = False;
-}
+
 
 echo json_encode($data);
 ?>

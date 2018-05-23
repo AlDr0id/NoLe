@@ -16,6 +16,10 @@ $(document).ready(function(){
         $('.popupReg').show();
     });
 
+    
+    $('#regSubmit').prop('disabled', true);
+    
+
     $(".logo").click(function(){
         window.location = 'index.php';
     });
@@ -28,6 +32,39 @@ $(document).ready(function(){
 
         return ( arroba > 0 && punto > 1 && correo.length > 0);
     }
+
+    $('#mail').change(function(){
+        if(correoValido($('#mail').val())){
+            if($('#passReg').val() == $('#passReg2').val())$('#regSubmit').prop('disabled', false);
+            $('#errMail').hide();
+        }
+        else{
+            $('#regSubmit').prop('disabled', true);
+            $('#errMail').show();
+        }
+    });
+
+    $('#passReg2').change(function(){
+        if($('#passReg').val() == $('#passReg2').val()){
+            if(correoValido($('#mail').val())) $('#regSubmit').prop('disabled', false);
+            $('#errPass').hide();
+        }
+        else{
+            $('#regSubmit').prop('disabled', true);
+            $('#errPass').show();
+        }
+    });
+
+    $('#passReg').change(function(){
+        if($('#passReg').val() == $('#passReg2').val()){
+            if(correoValido($('#mail').val())) $('#regSubmit').prop('disabled', false);
+            $('#errPass').hide();
+        }
+        else{
+            $('#regSubmit').prop('disabled', true);
+            $('#errPass').show();
+        }
+    });
 
     $('.buscNombre').submit(function(event) {
         var formData = {
@@ -89,9 +126,6 @@ $(document).ready(function(){
             'passReg'              : $('input[name=passReg]').val(),
             'passReg2'              : $('input[name=passReg2]').val()
         };
-        // while (!correoValido($("#mail").val())) {
-        //   // No permitimos hacer nada mientras no se ponga bien el correo
-        // }
         console.log(formData);
         $.ajax({
             type        : 'POST',
