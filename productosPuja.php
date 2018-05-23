@@ -17,7 +17,7 @@
 				$perfil = 'perfilVisitante.php?nickname='.$prod[$i]->getOwner().'';
 				echo"<h1>".$prod[$i]->getNombre()."</h1>"; ?>
 				<div class="author">
-					<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="img/'.$prod[$i]->getOwner().'.png"/>
+					<?php echo '<a class ="seemore" href='. $perfil . '><img src="img/'.$prod[$i]->getOwner().'.png"/>
 		              <h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
 				</div>
 				<div class="category">
@@ -53,9 +53,9 @@
 				<p><?php echo $prod[$i]->getDescripcionCorta() ?></p>
 			<form class="formCerrarPuja" action="cerrarPuja.php" method="POST">
 				<input name="id" type="hidden" value= <<?php $prod[$i]->getId() ?> >
-				<a href=<?php echo "perfil.php?opt=cerrarPujas&id=".$prod[$i]->getId();?>>Cerrar Puja</a>
+				<a class="seemore" href=<?php echo "perfil.php?opt=cerrarPujas&id=".$prod[$i]->getId() ?>><p>Cerrar Puja</p></a>
 			</form>
-				<?php echo '<a class="seemore" href='.$path.'><i class="right"></i><p>Ir al producto</p></a>'?>
+				<?php echo '<a class="seemore" href='.$path.'><p>Ir al producto</p></a>'?>
 
 		</div>
 		</div>

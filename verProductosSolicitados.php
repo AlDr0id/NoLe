@@ -39,7 +39,7 @@
 						<?php
 						switch ($prod[$i]->getCategoria()) {
 							case '0':
-								echo "<a class='catLink' href='numismatica.php'>Numistamica</a>";
+								echo "<a class='catLink' href='numismatica.php'>Numismatica</a>";
 								break;
 							case '1':
 								echo "<a class='catLink' href='rinconAbuela.php'>Rincón de la Abuela</a>";
