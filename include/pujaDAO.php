@@ -198,7 +198,7 @@ public function getPuja($id) {
       //conexión bbdd
       if($ok = parent::conectar()){
       //consulta del usuario
-      $sql = "SELECT * from puja where IdPostor = ".$idUser." AND Estado = 'PENDIENTE' +";
+      $sql = "SELECT * from puja where IdPostor = '$idUser' AND Estado = 'PENDIENTE'";
       $consulta = mysqli_query($this->db, $sql);
       if(mysqli_num_rows($consulta) > 0){  //devuelve error si no devuelve ninguna fila
         $pujas = array();
