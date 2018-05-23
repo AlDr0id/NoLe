@@ -30,12 +30,18 @@
     height: 90%;
     overflow-y: scroll;
 }
-.regError, .logError{
+.formulario p.regError{
+    color: red;
+    font-size: 15px;
+    font-weight:bold;
+}
+.logError{
     color: red;
     font-size: 18px;
     font-weight:bold;
     text-align: center;
 }
+
 .exito{
     color: green;
     font-size: 18px;
