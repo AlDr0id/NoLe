@@ -22,7 +22,33 @@
 				    <h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
 				</div>
 				<div class="category">
-					<h2><?php echo $prod[$i]->getCategoria() ?></h2>
+					<?php
+				      		switch ($prod[$i]->getCategoria()) {
+				      		 	case '0':
+			                      echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
+			                      break;
+			                    case '1':
+			                      echo "<a class='catLink' href='rinconAbuela.php'>Rincón de la Abuela</a>";
+			                      break;
+			                    case '2':
+			                      echo "<a class='catLink' href='figuras.php'>Figuras</a>";
+			                      break;
+			                    case '3':
+			                      echo "<a class='catLink' href='filatelia.php'>Filatelia</a>";
+			                      break;
+			                    case '4':
+			                      echo "<a class='catLink' href='vinilosDiscos.php'>Vinilos/Discos</a>";
+			                      break;
+			                    case '5':
+			                      echo "<a class='catLink' href='cromos.php'>Cromos</a>";
+			                      break;
+			                    case '6':
+			                      echo "<a class='catLink' href='librosComics.php'>Libros/Comics</a>";
+			                      break;
+			                    case '7':
+			                      echo "<a class='catLink' href='trastero.php'>Trastero</a>";
+			                      break;
+				      		 }?>
 				</div>
 				<div class="separator"></div>
 				<p><?php echo $prod[$i]->getDescripcionCorta() ?></p>
