@@ -21,7 +21,7 @@ $pujas = $sa->getPujasPostor($_SESSION["nombre"], "PENDIENTE");
 					$perfil = 'perfilVisitante.php?nickname='.$p->getOwner().'';
 					echo"<h1>".$p->getNombre()."</h1>"; ?>
 					<div class="author">
-						<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="pica.jpg"/>
+						<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="img/'.$p->getOwner().'.png"/>
 		              		<h2>'. $p->getOwner() .'</h2></a>' ?>
 					</div>
 					<div class="precio">

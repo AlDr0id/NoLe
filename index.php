@@ -71,7 +71,7 @@
 				    $perfil = 'perfilVisitante.php?nickname='.$ultimosProds[$i]->getOwner().'';
 				    echo"<h1>".$ultimosProds[$i]->getNombre()."</h1>"; ?>
 				    <div class="author">
-				    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="'.$ultimosProds[$i]->getOwner().'.jpg"/>
+				    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="img/'.$ultimosProds[$i]->getOwner().'.png"/>
 				    	<h2>'. $ultimosProds[$i]->getOwner() .'</h2></a>' ?>
 				    </div>
 				    <div class="category">
