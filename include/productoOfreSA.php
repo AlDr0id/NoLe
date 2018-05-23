@@ -70,6 +70,13 @@ class productoOfreSA {
           $aux= $this->dao;
       return $aux->deleteProducto($idProducto);
     }
+    public function  eliminarProductos($idUsuario){
+        if(!$this->dao){
+          $this->dao= new productoOfreDAO();
+        }
+          $aux= $this->dao;
+      return $aux->eliminarProductos($idUsuario);
+    }
 
 }
 

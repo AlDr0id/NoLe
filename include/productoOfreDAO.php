@@ -209,6 +209,32 @@ class productoOfreDAO extends DAO{
       }
     }
 
-}
+     public function eliminarProductos($idUsuario) {
+    //conexión bbdd
+      if($ok = parent::conectar()) {
+        //consulta del usuario
+        $sql = "SELECT * from producto_ofrecido WHERE Usuario = '".$idUsuario."' AND EnPuja = 0";
+        $consulta = mysqli_query($this->db, $sql);
+        if(mysqli_num_rows($consulta) > 0) {  //devuelve error si no devuelve ninguna fila
+          $productos = array();
+          while( $fila = mysqli_fetch_assoc($consulta)){
+            $idProducto=$fila["ID"];
+            $sql = "DELETE FROM producto_ofrecido WHERE ID='$idProducto'";
+            mysqli_query($this->db, $sql);
+          }
+
+             parent::desconectar();
+             return $productos;
+        }
+        else{
+          parent::desconectar();
+          return NULL;
+        }
+      }
+      else
+        return NULL;
+    }
+
+  }
 
 ?>

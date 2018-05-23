@@ -129,7 +129,13 @@ class pujaSA {
       $aux= $this->dao;
       return $aux->editPuja($puja);
     }
-
+     public function eliminarPendientes($idUser) {
+        if(!$this->dao){
+          $this->dao= new pujaDAO();
+        }
+      $aux= $this->dao;
+      return $aux->eliminarPendientes($idUser);
+     }
 }
 
 ?>
