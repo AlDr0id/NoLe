@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="cabecera.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
@@ -71,7 +72,7 @@
 				    $perfil = 'perfilVisitante.php?nickname='.$ultimosProds[$i]->getOwner().'';
 				    echo"<h1>".$ultimosProds[$i]->getNombre()."</h1>"; ?>
 				    <div class="author">
-				    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="img/'.$ultimosProds[$i]->getOwner().'.png"/>
+				    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img onerror=this.src="img/error/no-image.png" src="img/'.$ultimosProds[$i]->getOwner().'.png"/>
 				    	<h2>'. $ultimosProds[$i]->getOwner() .'</h2></a>' ?>
 				    </div>
 				    <div class="category">

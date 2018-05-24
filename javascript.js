@@ -2,6 +2,8 @@ $(document).ready(function(){
     setTimeout(function() {
       $(".alert").fadeOut('slow ').empty();
     }, 6000);
+
+
     $(".login").click(function(){
         $('.popupReg').hide();
         $('.popupLogin').show();
@@ -16,7 +18,13 @@ $(document).ready(function(){
         $('.popupReg').show();
     });
 
+    $('.cabecera .dropdown').hover(function(){
+        $(".menu").css("position","initial");
+    },function() {
+        $(".menu").css("position","sticky");
+    });
     
+
     $('#regSubmit').prop('disabled', true);
     
 
@@ -138,29 +146,17 @@ $(document).ready(function(){
             .done(function(data) {
                 if (data.success) {
                     $(".peReg").html("<p class='exito'>El registro se ha efectuado correctamente</p>");
+                    $(".regError").hide();
                     $(".regCont").css("height","");
                 }
                 else{
-                    $(".regError").html(data['errors']);
+                    $("#general").html(data['errors']);
+                    $('#general').show();
                 }
             });
 
         event.preventDefault();
     });
-
-    $("#mail").change(function(){
-
-        if (correoValido($("#mail").val() ) ) {
-
-            $("#correoNoValido").hide();
-
-        } else {
-
-            $("#correoNoValido").show();
-
-        }
-    });
-
 
 
 
