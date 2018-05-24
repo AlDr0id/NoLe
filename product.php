@@ -221,7 +221,7 @@
 					</div>
 					<div class="author">
 						<?php $perfil = 'perfilVisitante.php?nickname='.$prod->getOwner().'';
-						echo '<a class ="seemore" href='. $perfil . '></i><img src="img/'.$prod->getOwner()	.'.png"/>
+						echo '<a class ="seemore" href='. $perfil . '></i><img onerror=this.src="img/error/no-image.png" src="img/'.$prod->getOwner()	.'.png"/>
 				    	<h2>'. $prod->getOwner() .'</h2></a>' ?>
 			    	</div>
 					<div class="category">

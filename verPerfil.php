@@ -22,9 +22,8 @@
 
 		<div class="usuario">
 		  	<div class="imagen">
-				<h5>Imagen: </h5>
 				<?php
-				echo "<img src=\"img/" . $us->getNickname() . ".png\"/>";
+				echo "<img onerror=this.src='img/error/no-image.png' src=\"img/" . $us->getNickname() . ".png\"/>";
 			?>
 
 			</div>
@@ -42,7 +41,7 @@
 			    <?php
 			    	$editarperfil=true;
 			    	$path = 'perfil.php?opt=verPerfil&editarperfil='.$editarperfil;
-			    	echo '<a class="seemore" href='.$path.'><i class="right"></i><p>Editar mi perfil</p></a>';
+			    	echo '<a class="seemore" href='.$path.'><p>Editar mi perfil</p></a>';
 			   	?>
 
 

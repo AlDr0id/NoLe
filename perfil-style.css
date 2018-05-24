@@ -204,3 +204,24 @@
 .newProd .crear{
 	margin-top: 10px;
 }
+
+
+.usuario{
+	display: flex;
+	align-items: center;
+}
+.usuario .imagen{
+	height: 350px;
+	max-width: 50%;
+	flex-grow: 1;
+	overflow: hidden;
+}
+.usuario .imagen img{
+	height: 100%;
+	
+	
+}
+.usuario .details{
+	flex-grow: 1;
+	margin-left: 20px;
+}

@@ -16,7 +16,7 @@ $prod = $sa->getProducto($_GET["nom"]);
 			    $perfil = 'perfilVisitante.php?nickname='.$prod[$i]->getOwner().'';
 			    echo"<h1>".$prod[$i]->getNombre()."</h1>"; ?>
 			    <div class="author"> <!--la imagen se debe cambiar cuando esten las del usuario -->
-			    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img src="img/'.$prod[$i]->getOwner().'.png"/> 
+			    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img onerror=this.src="img/error/no-image.png" src="img/'.$prod[$i]->getOwner().'.png"/> 
 		              	<h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
 			    </div>
 			    <div class="category">
