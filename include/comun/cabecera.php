@@ -19,8 +19,7 @@
     <div class="regCont">
         <div class="popupCloseButton">X</div>
         <h1>Registro</h1>
-        <p class="regError"></p>
-        <p id="correoNoValido" hidden> Correo inválido </p>
+        <p class="regError" id="general"></p>
         <form class="formulario peReg" action="procesarRegistro.php" method="POST">
             <p>Nombre:</p>
             <input type="text" name="nom" placeholder="Introduce nombre" required>
@@ -51,9 +50,38 @@
 
 	<div id="log">
 	<?php
-  if (isset($_SESSION["login"]) and $_SESSION["login"]) {
-		echo "<p>Bienvenido <a class='perfil' href='perfil.php'>".$_SESSION["nombre"]."</a>. <a href='logout.php'>Logout</a></p>";
-        ?>
+  if (isset($_SESSION["login"]) and $_SESSION["login"]) 
+        {
+        require_once('include/UsuarioSA.php');
+        $sa = new UsuarioSA();
+        $tra = new usuarioTransfer($_SESSION["nombre"],"","","","",0,0,"");
+
+        $user = $sa->mostrarUsuario($tra);
+        echo '<script>console.log("'.$user->getNickname().'")</script>';
+        $nombre = $user->getNombre();
+        $apellido = $user->getApellido();
+        $nickname = $_SESSION["nombre"];?>
+
+        <a href="perfil.php?opt=verProdPuja" class="opts">Mis Productos</a>
+        <a href="perfil.php?opt=verProdSolic" class="opts">Mis Solicitudes</a>
+        <div class="dropdown">
+        <button class="dropbtn"><i class='fa fa-user'></i> <?php echo $nickname; ?></i></button>
+        <div class="dropdown-content">
+            <a href="perfil.php">
+                <div class="perfilCabe">
+                    <div><img onerror='this.src="img/error/no-image.png"' class='imgPerfil' src=<?php echo "'img/".$nickname.".png'"; ?>></div>
+                    <div><p><?php echo $nombre.' '.$apellido; ?></p><p><?php echo $nickname; ?></p></div>
+                </div>
+            </a>
+            <!--<a href="perfil.php?opt=actividadReciente">Historial</a>-->
+            <a href="perfil.php?opt=verProds">Inventario</a>
+            <a href="perfil.php?opt=verPujas">Mis Pujas</a>
+            <a href="perfil.php?opt=anadProd"><i class="fa fa-plus" aria-hidden="true"></i>Añadir Producto</a>
+            <a href="perfil.php?opt=solicitarProd"><i class="fa fa-eye" aria-hidden="true"></i>Solicitar Producto</a>
+            <a href='logout.php' class="logout"><i class="fa fa-sign-out"></i>Cerrar sesión</a>
+            </div>
+        </div>
+        
         <?php
         
 	}
