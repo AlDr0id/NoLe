@@ -229,10 +229,11 @@
 	height: 350px;
 	width: 350px;
 	flex-grow: 1;
-	overflow: hidden;
+	overflow: visible;
 }
 .usuario .imagen img{
-	height: 100%;
+	height: 350px;
+	width: 350px;
 	border-radius: 50%;
 	border: 5px solid green;
 	
