@@ -27,7 +27,7 @@ if (! isset($_GET['id']) ) {
 			<h5>Descripción del producto:</h5>
 			<textarea name="descP" placeholder="Descripción del producto"></textarea>
 			<h5>Precio:</h5>
-			<input type="number" name="precio" placeholder="Precio del producto" min=0 required >
+			<input type="number" name="precio" placeholder="Precio del producto" min=0 step=0.01 required >
 			<h5>Categoria:</h5>
 			<select class="cateP" name ="cateP" required >
 				<option value="-1">---</option>
@@ -212,7 +212,7 @@ else{
 			<textarea name="descP" placeholder="Descripción del producto" ><?=$descP ?></textarea>
 			<?php if(!$enPuja){ ?>
 			<h5>Precio:</h5>
-			<input type="number" name="precio" placeholder="Precio del producto" min=0 value="<?=$precio ?>" required >
+			<input type="number" name="precio" placeholder="Precio del producto" min=0 value="<?=$precio ?>" step=0.01 required >
 			<?php } ?>
 			<h5>Categoria:</h5>
 			<select class="cateP" name ="cateP" required>
@@ -249,6 +249,7 @@ else{
 				 ?>
 
 			</select>
+			<script type="text/javascript">alert('joder');</script>
 			<?php
 				switch ($cateP) {
 						case '0':

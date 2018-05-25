@@ -95,13 +95,12 @@
 	        <form class="formulario" action=<?php echo "'procesarPuja.php?idProd=".$_GET['id']."&idVend=".$propietario."'"; ?> method="POST">
 
 	        	<div class="popupPujaDin">
-			        <input class="valorPuja" type="number" name="valorPuja" value=<?php echo $prod->getPrecio();?> min= <?php echo $prod->getPrecio();?>>
+			        <input class="valorPuja" type="number" name="valorPuja" value=<?php echo $prod->getPrecio();?> min= <?php echo $prod->getPrecio();?> step=0.01>
 			        <button type="submit">Añadir puja</button>
 	        	</div>
 
 	        	<div class="popupPujaProd">
 					<select name="trueque">
-						<option value='-1' selected>-</option>
 						<?php
 							$sa = new productoOfreSA();
 							$productos=$sa->getProductoUsuarioInventario($_SESSION['nombre']);
@@ -116,7 +115,9 @@
 
 						 ?>
 					</select>
-	            <button type="submit">Añadir puja</button>
+	            <?php if ($productos != NULL){
+	            	echo '<button type="submit">Añadir puja</button>';
+	            } ?>
 	        	</div>
 	        </form>
 	        <?php }
