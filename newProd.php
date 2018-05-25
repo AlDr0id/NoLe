@@ -54,7 +54,6 @@ if (! isset($_GET['id']) ) {
 					<option value="0">Dedal</option>
 					<option value="1">Vajilla</option>
 					<option value="2">Imán</option>
-					<option value="3">Otro</option>
 				</select>
 				<h5>Origen:</h5>
 				<input type="text" name="rclaOrigen" placeholder="Origen del producto" >
@@ -273,7 +272,6 @@ else{
 										<option value="0">Dedal</option>
 										<option value="1">Vajilla</option>
 										<option value="2">Imán</option>
-										<option value="3">Otro</option>
 									</select>
 									<h5>Origen:</h5>
 									<input type="text" name="rclaOrigen" placeholder="Origen del producto" value="<?=$origP ?>" >
