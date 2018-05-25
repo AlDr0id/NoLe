@@ -250,6 +250,7 @@ else{
 				 ?>
 
 			</select>
+			<script type="text/javascript">alert('joder');</script>
 			<?php
 				switch ($cateP) {
 						case '0':
@@ -299,7 +300,7 @@ else{
 							break;
 						case '3':
 							?>
-								<div class="fil" >
+								<div>
 									<h5>Pais:</h5>
 									<input type="text" name="filPais" placeholder="Pais de origen" value="<?=$paisP ?>" >
 									<h5>Año:</h5>
@@ -309,7 +310,7 @@ else{
 							break;
 						case '4':
 							?>
-								<div class="vini" >
+								<div>
 									<h5>Año:</h5>
 									<input type="number" name="viniAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" >
 									<h5>Compositor:</h5>
@@ -323,7 +324,7 @@ else{
 							break;
 						case '5':
 							?>
-								<div class="cromos" >
+								<div>
 									<h5>Año:</h5>
 									<input type="number" name="cromosAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" >
 									<h5>Colección:</h5>
@@ -335,7 +336,7 @@ else{
 							break;
 						case '6':
 							?>
-								<div class="libros" >
+								<div>
 									<h5>Año:</h5>
 									<input type="number" name="librosAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" >
 									<h5>Autor:</h5>
@@ -353,7 +354,7 @@ else{
 							break;
 						case '7':
 							?>
-								<div class="trastero" >
+								<div>
 									<h5>Año:</h5>
 									<input type="number" name="trasteroAnyo" placeholder="Año" min=0 max=2018 value="<?=$anioP ?>" >
 									<h5>Origen:</h5>

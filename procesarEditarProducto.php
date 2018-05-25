@@ -100,7 +100,7 @@ require_once("include/numismaticaTransfer.php");
         $productoSA = new cromosSA();
 
         $productoCromos->setId($idP);
-        $id2 = $productoSA->newProductoCromos($productoCromos);
+        $id2 = $productoSA->editProductoCromos($productoCromos);
 
         break;
       case '6':
@@ -116,7 +116,7 @@ require_once("include/numismaticaTransfer.php");
         $productoSA = new librosComicsSA();
 
         $productoLib->setId($idP);
-        $id2 = $productoSA->newProductoLibrosComics($productoLib);
+        $id2 = $productoSA->editProductoLibrosComics($productoLib);
 
         break;
       case '7':
@@ -128,7 +128,7 @@ require_once("include/numismaticaTransfer.php");
         $productoSA = new trasteroSA();
 
         $productoTras->setId($idP);
-        $id2 = $productoSA->newProductoTrastero($productoTras);
+        $id2 = $productoSA->editProductoTrastero($productoTras);
         break;
 
  			default:
