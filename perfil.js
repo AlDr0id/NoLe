@@ -18,12 +18,15 @@ $(document).ready(function(){
     }
     if (loc.indexOf('verProds') != -1) {
         $('.verProductos').addClass('activePerfil');
+        $(".verOpts").slideDown("slow");
     }
     if (loc.indexOf('verPujas') != -1) {
         $('.verPujas').addClass('activePerfil');
+        $(".verOpts").slideDown("slow");
     }
     if (loc.indexOf('verProdPuja') != -1) {
         $('.verProductosPuja').addClass('activePerfil');
+        $(".verOpts").slideDown("slow");
     }
     if (loc.indexOf('camPass') != -1) {
         $('.cambiarPass').addClass('activePerfil');
@@ -37,5 +40,22 @@ $(document).ready(function(){
     if (loc.indexOf('verPerfil') != -1) {
         $('.verPerfil').addClass('activePerfil');
     }
-
+    if (loc.indexOf('verProdSolic') != -1) {
+        $('.verProductosSolicitados').addClass('activePerfil');
+        $(".verOpts").slideDown("slow");
+    }
+    if (loc.indexOf('solicitarProd') != -1) {
+        $('.solicitarProducto').addClass('activePerfil');
+    }
+    
+  $('.ver').click(function () {
+    $(".verOpts").slideToggle("slow");
+    if ($('.ver i').attr('class') == 'down') {
+        $('.ver i').attr('class','up');
+    }
+    else{
+        $('.ver i').attr('class','down');
+    }
+    
+  });
 });

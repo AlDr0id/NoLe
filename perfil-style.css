@@ -25,6 +25,18 @@
 	text-decoration-color: #FCF282; */
 
 }
+.verOpts{
+	display: none;
+}
+.ver i{
+	margin-left: 5px;
+}
+.ver .up{
+	margin-top:4px;
+}
+.ver .down{
+	margin-bottom: 3px;
+}
 .activePerfil{
 	border-left: 8px solid #FCF282;
 }
