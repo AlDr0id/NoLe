@@ -17,7 +17,7 @@
 				$perfil = 'perfilVisitante.php?nickname='.$prod[$i]->getOwner().'';
 				echo"<h1>".$prod[$i]->getNombre()."</h1>"; ?>
 				<div class="author">
-					<?php echo '<a class ="seemore" href='. $perfil . '><img src="img/'.$prod[$i]->getOwner().'.png"/>
+					<?php echo '<a class ="seemore" href='. $perfil . '><img onerror=this.src="img/error/no-image.png" src="img/'.$prod[$i]->getOwner().'.png"/>
 		              <h2>'. $prod[$i]->getOwner() .'</h2></a>' ?>
 				</div>
 				<div class="category">
