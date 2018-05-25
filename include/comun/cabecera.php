@@ -67,7 +67,7 @@
         <div class="dropdown">
         <button class="dropbtn"><i class='fa fa-user'></i> <?php echo $nickname; ?></i></button>
         <div class="dropdown-content">
-            <a href="perfil.php">
+            <a href="perfil.php?opt=actividadReciente">
                 <div class="perfilCabe">
                     <div><img onerror='this.src="img/error/no-image.png"' class='imgPerfil' src=<?php echo "'img/".$nickname.".png'"; ?>></div>
                     <div><p><?php echo $nombre.' '.$apellido; ?></p><p><?php echo $nickname; ?></p></div>
