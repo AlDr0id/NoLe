@@ -212,16 +212,31 @@
 }
 .usuario .imagen{
 	height: 350px;
-	max-width: 50%;
+	width: 350px;
 	flex-grow: 1;
 	overflow: hidden;
 }
 .usuario .imagen img{
 	height: 100%;
-	
+	border-radius: 50%;
+	border: 5px solid green;
 	
 }
 .usuario .details{
 	flex-grow: 1;
 	margin-left: 20px;
+}
+.usuario .seemore p{
+	float: right;
+	color: black;
+	margin-top: 0;
+	border:2px solid black;
+	padding: 5px 30px;
+	border-radius: 4px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.usuario .seemore p:hover, .arrow:hover{
+	background-color: black;
+	color: white;
 }
