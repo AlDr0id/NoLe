@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2018 a las 11:39:44
+-- Tiempo de generación: 25-05-2018 a las 18:52:55
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -170,7 +170,7 @@ INSERT INTO `numismatica` (`Id`, `Pais`, `Anyo`, `Conservacion`) VALUES
 
 CREATE TABLE `producto_ofrecido` (
   `ID` int(11) NOT NULL,
-  `Nombre` varchar(50) COLLATE utf8_bin NOT NULL,
+  `Nombre` varchar(200) COLLATE utf8_bin NOT NULL,
   `Usuario` varchar(20) COLLATE utf8_bin NOT NULL,
   `Fecha` datetime NOT NULL,
   `Disponible` tinyint(1) NOT NULL DEFAULT '1',
@@ -207,7 +207,8 @@ INSERT INTO `producto_ofrecido` (`ID`, `Nombre`, `Usuario`, `Fecha`, `Disponible
 (20, '6 CUARTOS 1850 NUEVO SIN GOMA', 'daniel', '2018-05-25 11:26:15', 1, 300, 'NÂº 001 - 6 CUARTOS 1850 NUEVO SIN GOMA - 2 MARGENES CORTOS', 3, 0),
 (21, 'mercers furniture Corona â€“ Mesa de comedor y 2 s', 'alberto', '2018-05-25 11:31:02', 1, 110, 'Madera maciza de pino.\r\nAcabado de cera antiguo.\r\nAutomontaje.', 7, 1),
 (22, 'Fitness revolucionario', 'alberto', '2018-05-25 11:36:06', 1, 17, 'La civilizaciÃ³n tiene una relaciÃ³n paradÃ³jica con la salud. Por un lado, vivimos ahora mÃ¡s que nunca y tenemos acceso a comodidades impensables hace unas pocas dÃ©cadas. Por otro lado, las nuevas tecnologÃ­as crean nuevos problemas, dando lugar a las enfermedades del progreso, como obesidad, diabetes, cÃ¡ncer, aterosclerosis y depresiÃ³n. Vivimos mÃ¡s pero pasamos mÃ¡s tiempo enfermos. Este libro detalla cÃ³mo evitar este triste destino. EntenderÃ¡s por quÃ© los genes tienen el secreto para deshacerse fÃ¡cilmente del sobrepeso y conocerÃ¡s los aspectos del mundo moderno que contribuyen a los trastornos del progreso. Te familiarizarÃ¡s con las tradiciones de las poblaciones mÃ¡s saludables del planeta y aprenderÃ¡s a aplicar la sabidurÃ­a del pasado para mejorar tu cuerpo en el presente. En un mundo plagado de mitos y falsas promesas, Fitness Revolucionario ofrece una visiÃ³n cientÃ­fica y global para eliminar esos kilos de mÃ¡s, pero tambiÃ©n para descansar mejor y vivir con mÃ¡s energÃ­a. Miles de personas han logrado su objetivo siguiendo los principios que encontrarÃ¡s en este libro. Es el momento de experimentar una salud salvaje.', 6, 0),
-(23, 'Dragon Ball Serie roja nÂº 218', 'alberto', '2018-05-25 11:38:43', 1, 3, 'Trunks ha vuelto una vez mÃ¡s del futuro. En su mundo, un hombre idÃ©ntico a Goku, Goku Black, se dispone a exterminar a la humanidad. Â¿Â¡QuÃ© serÃ¡ de Goku y Vegeta, que se dirigen al futuro!? Mientras tanto, Zamasu, candidato a KaiÃ´shin del dÃ©cimo universo, se fija en Goku...', 6, 1);
+(23, 'Dragon Ball Serie roja nÂº 218', 'alberto', '2018-05-25 11:38:43', 1, 3, 'Trunks ha vuelto una vez mÃ¡s del futuro. En su mundo, un hombre idÃ©ntico a Goku, Goku Black, se dispone a exterminar a la humanidad. Â¿Â¡QuÃ© serÃ¡ de Goku y Vegeta, que se dirigen al futuro!? Mientras tanto, Zamasu, candidato a KaiÃ´shin del dÃ©cimo universo, se fija en Goku...', 6, 1),
+(24, 'Victorinox Huntsman 1.3713 - Cuchillo navaja con 9 funciones', 'manuel', '2018-05-25 06:52:06', 1, 50, 'Cuchilla grande, cuchilla pequeÃ±a, abrelatas ,destornillador 3 mm, abrebotellas, pelacables ,destornillador 6 mm ,escariador, punzÃ³n y punzÃ³n de costura ,sacacorchos ,tijeras ,sierra de madera, gancho multipropÃ³sito ,palillo ,pinzas, llavero.', 7, 1);
 
 -- --------------------------------------------------------
 
@@ -302,7 +303,8 @@ CREATE TABLE `trastero` (
 
 INSERT INTO `trastero` (`Id`, `Anyo`, `Origen`) VALUES
 (11, 1990, 'EspaÃ±ol'),
-(21, 2014, 'Desconocido');
+(21, 2014, 'Desconocido'),
+(24, 0, 'Suiza');
 
 -- --------------------------------------------------------
 
@@ -329,9 +331,12 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`Nombre`, `Apellido`, `Nickname`, `Pass`, `Correo`, `Activo`, `Foto`, `Valoracion`, `Numvaloraciones`) VALUES
 ('alberto', 'alberto', 'alberto', '$2y$10$J4.0fFMUebr1AOQq1CnbJO3eDy7/.UZhnsLHJRoorEeE6.KjkBGl.', 'alberto@alberto.com', 1, '', '0', 0),
 ('alejandro', 'alejandro', 'alejandro', '$2y$10$HmrDRMEZGn8igRHjJ1iHi.rx4R/0ZgQnxgkL7tafTrEi4PqDWCpG2', 'alejandro@alejandro.com', 1, '', '0', 0),
+('alvaro', 'alvaro', 'alvaro', '$2y$10$0zoz2BDQiUpoCfIM.YxtmeHnLPi0SzqyNY5kmxOdHd1kau9tesvki', 'alvaro@alvaro.com', 1, '', '0', 0),
 ('daniel', 'daniel', 'daniel', '$2y$10$AvQdfqCnxZ4NY8Q304zOKO7jm0.louKRf7pgy.E/nRWfZEPXoUY/C', 'daniel@daniel.com', 1, '', '0', 0),
 ('javier', 'javier', 'javier', '$2y$10$/NtuCSg/49OkQPiJyilQb.VIIcDdR/i2/CVzvVQLc3sTuudNUPRv.', 'javier@javier.com', 1, '', '0', 0),
-('marcos', 'marcos', 'marcos', '$2y$10$uX3hcX7748WgmzVvj16iA.0yvO4UTuQZTaImKdCPSzZAhW2gbe8WO', 'marcos@marcos.com', 1, '', '0', 0);
+('manuel', 'manuel', 'manuel', '$2y$10$EJvxYYQn3Pey5UW.5UQOjOKJo0iua088TpvdzUFx4dcopbH9bRjS6', 'manuel@manuel.com', 1, '', '0', 0),
+('marcos', 'marcos', 'marcos', '$2y$10$uX3hcX7748WgmzVvj16iA.0yvO4UTuQZTaImKdCPSzZAhW2gbe8WO', 'marcos@marcos.com', 1, '', '0', 0),
+('rodrigo', 'rodrigo', 'rodrigo', '$2y$10$4DWnNlTyqfzel56mOk0wkuLpSnDHSn6U4/GLHkUCOzwAUxHpHRBoG', 'rodrigo@rodrigo.com', 1, '', '0', 0);
 
 -- --------------------------------------------------------
 
