@@ -7,7 +7,6 @@ body{
 
 .formulario input{
 	background: none;
-	margin-left: 50px;
 	padding: 0px 10px 8px 10px;
     border: 0;
     outline: none;
@@ -22,7 +21,7 @@ body{
 }
 .formulario p{
 	display:block;
-	margin:5px 50px 0;
+	margin:5px 0 0;
 	font-size: 25px;
 	color:#5a5a5a
 }
@@ -188,4 +187,4 @@ body{
 .text_404{
 	font-size:30px;
 	text-align:center;
-}
+} 
