@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 	$(".valorar").click(function(){
 	   	$('.popupValorar').show();
 	});
@@ -12,4 +12,4 @@ $(document).ready(function(){
 		var path = "procesarValoracion.php?idpuja="+idPuja;
 		$(".valForm").attr("action", path);
 	}
- });
+ 
