@@ -103,6 +103,7 @@
 					<select name="trueque">
 						<option value='-1' selected>-</option>
 						<?php
+							$sa = new productoOfreSA();
 							$productos=$sa->getProductoUsuarioInventario($_SESSION['nombre']);
 							if ($productos != NULL) {
 								for ($i=0; $i < sizeof($productos); $i++) {
@@ -133,6 +134,8 @@
 		    }?>
 	    </div>
 	</div>
+
+
 	<div class="container">
 
 		<h1><?php echo $prod->getNombre();  ?></h1>
