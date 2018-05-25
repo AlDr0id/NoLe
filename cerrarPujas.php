@@ -31,9 +31,12 @@
 				echo "</div>";
 			}
 		}
-		else{
-			echo "<p>No hay pujas por tu producto</p>";
+		else{ 
+?>
+			<h2>Nadie ha pujado por su producto. Aún puedes <a href='perfil.php?opt=verProds&idProd=<?php echo $_GET["id"]; ?>'>mandarlo a su inventario </a>.</h2> 
+		<?php
 		}
+
 	?>
 </div>
 <?php } ?>

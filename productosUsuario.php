@@ -1,6 +1,13 @@
 <?php
 	require_once("include/productoOfreSA.php");
 	$sa = new productoOfreSA();
+	
+	if(isset($_GET["idProd"])){
+		$prod = $sa->getProducto($_GET["idProd"]);
+		$prod->setEnPuja(0);
+		$sa->editProducto($prod);
+	}
+
 	$prod = $sa->getProductoUsuarioInventario($_SESSION["nombre"]);
 ?>
 	<h1>Tus productos</h1>
