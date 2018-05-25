@@ -36,6 +36,9 @@
 .izquierda h2{
 	margin-top: 0;
 	padding-bottom: 5px;
+	
+}
+.izquierda .subrayado{
 	border-bottom: 1px solid gray;
 }
 .visitante{

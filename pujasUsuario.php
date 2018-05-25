@@ -34,10 +34,10 @@ $pujas = $sa->getPujaPostor($_SESSION["nombre"]);
 						}
 						?></h2>
 					</div>
-				<div class="fecha">
+					<div class="fecha">
 						<h2><?php echo $pujas[$i]->getFecha() ?></h2>
 					</div>
-				<div class="estado">
+					<div class="estado">
 						<h2><?php echo $pujas[$i]->getEstado() ?></h2>
 					</div>
 					<div class="separator"></div>
