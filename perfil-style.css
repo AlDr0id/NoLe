@@ -27,6 +27,12 @@
 }
 .verOpts{
 	display: none;
+	background-color: #F9F9F9FF;
+	display: block;
+    margin-top: 0px;
+    padding-top: 0px;
+    overflow: hidden;
+    box-shadow: lightgrey 0px 1px 6px 0px inset;
 }
 .ver i{
 	margin-left: 5px;
