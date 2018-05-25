@@ -3,8 +3,8 @@
 	$nickname = $_GET["nickname"];
 	$sa = new UsuarioSA();
   	$user = new usuarioTransfer($nickname,"","","","",0,0,"");
-	$us = $sa->mostrarUsuario($user);
-
+	
+	$us = $sa->mostrarUsuario($user)or exit(header("Refresh: 0 ;URL= 404.php"));
 	$nombre="";
 	if (isset($_SESSION['login'])){
 		$nombre =$_SESSION ["nombre"];
@@ -12,7 +12,8 @@
 
 	if($us->getNickname() == $nombre){
 		header("Refresh: 0 ;URL= perfil.php?opt=verPerfil");
-	}?>
+	}
+	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,9 +39,7 @@
 
   ?>
 
-  <div class="slider">
-    <img src="error/no-image.png">
-  </div>
+  
   <div class="container">
 <?php
 

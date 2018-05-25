@@ -23,9 +23,7 @@
 
   ?>
 
-  <div class="slider">
-    <img src="error/no-image.png">
-  </div>
+  
   <div class="container">
     <h1>Sobre nosotros</h1>
     <div class="sobre-div">

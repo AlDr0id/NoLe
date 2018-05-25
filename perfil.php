@@ -91,9 +91,7 @@
     }
   ?>
 
-  <div class="slider">
-    <img src="error/no-image.png">
-  </div>
+  
   <div class="container">
     <h1>Perfil del usuario</h1>
     <div class="perfil-div">

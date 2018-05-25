@@ -5,7 +5,7 @@
 	if (isset($_GET["id"])) {
 		$id = $_GET["id"];
 		$sa = new productoOfreSA();
-		$prod = $sa->getProducto($id);
+		$prod = $sa->getProducto($id) or exit(header("Refresh: 0 ;URL= 404.php"));
 		$propietario = $prod->getOwner();
 		$editar = false;
 		if (isset($_SESSION['login']) and $propietario == $_SESSION['nombre']){

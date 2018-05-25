@@ -20,7 +20,7 @@
 	<?php require_once("include/comun/cabecera.php"); ?>
 
 	<div class="hero-banner">
-		<img src="hero/colec3.jpeg">
+		<img src="img/hero/colec3.jpeg">
 		<form action="procesarBusqueda.php" class="formulario buscNombre" method="POST">
 			<h1>¿Quieres completar tu colección?</h1>
 			<p>Encuentra tu producto con nosotros</p>
