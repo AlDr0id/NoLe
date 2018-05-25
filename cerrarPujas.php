@@ -20,14 +20,14 @@
 		if($pujas != NULL){
 			for ($i=0; $i < sizeof($pujas); $i++) {
 				echo "<div class='card'>";
-					echo "<p>Postor: ".$pujas[$i]->getIdPostor()." Oferta: ";
+					echo "<p>Postor: ".$pujas[$i]->getIdPostor()."</p><p style= 'margin-left:35px'> Oferta: </p>";
 					if ($pujas[$i]->getIdTrueque() != NULL) {
-						echo "<a href='product.php?id=".$pujas[$i]->getIdTrueque()."'> Producto</a></p>";
+						echo "<a class='seemore' style= 'margin-left:15px' href='product.php?id=".$pujas[$i]->getIdTrueque()."'><p>Producto</p></a>";
 					}
 					else{
-						echo $pujas[$i]->getPrecio()."$</p>";
+						echo "<p style= 'margin-left:5px'>".$pujas[$i]->getPrecio()."$ </p>";
 					}
-					echo "<a class='seemore' href='perfil.php?opt=cerrarPujas&id=".$_GET['id']."&puja=".$pujas[$i]->getId()."'>Aceptar</a>";
+					echo "<a class='seemore' style= 'margin-left:50px' href='perfil.php?opt=cerrarPujas&id=".$_GET['id']."&puja=".$pujas[$i]->getId()."'><p>Aceptar</p></a>";
 				echo "</div>";
 			}
 		}
