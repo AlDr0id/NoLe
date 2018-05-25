@@ -249,7 +249,6 @@ else{
 				 ?>
 
 			</select>
-			<script type="text/javascript">alert('joder');</script>
 			<?php
 				switch ($cateP) {
 						case '0':
