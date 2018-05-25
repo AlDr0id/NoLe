@@ -147,13 +147,22 @@
         </div>
         <div class="derecha">
           <a class='actividadReciente' href="perfil.php?opt=actividadReciente" onclick="actualicePerfil()">Historial</a>
-          <a class="verProductos" href="perfil.php?opt=verProds" onclick="actualicePerfil()">Ver todos mis productos de inventario(No en puja)</a>
-          <a class="verPujas" href="perfil.php?opt=verPujas" onclick="actualicePerfil()">Ver todas mis pujas</a>
-          <a class="verProductosPuja" href="perfil.php?opt=verProdPuja" onclick="actualicePerfil()">Ver todos mis productos en puja</a>
-          <a class="verProductosSolicitados" href="perfil.php?opt=verProdSolic" onclick="actualicePerfil()">Ver mis productos solicitados</a>
+          <a class="ver">Ver  <i class="down"></i>
+            <div class="verOpts">
+              <ul>
+                <a class="verProductos" href="perfil.php?opt=verProds" onclick="actualicePerfil()">Productos inventario(No en puja)</a>
+                <a class="verPujas" href="perfil.php?opt=verPujas" onclick="actualicePerfil()">Mis pujas</a>
+                <a class="verProductosPuja" href="perfil.php?opt=verProdPuja" onclick="actualicePerfil()">Mis productos en puja</a>
+                <a class="verProductosSolicitados" href="perfil.php?opt=verProdSolic" onclick="actualicePerfil()">Mis productos solicitados</a>
+                
+              </ul>
+            </div>
+          </a>
+          
           <a class="anadirProducto" href="perfil.php?opt=anadProd" onclick="actualicePerfil()">Añadir un producto</a>
           <a class="solicitarProducto" href="perfil.php?opt=solicitarProd" onclick="actualicePerfil()">Solicitar un producto</a>
-          <a class="verPerfil" href="perfil.php?opt=verPerfil" onclick="actualicePerfil()">Ver mi perfil</a> <!-- Dentro de aquí habrá una opción para editar perfil, salvo la contraseña que va aquí fuera  -->
+           <!-- Dentro de aquí habrá una opción para editar perfil, salvo la contraseña que va aquí fuera  -->
+          <a class="verPerfil" href="perfil.php?opt=verPerfil" onclick="actualicePerfil()">Ver mi perfil</a>
           <a class='cambiarPass' href="perfil.php?opt=camPass" onclick="actualicePerfil()">Cambiar contraseña</a>
           <a class='deleteCuenta' href="perfil.php?opt=deleteCuenta" onclick="actualicePerfil()">Eliminar mi cuenta</a>
 

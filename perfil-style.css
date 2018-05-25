@@ -25,6 +25,18 @@
 	text-decoration-color: #FCF282; */
 
 }
+.verOpts{
+	display: none;
+}
+.ver i{
+	margin-left: 5px;
+}
+.ver .up{
+	margin-top:4px;
+}
+.ver .down{
+	margin-bottom: 3px;
+}
 .activePerfil{
 	border-left: 8px solid #FCF282;
 }
@@ -217,11 +229,10 @@
 	height: 350px;
 	width: 350px;
 	flex-grow: 1;
-	overflow: visible;
+	overflow: hidden;
 }
 .usuario .imagen img{
-	height: 350px;
-	width: 350px;
+	height: 100%;
 	border-radius: 50%;
 	border: 5px solid green;
 	
