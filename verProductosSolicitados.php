@@ -32,7 +32,7 @@
 						}
 					?>
 					<div class="author">
-						<?php echo '<a class ="seemore" href='. $perfil . '><img src="img/'. $prod[$i]->getId_user() .'.png"/>
+						<?php echo '<a class ="seemore" href='. $perfil . '><img onerror=this.src="img/error/no-image.png" src="img/'. $prod[$i]->getId_user() .'.png"/>
 			              <h2>'. $prod[$i]->getId_user() .'</h2></a>' ?>
 					</div>
 					<div class="category">
