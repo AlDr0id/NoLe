@@ -179,7 +179,6 @@
           echo '<script type="text/javascript" src="valoracion.js"></script>';
           break;
        default:
-         # code...
          break;
     }
   }
