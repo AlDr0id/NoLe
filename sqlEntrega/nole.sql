@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2018 a las 18:32:32
+-- Tiempo de generación: 25-05-2018 a las 11:39:44
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -65,7 +65,8 @@ CREATE TABLE `cromos` (
 --
 
 INSERT INTO `cromos` (`Id`, `Anyo`, `Coleccion`, `Ncromo_idcromo`) VALUES
-(9, 2015, 'liga este', '');
+(9, 2015, 'liga este', ''),
+(12, 2010, 'MUNDIAL 2010 SUDAFRICA', '');
 
 -- --------------------------------------------------------
 
@@ -88,7 +89,8 @@ CREATE TABLE `figuras` (
 --
 
 INSERT INTO `figuras` (`Id`, `Alto`, `Ancho`, `Largo`, `Tema`, `Material`, `Fabricante`) VALUES
-(5, 29, 5, 5, 'ACTION MAN', 'Plastico', 'ACTION MAN');
+(5, 29, 5, 5, 'ACTION MAN', 'Plastico', 'ACTION MAN'),
+(17, 10, 5, 5, ' Marvel', 'PVC/ABS', 'Marvel');
 
 -- --------------------------------------------------------
 
@@ -108,7 +110,8 @@ CREATE TABLE `filatelia` (
 
 INSERT INTO `filatelia` (`Id`, `Anyo`, `Pais`) VALUES
 (6, 1951, 'EspaÃ±a'),
-(7, 2010, 'EspaÃ±a');
+(7, 2010, 'EspaÃ±a'),
+(20, 1850, 'EspaÃ±a');
 
 -- --------------------------------------------------------
 
@@ -131,7 +134,10 @@ CREATE TABLE `libros_comics` (
 --
 
 INSERT INTO `libros_comics` (`Id`, `Anyo`, `Autor`, `Editorial`, `Genero`, `Idioma`, `Formato`) VALUES
-(10, 1989, 'Marcus Pfister', 'Penguin Random House', 'Accion', 'EspaÃ±ol', 'Tapa Blanda');
+(10, 1989, 'Marcus Pfister', 'Penguin Random House', 'Accion', 'EspaÃ±ol', 'Tapa Blanda'),
+(18, 2015, 'JuliÃ¡n M. Clemente', 'Panini', 'Accion', 'EspaÃ±ol', 'Tapa blanda'),
+(22, 2018, 'Marcos Vazquez Garcia', 'ANAYA', 'Deportes', 'EspaÃ±ol', 'Tapa blanda'),
+(23, 2018, 'Akira Toriyama', 'Planeta DeAgostini', 'Manga', 'EspaÃ±ol', 'Tapa blanda');
 
 -- --------------------------------------------------------
 
@@ -152,7 +158,9 @@ CREATE TABLE `numismatica` (
 
 INSERT INTO `numismatica` (`Id`, `Pais`, `Anyo`, `Conservacion`) VALUES
 (1, 'Armenia', 2015, 'Bueno'),
-(2, 'Marruecos', 1299, 'Bueno');
+(2, 'Marruecos', 1299, 'Bueno'),
+(15, 'Grecia', 2004, 'Bueno'),
+(16, 'Italia', 2004, 'Bueno');
 
 -- --------------------------------------------------------
 
@@ -162,7 +170,7 @@ INSERT INTO `numismatica` (`Id`, `Pais`, `Anyo`, `Conservacion`) VALUES
 
 CREATE TABLE `producto_ofrecido` (
   `ID` int(11) NOT NULL,
-  `Nombre` varchar(20) COLLATE utf8_bin NOT NULL,
+  `Nombre` varchar(50) COLLATE utf8_bin NOT NULL,
   `Usuario` varchar(20) COLLATE utf8_bin NOT NULL,
   `Fecha` datetime NOT NULL,
   `Disponible` tinyint(1) NOT NULL DEFAULT '1',
@@ -187,7 +195,19 @@ INSERT INTO `producto_ofrecido` (`ID`, `Nombre`, `Usuario`, `Fecha`, `Disponible
 (8, 'Abbey Road (Vinilo)', 'marcos', '2018-05-24 06:16:04', 1, 20, 'Abbey Road (Vinilo)', 4, 0),
 (9, 'Cromos liga este', 'marcos', '2018-05-24 06:18:57', 1, 100, 'Cromos conmemorativos y exclusivos no se pueden conseguir en ningun sitio liga este 2015-16.', 5, 1),
 (10, 'Pilares de la Tierra', 'marcos', '2018-05-24 06:26:25', 1, 12, 'Los pilares de la Tierra es la obra maestra de Ken Follett y constituye una excepcional evocaciÃ³n de una Ã©poca de violentas pasiones.\r\n\r\nEl gran maestro de la narrativa de acciÃ³n y suspense nos transporta a la Edad Media, a un fascinante mundo de reyes, damas, caballeros, pugnas feudales, castillos y ciudades amuralladas. El amor y la muerte se entrecruzan vibrantemente en este magistral tapiz cuyo centro es la construcciÃ³n de una catedral gÃ³tica. La historia se inicia con el ahorcamiento pÃºblico de un inocente y finaliza con la humillaciÃ³n de un rey.', 6, 0),
-(11, 'Consola de nogal', 'marcos', '2018-05-24 06:29:20', 1, 800, 'Consola de nogal barnizada en muy buena conservaciÃ³n', 7, 1);
+(11, 'Consola de nogal', 'marcos', '2018-05-24 06:29:20', 1, 800, 'Consola de nogal barnizada en muy buena conservaciÃ³n', 7, 1),
+(12, 'COLECCION COMPLETA MUNDIAL 2010 SUDAFRICA', 'alejandro', '2018-05-25 10:56:20', 1, 50, 'COLECCION COMPLETA MUNDIAL 2010 SUDAFRICA DE PANINI\r\n\r\nSE COMPONE DE LOS 640 CROMOS DE LA COLECCION SIN PEGAR + EL ALBUM OFICIAL DE LA COLECCION ( TODO TOTALMENTE NUEVO )\r\n\r\nSE AÃ‘ADEN 4 CROMOS EXCLUSIVOS ( KLOSE  - ALEMANIA )', 5, 1),
+(13, 'Disco red hot chili peppers californication', 'alejandro', '2018-05-25 11:00:51', 1, 8, '', 4, 1),
+(14, 'NUNCHAKUS BOIS', 'alejandro', '2018-05-25 11:04:02', 1, 23, 'Nunchakus Bois de entrenamiento\r\nFuertes y Resistentes\r\nMaterial: Madera clara', 1, 0),
+(15, '2 â‚¬ CONMEMORATIVOS GRECIA 2004', 'javier', '2018-05-25 11:09:40', 1, 6, '2 â‚¬ conmemorativos Grecia 2004 -OLIMPIADA DE ATENAS', 0, 1),
+(16, '2 â‚¬ CONMEMORATIVOS ITALIA 2004', 'javier', '2018-05-25 11:13:11', 1, 7, '2 â‚¬ conmemorativos Italia 2004 - F.A.O.', 0, 0),
+(17, 'FIGURA SPIDER-MAN MILES MORALES - MARVEL NOW ARTFX', 'javier', '2018-05-25 11:15:43', 1, 70, 'Kotobukiya presenta la estatua de Spider-man, en su versiÃ³n del traje perteneciente a Miles Morales, para la colecciÃ³n ART FX+. Este personaje pertenecÃ­a al universo Ultimate de Marvel aunque actualmente, despues de la Ãºltima Secret War, pertenece al nuevo universo Marvel. Esta realizada en PVC/ABS y mide unos 10 cm de alto. Escala 1/10. Esta figura incluye base soporte para exposiciÃ³nn. Es parte de la serie dedicada Esta nueva estatua es la segunda en una serie de figuras basadas en el universo Spider-Man, que ya tuvo su primera versiÃ³n con la estatua de The Amazing Spider-Man y que se proyecta siga en el futuro con las figuras de Spider-Man 2099, Spider-Gwen, Veneno clÃ¡sico, Veneno Moderno y Matanza.', 2, 1),
+(18, 'Spiderman. La Historia JamÃ¡s Contada', 'daniel', '2018-05-25 11:21:09', 1, 23, 'Icono de la cultura popular del siglo XX, personificaciÃ³n de todos los nerds que hayan existido, hÃ©roe de la calle, sÃ­mbolo de Marvel Comicsâ€¦ En su mÃ¡s de medio siglo de existencia, Spider-Man ha sido todo eso y mÃ¡s. Su historia es la historia del cÃ³mic americano, en una Ã©poca apasionante en que Marvel se reinventÃ³ una y otra vez, de pequeÃ±a editorial a lÃ­der del mercado, de empresa en bancarrota a gigante del entretenimiento. JuliÃ¡n M. Clemente, autor de multitud de libros, artÃ­culos y estudios sobre La Casa de las Ideas y Editor Marvel en EspaÃ±a, ha buscado en los rincones mÃ¡s oscuros de innumerables archivos, ha preguntado a autores y editores y ha investigado mÃ¡s allÃ¡ de toda medida, a la caza de secretos nunca antes desvelados, para ofrecer el mÃ¡s exhaustivo y completo anÃ¡lisis de la historia de Spider-Man que se haya realizado jamÃ¡s, en una obra que ha tardado mÃ¡s de quince aÃ±os en completar. No lo sabrÃ¡s todo sobre el trepamuros hasta que no hayas leÃ­do Spider-Man: La historia jamÃ¡s contada.', 6, 1),
+(19, 'ImÃ¡n para nevera acrÃ­lico El Greco Toledo', 'daniel', '2018-05-25 11:23:13', 1, 7, '2,75 pulgadas x 2 pulgadas imÃ¡n acrÃ­lico transparente con imagen impresa en calidad papel fotogrÃ¡fico brillante y recubierto', 1, 1),
+(20, '6 CUARTOS 1850 NUEVO SIN GOMA', 'daniel', '2018-05-25 11:26:15', 1, 300, 'NÂº 001 - 6 CUARTOS 1850 NUEVO SIN GOMA - 2 MARGENES CORTOS', 3, 0),
+(21, 'mercers furniture Corona â€“ Mesa de comedor y 2 s', 'alberto', '2018-05-25 11:31:02', 1, 110, 'Madera maciza de pino.\r\nAcabado de cera antiguo.\r\nAutomontaje.', 7, 1),
+(22, 'Fitness revolucionario', 'alberto', '2018-05-25 11:36:06', 1, 17, 'La civilizaciÃ³n tiene una relaciÃ³n paradÃ³jica con la salud. Por un lado, vivimos ahora mÃ¡s que nunca y tenemos acceso a comodidades impensables hace unas pocas dÃ©cadas. Por otro lado, las nuevas tecnologÃ­as crean nuevos problemas, dando lugar a las enfermedades del progreso, como obesidad, diabetes, cÃ¡ncer, aterosclerosis y depresiÃ³n. Vivimos mÃ¡s pero pasamos mÃ¡s tiempo enfermos. Este libro detalla cÃ³mo evitar este triste destino. EntenderÃ¡s por quÃ© los genes tienen el secreto para deshacerse fÃ¡cilmente del sobrepeso y conocerÃ¡s los aspectos del mundo moderno que contribuyen a los trastornos del progreso. Te familiarizarÃ¡s con las tradiciones de las poblaciones mÃ¡s saludables del planeta y aprenderÃ¡s a aplicar la sabidurÃ­a del pasado para mejorar tu cuerpo en el presente. En un mundo plagado de mitos y falsas promesas, Fitness Revolucionario ofrece una visiÃ³n cientÃ­fica y global para eliminar esos kilos de mÃ¡s, pero tambiÃ©n para descansar mejor y vivir con mÃ¡s energÃ­a. Miles de personas han logrado su objetivo siguiendo los principios que encontrarÃ¡s en este libro. Es el momento de experimentar una salud salvaje.', 6, 0),
+(23, 'Dragon Ball Serie roja nÂº 218', 'alberto', '2018-05-25 11:38:43', 1, 3, 'Trunks ha vuelto una vez mÃ¡s del futuro. En su mundo, un hombre idÃ©ntico a Goku, Goku Black, se dispone a exterminar a la humanidad. Â¿Â¡QuÃ© serÃ¡ de Goku y Vegeta, que se dirigen al futuro!? Mientras tanto, Zamasu, candidato a KaiÃ´shin del dÃ©cimo universo, se fija en Goku...', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -241,7 +261,8 @@ CREATE TABLE `rincon_de_la_abuela` (
 
 INSERT INTO `rincon_de_la_abuela` (`Id`, `Tipo`, `Origen`) VALUES
 (3, 0, 'Bolivia'),
-(4, 2, 'Italia');
+(4, 2, 'Italia'),
+(19, 2, 'UK');
 
 -- --------------------------------------------------------
 
@@ -280,7 +301,8 @@ CREATE TABLE `trastero` (
 --
 
 INSERT INTO `trastero` (`Id`, `Anyo`, `Origen`) VALUES
-(11, 1990, 'EspaÃ±ol');
+(11, 1990, 'EspaÃ±ol'),
+(21, 2014, 'Desconocido');
 
 -- --------------------------------------------------------
 
@@ -305,6 +327,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Nombre`, `Apellido`, `Nickname`, `Pass`, `Correo`, `Activo`, `Foto`, `Valoracion`, `Numvaloraciones`) VALUES
+('alberto', 'alberto', 'alberto', '$2y$10$J4.0fFMUebr1AOQq1CnbJO3eDy7/.UZhnsLHJRoorEeE6.KjkBGl.', 'alberto@alberto.com', 1, '', '0', 0),
+('alejandro', 'alejandro', 'alejandro', '$2y$10$HmrDRMEZGn8igRHjJ1iHi.rx4R/0ZgQnxgkL7tafTrEi4PqDWCpG2', 'alejandro@alejandro.com', 1, '', '0', 0),
+('daniel', 'daniel', 'daniel', '$2y$10$AvQdfqCnxZ4NY8Q304zOKO7jm0.louKRf7pgy.E/nRWfZEPXoUY/C', 'daniel@daniel.com', 1, '', '0', 0),
+('javier', 'javier', 'javier', '$2y$10$/NtuCSg/49OkQPiJyilQb.VIIcDdR/i2/CVzvVQLc3sTuudNUPRv.', 'javier@javier.com', 1, '', '0', 0),
 ('marcos', 'marcos', 'marcos', '$2y$10$uX3hcX7748WgmzVvj16iA.0yvO4UTuQZTaImKdCPSzZAhW2gbe8WO', 'marcos@marcos.com', 1, '', '0', 0);
 
 -- --------------------------------------------------------
@@ -326,7 +352,8 @@ CREATE TABLE `vinilos_discos` (
 --
 
 INSERT INTO `vinilos_discos` (`Id`, `Anyo`, `Autor_compositor`, `Grupo_cantante`, `Genero`) VALUES
-(8, 2012, 'George Martin', 'The Beatles', 'Rock');
+(8, 2012, 'George Martin', 'The Beatles', 'Rock'),
+(13, 1999, 'red hot chili peppers', 'red hot chili peppers', 'Rock');
 
 --
 -- Índices para tablas volcadas
