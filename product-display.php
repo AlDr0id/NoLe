@@ -94,6 +94,7 @@
 	<h2>Resultado de la búsqueda</h2>
 
 	<?php
+	if($prod != null){
     for ($i=0; $i < sizeof($prod); $i++) {
     ?>
 	  <div class="card">
@@ -148,5 +149,7 @@
 		  </div>
 		</div>
 	<?php
+		}
 	}
+	else echo "<div class='err'> Sin resultados</div>";
 	    ?>

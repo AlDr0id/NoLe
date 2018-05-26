@@ -118,7 +118,7 @@
 					<?php }
 
 				}
-				else echo "<h4>No hay productos disponibles para pujar</h4>";
+				else echo "<div class='err'> No hay productos pujables</div>";
 		    
 			    ?>
 			</div>
