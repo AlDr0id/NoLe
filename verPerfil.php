@@ -37,6 +37,7 @@
 			    <div class="mail">
 			      	<h2>Email: <?php echo $us->getCorreo() ?></h2>
 			    </div>
+			    
 			    <div class="separator"></div>
 			    <?php
 			    	$editarperfil=true;
@@ -63,7 +64,7 @@
 				<p>Inserta tu contraseña*: </p>
 				<input type="password" name="pass" required="true">
 				<p>Foto perfil: </p>
-				<input type="file" name="fotoPerfil" />
+				<input type="file" name="fotoPerfil" accept=".png, .jpg, .jpeg"/>
 				<button type="submit" class="guardar">Guardar datos</button>
 			</form>
 
