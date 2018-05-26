@@ -234,11 +234,11 @@ class BusquedaDAO extends DAO{
               
               break;
               case 6:
-                  $sql = "SELECT * FROM producto_ofrecido INNER JOIN libros_cromics ON producto_ofrecido.id=libros_cromics.id" ;
+                  $sql = "SELECT * FROM producto_ofrecido INNER JOIN libros_comics ON producto_ofrecido.id=libros_comics.id" ;
                   $sql .= " AND producto_ofrecido.Categoria = $Categoria";
                    if(array_key_exists ('librosFecha', $argumentos)){
                     $anio= $argumentos["librosFecha"];
-                    $sql .= " AND libros_cromics.Anyo LIKE '$anio'";
+                    $sql .= " AND libros_comics.Anyo LIKE '$anio'";
                     $p = false;
                   }
                   if(array_key_exists ('librosColeccion', $argumentos)) {
@@ -248,7 +248,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $autor = $argumentos["librosAutor"];
-                    $sql .= " UPPER(libros_cromics.Autor) LIKE UPPER('$autor')";
+                    $sql .= " UPPER(libros_comics.Autor) LIKE UPPER('$autor')";
 
                     $p = false;
                   }
@@ -259,7 +259,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $editorial = $argumentos["librosEditorial"];
-                    $sql .= " UPPER(filatelia.Editorial) LIKE UPPER('$editorial')";
+                    $sql .= " UPPER(libros_comics.Editorial) LIKE UPPER('$editorial')";
 
                     $p = false;
                   }
@@ -270,7 +270,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $genero = $argumentos["librosGenero"];
-                    $sql .= " UPPER(Genero.Editorial) LIKE UPPER('$genero')";
+                    $sql .= " UPPER(libros_comics.Genero) LIKE UPPER('$genero')";
 
                     $p = false;
                   }
@@ -281,7 +281,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $idioma = $argumentos["librosIdioma"];
-                    $sql .= " UPPER(filatelia.Idioma) LIKE UPPER('$idioma')";
+                    $sql .= " UPPER(libros_comics.Idioma) LIKE UPPER('$idioma')";
 
                     $p = false;
                   }
