@@ -61,61 +61,65 @@
 			<h1>Últimos productos</h1>
 			<div class="productosCuadricula">
 			<?php
+				if($ultimosProds != null){
+					for ($i=0; $i < sizeof($ultimosProds); $i++) {
+						?>
+						<div class="card cuadricula">
+						<?php echo '<div class="thumbnail"><img class="leftImg" src="img/prods/'.$ultimosProds[$i]->getId().'.png"/></div>'; ?>
+						<div class="details">
+							<?php
+								$path = 'product.php?id='.$ultimosProds[$i]->getId().'';
+								$perfil = 'perfilVisitante.php?nickname='.$ultimosProds[$i]->getOwner().'';
+								echo"<h1>".$ultimosProds[$i]->getNombre()."</h1>"; ?>
+								<div class="author">
+									<?php echo '<a class ="seemore" href='. $perfil . '></i><img onerror=this.src="img/error/no-image.png" src="img/'.$ultimosProds[$i]->getOwner().'.png"/>
+									<h2>'. $ultimosProds[$i]->getOwner() .'</h2></a>' ?>
+								</div>
+								<div class="category">
+										<?php
+											switch ($ultimosProds[$i]->getCategoria()) {
+												 case '0':
+																echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
+																break;
+															case '1':
+																echo "<a class='catLink' href='rinconAbuela.php'>Rincón de la Abuela</a>";
+																break;
+															case '2':
+																echo "<a class='catLink' href='figuras.php'>Figuras</a>";
+																break;
+															case '3':
+																echo "<a class='catLink' href='filatelia.php'>Filatelia</a>";
+																break;
+															case '4':
+																echo "<a class='catLink' href='vinilosDiscos.php'>Vinilos/Discos</a>";
+																break;
+															case '5':
+																echo "<a class='catLink' href='cromos.php'>Cromos</a>";
+																break;
+															case '6':
+																echo "<a class='catLink' href='librosComics.php'>Libros/Comics</a>";
+																break;
+															case '7':
+																echo "<a class='catLink' href='trastero.php'>Trastero</a>";
+																break;
+											 }?>
+		
+								</div>
+								<div class="precio">
+										<h2><?php echo $ultimosProds[$i]->getPrecio() ?>$</h2>
+								</div>
+		
+								<div class="separator"></div>
+								<p><?php echo $ultimosProds[$i]->getDescripcionCorta() ?></p>
+								<?php echo '<a class="seemore" href='.$path.'><p>Ir al producto</p></a>'?>
+		
+						</div>
+					</div>
+					<?php }
 
-		    for ($i=0; $i < sizeof($ultimosProds); $i++) {
-		    ?>
-			  <div class="card cuadricula">
-			  <?php echo '<div class="thumbnail"><img class="leftImg" src="img/prods/'.$ultimosProds[$i]->getId().'.png"/></div>'; ?>
-			  <div class="details">
-			    <?php
-				    $path = 'product.php?id='.$ultimosProds[$i]->getId().'';
-				    $perfil = 'perfilVisitante.php?nickname='.$ultimosProds[$i]->getOwner().'';
-				    echo"<h1>".$ultimosProds[$i]->getNombre()."</h1>"; ?>
-				    <div class="author">
-				    	<?php echo '<a class ="seemore" href='. $perfil . '></i><img onerror=this.src="img/error/no-image.png" src="img/'.$ultimosProds[$i]->getOwner().'.png"/>
-				    	<h2>'. $ultimosProds[$i]->getOwner() .'</h2></a>' ?>
-				    </div>
-				    <div class="category">
-				      	<?php
-				      		switch ($ultimosProds[$i]->getCategoria()) {
-				      		 	case '0':
-			                      echo "<a class='catLink' href='numismatica.php'> Numismática</a>";
-			                      break;
-			                    case '1':
-			                      echo "<a class='catLink' href='rinconAbuela.php'>Rincón de la Abuela</a>";
-			                      break;
-			                    case '2':
-			                      echo "<a class='catLink' href='figuras.php'>Figuras</a>";
-			                      break;
-			                    case '3':
-			                      echo "<a class='catLink' href='filatelia.php'>Filatelia</a>";
-			                      break;
-			                    case '4':
-			                      echo "<a class='catLink' href='vinilosDiscos.php'>Vinilos/Discos</a>";
-			                      break;
-			                    case '5':
-			                      echo "<a class='catLink' href='cromos.php'>Cromos</a>";
-			                      break;
-			                    case '6':
-			                      echo "<a class='catLink' href='librosComics.php'>Libros/Comics</a>";
-			                      break;
-			                    case '7':
-			                      echo "<a class='catLink' href='trastero.php'>Trastero</a>";
-			                      break;
-				      		 }?>
-
-				    </div>
-				    <div class="precio">
-				      	<h2><?php echo $ultimosProds[$i]->getPrecio() ?>$</h2>
-				    </div>
-
-				    <div class="separator"></div>
-				    <p><?php echo $ultimosProds[$i]->getDescripcionCorta() ?></p>
-				    <?php echo '<a class="seemore" href='.$path.'><p>Ir al producto</p></a>'?>
-
-			  </div>
-			</div>
-			<?php }
+				}
+				else echo "<h4>No hay productos disponibles para pujar</h4>";
+		    
 			    ?>
 			</div>
 	</div>
