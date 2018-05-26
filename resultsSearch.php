@@ -5,7 +5,9 @@ $prod = $sa->getProducto($_GET["nom"]);
 ?>
 	<h1>Resultado búsqueda</h1>
 
+
 	<?php
+		if($prod != null){
     for ($i=0; $i < sizeof($prod); $i++) {
     ?>
 	  <div class="card">
@@ -60,5 +62,7 @@ $prod = $sa->getProducto($_GET["nom"]);
 			</div>
 		</div>
 	<?php
+		}
 	}
+	else echo "<div class='err'> Sin resultados</div>";
 	    ?>
