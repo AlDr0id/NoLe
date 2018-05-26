@@ -41,7 +41,7 @@ $(document).ready(function(){
         return ( arroba > 0 && punto > 1 && correo.length > 0);
     }
 
-    $('#mail').change(function(){
+    $('#mail').on('input', function(){
         if(correoValido($('#mail').val())){
             if($('#passReg').val() == $('#passReg2').val())$('#regSubmit').prop('disabled', false);
             $('#errMail').hide();
@@ -52,7 +52,7 @@ $(document).ready(function(){
         }
     });
 
-    $('#passReg2').change(function(){
+    $('#passReg2').on('input', function(){
         if($('#passReg').val() == $('#passReg2').val()){
             if(correoValido($('#mail').val())) $('#regSubmit').prop('disabled', false);
             $('#errPass').hide();
@@ -63,7 +63,7 @@ $(document).ready(function(){
         }
     });
 
-    $('#passReg').change(function(){
+    $('#passReg').on('input', function(){
         if($('#passReg').val() == $('#passReg2').val()){
             if(correoValido($('#mail').val())) $('#regSubmit').prop('disabled', false);
             $('#errPass').hide();
