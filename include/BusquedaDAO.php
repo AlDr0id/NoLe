@@ -241,14 +241,14 @@ class BusquedaDAO extends DAO{
                     $sql .= " AND libros_comics.Anyo LIKE '$anio'";
                     $p = false;
                   }
-                  if(array_key_exists ('librosColeccion', $argumentos)) {
+                  if(array_key_exists ('librosAutor', $argumentos)) {
                      if(!$p)
                       $sql .= " AND";
                     else{
                        $sql .= " WHERE ";
                     }
                     $autor = $argumentos["librosAutor"];
-                    $sql .= " UPPER(libros_comics.Autor) LIKE UPPER('$autor')";
+                    $sql .= " UPPER(libros_comics.Autor) LIKE UPPER('%$autor%')";
 
                     $p = false;
                   }
