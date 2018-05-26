@@ -18,15 +18,18 @@ $(document).ready(function(){
     }
     if (loc.indexOf('verProds') != -1) {
         $('.verProductos').addClass('activePerfil');
-        $(".verOpts").slideDown("slow");
+        $(".verOpts").slideToggle("slow");
+        $('.ver i').attr('class','up');
     }
     if (loc.indexOf('verPujas') != -1) {
         $('.verPujas').addClass('activePerfil');
-        $(".verOpts").slideDown("slow");
+        $(".verOpts").slideToggle("slow");
+        $('.ver i').attr('class','up');
     }
     if (loc.indexOf('verProdPuja') != -1) {
         $('.verProductosPuja').addClass('activePerfil');
-        $(".verOpts").slideDown("slow");
+        $(".verOpts").slideToggle("slow");
+        $('.ver i').attr('class','up');
     }
     if (loc.indexOf('camPass') != -1) {
         $('.cambiarPass').addClass('activePerfil');
@@ -42,7 +45,8 @@ $(document).ready(function(){
     }
     if (loc.indexOf('verProdSolic') != -1) {
         $('.verProductosSolicitados').addClass('activePerfil');
-        $(".verOpts").slideDown("slow");
+        $(".verOpts").slideToggle("slow");
+        $('.ver i').attr('class','up');
     }
     if (loc.indexOf('solicitarProd') != -1) {
         $('.solicitarProducto').addClass('activePerfil');
