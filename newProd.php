@@ -18,7 +18,7 @@ if (! isset($_GET['id']) ) {
 		<div class="info">
 			<div class="imagen">
 				<h5>Imagen: </h5>
-				<input type="file" name="fotoProd" required />
+				<input type="file" name="fotoProd" accept=".png, .jpg, .jpeg" required />
 				<!-- <br />
 				<output id="list"></output> -->
 			</div>
@@ -206,7 +206,7 @@ else{
 			<input type="text" name="nomP" placeholder="Nombre del producto" value="<?=$nomP ?>" >
 			<div class="imagen">
 				<h5>Imagen del producto:</h5>
-				<input type="file" name="fotoProd" value="/img/prods/<?=$id ?>.png" />
+				<input type="file" name="fotoProd" accept=".png, .jpg, .jpeg" value="/img/prods/<?=$id ?>.png" />
 			</div>
 			<h5>Descripción del producto:</h5>
 			<textarea name="descP" placeholder="Descripción del producto" ><?=$descP ?></textarea>
