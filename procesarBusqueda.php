@@ -1,5 +1,5 @@
 <?php 
 
-echo json_encode($_POST["buscNom"]);
+echo json_encode(urlencode($_POST["buscNom"]));
 
 ?>
