@@ -186,16 +186,16 @@
 								$saRdla = new rinconAbSA();
 								$prodRdla = $saRdla->getProductoRinconAb($id);
 								$or ='';
-								if ($prodRdla->getOrigen() == 0) {
+								if ($prodRdla->getTipo() == 0) {
 									$or = 'Dedal';
 								}
-								elseif ($prodRdla->getOrigen() == 1) {
+								elseif ($prodRdla->getTipo() == 1) {
 									$or = 'Vajilla';
 								}
 								else{
 									$or = 'Imán';
 								}
-								echo '<p>Tipo: '.$prodRdla->getTipo().'</p> <p>Origen: '.$prodRdla->getOrigen().'</p>';
+								echo '<p>Tipo: '.$or.'</p> <p>Origen: '.$prodRdla->getOrigen().'</p>';
 								break;
 							case '2':
 								require_once("include/figurasSA.php");
