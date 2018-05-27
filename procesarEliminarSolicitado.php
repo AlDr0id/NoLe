@@ -5,14 +5,14 @@ require_once("include/productoSolicitadoTransfer.php");
 
 $data = array();
 
-function eliminaCuenta( $id){
+function eliminaSoli( $id){
  	$productoSa = new productoSolicitadoSA();
  	$correcto=$productoSa->eliminar($id);
  	return $correcto;
 }
 
 $id = htmlspecialchars(trim(strip_tags($_GET["id"])));
-$anadido = eliminaCuenta($id);
+$anadido = eliminaSoli($id);
  if($anadido != NULL){
 
       $data['success'] = True;
