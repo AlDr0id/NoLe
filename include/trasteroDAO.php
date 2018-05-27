@@ -108,10 +108,10 @@ class trasteroDAO extends DAO{
 
        $id = $trastero->getId();
        $anyo = $trastero->getAnyo();
-       $pais = $trastero->getPais();
+       $pais = $trastero->getOrigen();
        
         //consulta del usuario
-        $sql = "UPDATE trastero SET Anyo = '$anyo', Pais = '$pais' WHERE Id = '$id'";
+        $sql = "UPDATE trastero SET Anyo = '$anyo', Origen = '$pais' WHERE Id = '$id'";
         $consulta = mysqli_query($this->db, $sql);
         if($consulta) {
              parent::desconectar();

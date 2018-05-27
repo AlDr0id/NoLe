@@ -204,10 +204,6 @@ session_start();?>
     switch ($_GET['opt']) {
         case 'anadProd':
           echo '<script type="text/javascript" src="cate.js"></script>';
-          echo '<script type="text/javascript" src="imagenes.js"></script>';
-          break;
-        case 'verPerfil':
-          echo '<script type="text/javascript" src="imagenes.js"></script>';
           break;
         case 'actividadReciente':
           echo '<script type="text/javascript" src="valoracion.js"></script>';
