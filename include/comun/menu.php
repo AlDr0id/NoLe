@@ -17,6 +17,7 @@
 		if (isset($_SESSION["login"]) and $_SESSION["login"]) {
 			?>
 			<span><a href="perfil.php?opt=anadProd">Añadir un artículo</a></span>
+			<span><a href="perfil.php?opt=solicitarProd">Solicitar un artículo</a></span>
 		<?php
 		}
   		?>
