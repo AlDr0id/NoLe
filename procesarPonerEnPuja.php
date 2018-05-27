@@ -1,4 +1,5 @@
 <?php 
+	ob_start();
 	require_once('include/productoOfreSA.php');
 	require_once('include/productoSolicitadoSA.php');
 
@@ -15,4 +16,5 @@
 	$productoSolSA->comprobarProducto($producto);
 
 	header("Location: perfil.php?opt=verProdPuja");
+	ob_end_flush();
 ?>

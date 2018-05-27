@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 require_once('include/productoOfreSA.php');
 require_once('include/cromosSA.php');
 require_once('include/filateliaSA.php');
@@ -372,4 +372,5 @@ else{
 </form>
 <?php
 }
+ob_end_flush();
 ?>

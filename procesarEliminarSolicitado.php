@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require_once("include/productoSolicitadoSA.php");
 require_once("include/productoSolicitadoTransfer.php");
@@ -25,4 +26,6 @@ $anadido = eliminaSoli($id);
       $data['errors'] = 'No se ha podido eliminar la Busqueda';
       header("Refresh: 0 ;URL= perfil.php?opt=verProdSolic&errCod=9");
   }
+
+  ob_end_flush();
 ?>

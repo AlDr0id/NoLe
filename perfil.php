@@ -1,9 +1,12 @@
-<?php session_start();?>
+<?php 
+ob_start();
+session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>NoLe</title>
   <meta charset="utf-8">
+  <link rel="icon" href="img/logo.png">
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <link rel="stylesheet" type="text/css" href="card.css">
   <link rel="stylesheet" type="text/css" href="menu.css">
@@ -215,3 +218,4 @@
   }
 ?>
 </html>
+<?php ob_end_flush(); ?>

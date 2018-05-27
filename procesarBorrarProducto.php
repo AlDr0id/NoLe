@@ -1,4 +1,5 @@
 <?php
+	ob_start();
 	require_once('include/productoOfreSA.php');
 
 	$sa = new productoOfreSA();
@@ -8,4 +9,5 @@
 	else{
 		header('Location: product.php?errCod=2');
 	}
+	ob_end_flush();
 ?>
