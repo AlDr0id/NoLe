@@ -74,7 +74,7 @@ $pujasVendidas = $sa->getPujasVendedorCerradas($_SESSION["nombre"]);
 		$pathOfer = '"product.php?id='.$pujasPerdidas[$i]->getIdTrueque().'"';
 		$p = $saProd->getProducto($pujasPerdidas[$i]->getIdProducto());
 	?>
-		<li><em><?php echo $pujasPerdidas[$i]->getFecha()?></em> - Ha ganado la puja por este <a href=<?php echo $path; ?>>producto</a> a cambio de 
+		<li><em><?php echo $pujasPerdidas[$i]->getFecha()?></em> - Ha perdido la puja por este <a href=<?php echo $path; ?>>producto</a> a cambio de 
 			<?php 
 				if($pujasPerdidas[$i]->getIdTrueque()!=NULL){
 					echo "<a href=".$pathOfer.">producto ofertado</a>.";
