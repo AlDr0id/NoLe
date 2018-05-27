@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require_once("include/productoSolicitadoSA.php");
 require_once("include/productoSolicitadoTransfer.php");
@@ -17,3 +18,5 @@ if ($cat != -1) {
 else{
 	header("Refresh: 0 ;URL= perfil.php?opt=verProdSolic&errCod=10");
 }
+ob_end_flush();
+?>

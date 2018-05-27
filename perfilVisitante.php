@@ -1,4 +1,6 @@
-<?php session_start();
+<?php
+	ob_start(); 
+	session_start();
 	require_once("include/UsuarioSA.php");
 	$nickname = $_GET["nickname"];
 	$sa = new UsuarioSA();
@@ -99,3 +101,4 @@
 </body>
 
 </html>
+<?php ob_end_flush(); ?>

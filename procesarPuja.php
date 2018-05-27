@@ -1,7 +1,9 @@
 <?php
+ob_start();
+session_start();
 require_once("include/pujaSA.php");
 require_once("include/productoOfreSA.php");
-session_start();
+
 
 $sa = new pujaSA();
 
@@ -18,4 +20,5 @@ else{
 }
 
 header('Location: product.php?id='.$_GET['idProd']);
+ob_end_flush();
 ?>

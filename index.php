@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>NoLe</title>
+	<link rel="icon" href="img/logo.png">
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<link rel="stylesheet" type="text/css" href="card.css">

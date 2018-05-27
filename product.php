@@ -1,7 +1,9 @@
 <?php
+	ob_start();
+	session_start();
 	require_once("include/productoOfreSA.php");
 
-	session_start();
+	
 	if (isset($_GET["id"])) {
 		$id = $_GET["id"];
 		$sa = new productoOfreSA();
@@ -22,6 +24,7 @@
 <head>
 	<title>NoLe</title>
 	<meta charset="utf-8">
+	<link rel="icon" href="img/logo.png">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<link rel="stylesheet" type="text/css" href="card.css">
 	<link rel="stylesheet" type="text/css" href="menu.css">
@@ -269,3 +272,4 @@
 </body>
 <script type="text/javascript" src="puja.js"></script>
 </html>
+<?php ob_end_flush(); ?>

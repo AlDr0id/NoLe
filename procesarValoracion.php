@@ -1,4 +1,5 @@
 <?php 
+	ob_start();
 	require_once('include/UsuarioSA.php');
 	require_once('include/pujaSA.php');
 
@@ -16,4 +17,5 @@
 	$sap->editPuja($puja);
 
 	header("Location: perfil.php?opt=actividadReciente");
+	ob_end_flush();
 ?>

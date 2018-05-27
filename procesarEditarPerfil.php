@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require_once("include/UsuarioSA.php");
 require_once("include/UsuarioTransfer.php");
@@ -52,4 +53,5 @@ else {
     header("Refresh: 0 ;URL= perfil.php?opt=verPerfil&errCod=8");
 }
 
+ob_end_flush();
 ?>

@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require_once("include/productoOfreSA.php");
 require_once("include/productoOfreTransfer.php");
@@ -149,5 +150,5 @@ else {
 }
 
  		/*header("Refresh: 0 ;URL= perfil.php?opt=verProds");*/
-
+ob_end_flush();
  ?>

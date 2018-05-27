@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require_once("include/UsuarioSA.php");
 require_once("include/UsuarioTransfer.php");
@@ -32,5 +33,5 @@ if ($op == '1') {
       header("Refresh: 0 ;URL= perfil.php?errCod=5");
   }
 }
-
+ob_end_flush();
 ?>

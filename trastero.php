@@ -13,6 +13,7 @@ $prod = $busq->getProductoAvan($array);
 <head>
   <title>NoLe</title>
   <meta charset="utf-8">
+  <link rel="icon" href="img/logo.png">
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <link rel="stylesheet" type="text/css" href="card.css">
   <link rel="stylesheet" type="text/css" href="menu.css">

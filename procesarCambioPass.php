@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require_once("include/UsuarioSA.php");
 require_once("include/UsuarioTransfer.php");
@@ -40,4 +41,5 @@ else{
 }
 
 //echo json_encode($data);
+ob_end_flush();
 ?>

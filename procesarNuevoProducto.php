@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require_once("include/productoOfreSA.php");
 require_once("include/productoOfreTransfer.php");
@@ -196,5 +197,5 @@ function newProductControlador(productoOfreTransfer $producto){
 		else {
 			header("Refresh: 0 ;URL= perfil.php?opt=anadProd&errCod=1");
 		}
-
+ob_end_flush();
  ?>
