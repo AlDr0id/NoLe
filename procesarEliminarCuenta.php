@@ -17,8 +17,6 @@ $user = new usuarioTransfer($nickname,"","","","",0,0,"");
 
 if ($op == '1') {
   $anadido = eliminaCuenta($user);
-  /* FALTA HACER TODAS LAS COMPROBACIONES QUE SEAN NECESARIAS ANTES DE ELIMINAR UNA CUENTA, COMO QUE NO TENGA PRODUCTOS O PUJAS, O EN SU
-  DEFECTO DESACTIVAR TODOS SUS PRODUCTOS Y SUS PUJAS ANTES DE DAR DE BAJA LA CUENTA */
   if($anadido != NULL){
 
       $data['success'] = True;
@@ -35,5 +33,4 @@ if ($op == '1') {
   }
 }
 
-echo json_encode($data);
 ?>

@@ -38,6 +38,18 @@
         </div>
       <?php
       }
+      if ($_GET['okCod'] == 3) {?>
+        <div class="alert success">
+          <p><strong>Hecho!</strong> Producto solicitado borrado</p>
+        </div>
+      <?php
+      }
+      if ($_GET['okCod'] == 4) {?>
+        <div class="alert success">
+          <p><strong>Hecho!</strong> Producto solicitado creado</p>
+        </div>
+      <?php
+      }
     }
   if(isset($_GET['errCod'])){
       if ($_GET['errCod'] == 1) {?>
@@ -85,6 +97,18 @@
       if ($_GET['errCod'] == 8) {?>
         <div class="alert">
           <p><strong>Error!</strong> Contraseña incorrecta</p>
+        </div>
+      <?php
+      }
+      if ($_GET['errCod'] == 9) {?>
+        <div class="alert">
+          <p><strong>Error!</strong> El producto solicitado no ha podido borrarse</p>
+        </div>
+      <?php
+      }
+      if ($_GET['errCod'] == 10) {?>
+        <div class="alert">
+          <p><strong>Error!</strong> El producto solicitado no ha podido crearse, compruebe que todos los campos estén rellenos</p>
         </div>
       <?php
       }
