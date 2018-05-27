@@ -65,7 +65,6 @@ class productoSolicitadoDAO extends DAO{
           $sql = "UPDATE producto_solicitado SET activo=0 where id LIKE '$id'  ";
       
           $consulta = mysqli_query($this->db, $sql);
-          echo $sql;
           if(($consulta)){
             return true;
             }

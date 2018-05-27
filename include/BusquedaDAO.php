@@ -10,7 +10,7 @@ class BusquedaDAO extends DAO{
         //conexión bbdd
       if($ok = parent::conectar()) {
         //consulta del usuario
-        $sql = "SELECT * FROM producto_ofrecido WHERE UPPER(Nombre) LIKE UPPER('%$nombre%')";
+        $sql = "SELECT * FROM producto_ofrecido WHERE UPPER(Nombre) LIKE UPPER('%$nombre%') AND EnPuja LIKE '1'";
         $consulta = mysqli_query($this->db, $sql);
         if($consulta) {
           $num =$consulta->num_rows;

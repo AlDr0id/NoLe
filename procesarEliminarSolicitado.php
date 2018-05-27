@@ -17,15 +17,12 @@ $anadido = eliminaSoli($id);
 
       $data['success'] = True;
 
-      echo"<script language='JavaScript'>
-              alert('Busqueda Borrada');
-         </script>";
-      header("Refresh: 0 ;URL= perfil.php");
+      header("Refresh: 0 ;URL= perfil.php?opt=verProdSolic&okCod=3");
 
   }
   else {
       $data['success'] = False;
       $data['errors'] = 'No se ha podido eliminar la Busqueda';
+      header("Refresh: 0 ;URL= perfil.php?opt=verProdSolic&errCod=9");
   }
-echo json_encode($data);
 ?>
