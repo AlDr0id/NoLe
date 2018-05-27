@@ -18,9 +18,7 @@ function newProductControlador(productoOfreTransfer $producto){
  		$descP = htmlspecialchars(trim(strip_tags($_POST['descP'])));
  		$producto = new productoOfreTransfer('',$_SESSION['nombre'],$nomP ,$cat,date('Y/m/d h:i:s', time()),'1',$precio ,$descP,'0');
 		$id = newProductControlador($producto);
-		$producto->setId($id);
-		$productoSolSA = new productoSolicitadoSA();
-		$productoSolSA->comprobarProducto($producto);
+	
 
 
 		/*Atributos propios de la categoría*/
