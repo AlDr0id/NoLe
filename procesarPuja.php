@@ -9,7 +9,7 @@ $sa = new pujaSA();
 
 $date = date('Y/m/d h:i:s', time());
 
-if($_POST['trueque'] != -1){
+if($_POST['puja'] == 'producto'){
 	$puja = new pujaTransfer('',$_GET['idProd'],$_GET['idVend'],$_SESSION['nombre'],0,$_POST['trueque'],$date,'PENDIENTE', 0);
 	$sa->newPuja($puja);
 }

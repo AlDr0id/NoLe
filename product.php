@@ -91,11 +91,16 @@
 	        <div class="popupCloseButton">X</div>
 	        <?php if (isset($_SESSION['login']) and $_SESSION['login'] and $prod->getEnPuja() and $propietario != $_SESSION['nombre']) { ?>
 	        <h1>Puja</h1>
-	        <form id=opt>
+	        <!--<form id=opt>
 		        <input class="din" type="radio" name="puja" value="dinero" checked>Pujar con dinero
 				<input class="prod" type="radio" name="puja" value="producto">Pujar con un producto
-			</form>
+			</form>-->
 	        <form class="formulario" action=<?php echo "'procesarPuja.php?idProd=".$_GET['id']."&idVend=".$propietario."'"; ?> method="POST">
+	        	<div id="opt">
+	        		<input class="din" type="radio" name="puja" value="dinero" checked>Pujar con dinero
+					<input class="prod" type="radio" name="puja" value="producto">Pujar con un producto
+	        	</div>
+	        	
 
 	        	<div class="popupPujaDin">
 			        <input class="valorPuja" type="number" name="valorPuja" value=<?php echo $prod->getPrecio();?> min= <?php echo $prod->getPrecio();?> step=0.01>
