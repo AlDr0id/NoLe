@@ -185,6 +185,16 @@
 								require_once("include/rinconAbSA.php");
 								$saRdla = new rinconAbSA();
 								$prodRdla = $saRdla->getProductoRinconAb($id);
+								$or ='';
+								if ($prodRdla->getOrigen() == 0) {
+									$or = 'Dedal';
+								}
+								elseif ($prodRdla->getOrigen() == 1) {
+									$or = 'Vajilla';
+								}
+								else{
+									$or = 'Imán';
+								}
 								echo '<p>Tipo: '.$prodRdla->getTipo().'</p> <p>Origen: '.$prodRdla->getOrigen().'</p>';
 								break;
 							case '2':
