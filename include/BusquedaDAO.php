@@ -10,7 +10,7 @@ class BusquedaDAO extends DAO{
         //conexión bbdd
       if($ok = parent::conectar()) {
         //consulta del usuario
-        $sql = "SELECT * FROM producto_ofrecido WHERE UPPER(Nombre) LIKE UPPER('%$nombre%') AND EnPuja LIKE '1'";
+        $sql = "SELECT * FROM producto_ofrecido WHERE UPPER(Nombre) LIKE UPPER('%$nombre%')  AND EnPuja LIKE '1'";
         $consulta = mysqli_query($this->db, $sql);
         if($consulta) {
           $num =$consulta->num_rows;
@@ -96,7 +96,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $origen = $argumentos["rdlaOrigen"];
-                    $sql .= " UPPER(rincon_de_la_abuela.Origen) LIKE UPPER('$origen')";
+                    $sql .= " UPPER(rincon_de_la_abuela.Origen) LIKE UPPER('%$origen%')";
 
                     $p = false;
                   }
@@ -109,7 +109,7 @@ class BusquedaDAO extends DAO{
                   $sql .= " AND producto_ofrecido.Categoria = $Categoria";
                   if(array_key_exists ('figTema', $argumentos)){
                     $tema= $argumentos["figTema"];
-                    $sql .= " AND figuras.Tema LIKE '$tema'";
+                    $sql .= " AND UPPER(figuras.Tema) LIKE UPPER('%$tema%')";
                     $p = false;
                   }
                   if(array_key_exists ('figMaterial', $argumentos)) {
@@ -119,7 +119,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $material = $argumentos["figMaterial"];
-                    $sql .= " UPPER(figuras.Material) LIKE UPPER('$material')";
+                    $sql .= " UPPER(figuras.Material) LIKE UPPER('%$material%')";
 
                     $p = false;
                   }
@@ -130,7 +130,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $fabricante = $argumentos["figFabricante"];
-                    $sql .= " UPPER(figuras.Fabricante) LIKE UPPER('$fabricante')";
+                    $sql .= " UPPER(figuras.Fabricante) LIKE UPPER('%$fabricante%')";
 
                     $p = false;
                   }
@@ -172,7 +172,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $autor = $argumentos["viniAutor"];
-                    $sql .= " UPPER(vinilos_discos.Autor_compositor) LIKE UPPER('$autor')";
+                    $sql .= " UPPER(vinilos_discos.Autor_compositor) LIKE UPPER('%$autor%')";
 
                     $p = false;
                   }
@@ -183,7 +183,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $grupo = $argumentos["viniGrupo"];
-                    $sql .= " UPPER(vinilos_discos.Grupo_cantante) LIKE UPPER('$grupo')";
+                    $sql .= " UPPER(vinilos_discos.Grupo_cantante) LIKE UPPER('%$grupo%')";
 
                     $p = false;
                   }
@@ -194,7 +194,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $genero = $argumentos["viniGenero"];
-                    $sql .= " UPPER(vinilos_discos.Genero) LIKE UPPER('$genero')";
+                    $sql .= " UPPER(vinilos_discos.Genero) LIKE UPPER('%$genero%')";
 
                     $p = false;
                   }
@@ -215,7 +215,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $coleccion = $argumentos["cromosColeccion"];
-                    $sql .= " UPPER(cromos.Coleccion) LIKE UPPER('$coleccion')";
+                    $sql .= " UPPER(cromos.Coleccion) LIKE UPPER('%$coleccion%')";
 
                     $p = false;
                   }
@@ -259,7 +259,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $editorial = $argumentos["librosEditorial"];
-                    $sql .= " UPPER(libros_comics.Editorial) LIKE UPPER('$editorial')";
+                    $sql .= " UPPER(libros_comics.Editorial) LIKE UPPER('%$editorial%')";
 
                     $p = false;
                   }
@@ -270,7 +270,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $genero = $argumentos["librosGenero"];
-                    $sql .= " UPPER(libros_comics.Genero) LIKE UPPER('$genero')";
+                    $sql .= " UPPER(libros_comics.Genero) LIKE UPPER('%$genero%')";
 
                     $p = false;
                   }
@@ -303,7 +303,7 @@ class BusquedaDAO extends DAO{
                        $sql .= " WHERE ";
                     }
                     $origen = $argumentos["trasteroOrigen"];
-                    $sql .= " UPPER(trastero.Origen) LIKE UPPER('$origen')";
+                    $sql .= " UPPER(trastero.Origen) LIKE UPPER('%$origen%')";
 
                     $p = false;
                   }
